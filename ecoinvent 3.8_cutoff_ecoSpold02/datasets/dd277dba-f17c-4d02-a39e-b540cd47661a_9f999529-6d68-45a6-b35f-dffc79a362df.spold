@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="dd277dba-f17c-4d02-a39e-b540cd47661a" activityNameId="0f1630bb-6edd-4f3c-a37e-c34c80a811fc" parentActivityId="bc367d54-b46c-4f6e-875c-1ac68e48ef86" inheritanceDepth="-1" type="1" specialActivityType="0">
+        <activityName xml:lang="en">canal construction</activityName>
+        <includedActivitiesStart xml:lang="en">Canal construction is starting with the material for construction. Canal maintenance and land use is starting with the energy consumption.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">The dataset ends with the construction and the maintenance and land use of one canal. The dataset includes the material for construction and the transport of these materials. The dataset doesn't includ the disposal of the canal. For the maintenance and land use dataset, it ends with the maintenance and land use of one port. The dataset includes the energy consumption and land occupation and transformation.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="1">The dataset represents the construction, the maintenance and land use of one canal with life time assumed to be 118 years.</text>
+        </generalComment>
+      </activity>
+      <classification classificationId="3ec99844-8ddd-4b2f-b1c7-bb3111d53d92">
+        <classificationSystem xml:lang="en">EcoSpold01Categories</classificationSystem>
+        <classificationValue xml:lang="en">transport systems/ship</classificationValue>
+      </classification>
+      <classification classificationId="d1a5808c-6d4a-4d8c-a748-b9fef65b7ed1">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">4290:Construction of other civil engineering projects</classificationValue>
+      </classification>
+      <geography geographyId="0723d252-7e2a-11de-9820-0019e336be3a">
+        <shortname xml:lang="en">RER</shortname>
+        <comment>
+          <text xml:lang="en" index="1">Data is based on  a case study of one canal in Germany.</text>
+        </comment>
+      </geography>
+      <technology technologyLevel="3">
+        <comment>
+          <text xml:lang="en" index="1">The data are derived from the Main-Donau-Canal in Germany. The canal is characterised by a width of 42 m and an average depth of 4m.  The life span of the canal is assumed to be 118 years. The data employed in this study is derived from Maibach et al. (1999). Data for electricity consumption, predominately due the operation of sluices is derived from Enquête (1994) as quoted in Maibach et al. (1999).  The canal bed area is estimated with 42m2/m canal. In addition, 10 meters at each edge is modelled as road traffic area. The life span of the canal is assumed to be 118 years.</text>
+          <text xml:lang="en" index="3">Maibach M., Peter D. and Seiler B. (1999) Ökoinventar Transporte: Grundlagen für den ökologischen Vergleich von Transportsystemen und den Einbezug von Transportsystemen in Ökobilanzen. Technischer Schlussbericht. In: Schweizerischer Nationalfonds zur Förderung der wissenschaftlichen Forschung (ed. SPP Umwelt M.). 2nd Edition. INFRAS, Zürich</text>
+          <text xml:lang="en" index="2">References:</text>
+          <text xml:lang="en" index="4">Enquête (1994) Schutz der Erdatmospäre, Verkehr, Band 4, Studienband, Teilband II. Enquête Kommission, Bonn</text>
+        </comment>
+      </technology>
+      <timePeriod startDate="1993-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="d4c433b2-31bf-4bae-8ed3-72e2a653f926" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="8.68" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="9ba48284-0f03-4fec-800d-de77833b12f6" activityLinkId="2c917a85-ddc8-4966-884f-c3fee54ed328">
+        <name xml:lang="en">reinforcing steel</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Literature value. The data employed in this study is derived from Maibach et al. (1999)</comment>
+        <uncertainty>
+          <lognormal meanValue="8.68" mu="2.161" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.004" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Mix of differently produced steels and hot rolling</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="0" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Non combustible products are assumed to have an LHV equal to zero (0).</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.004" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.004" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="95701f23-88ae-4d9e-b43d-6e2e99ac3a1a">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">4124: Bars and rods, hot-rolled, of iron or steel</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="7ceab73b-65b6-49e7-8eb2-3357fa99ecd9" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="4.03" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="d67e647c-1f74-4961-81c0-5b144f1ca082" activityLinkId="e71f2a2d-eda9-4e93-81c2-1ddeadb06650">
+        <name xml:lang="en">excavation, skid-steer loader</name>
+        <unitName xml:lang="en">m3</unitName>
+        <comment xml:lang="en">Literature value. The data employed in this study is derived from Maibach et al. (1999);activityLink introduced to establish a direct link to the corresponding regional supply of this product</comment>
+        <uncertainty>
+          <lognormal meanValue="4.03" mu="1.394" variance="0.3" varianceWithPedigreeUncertainty="0.34" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="f358a386-57e5-4cc7-958a-766b8e986f73">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">54330: Excavating and earthmoving services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="d7544bd9-10ff-43e1-8997-c2189d995159" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="0.13" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="eb266390-532c-4f14-ba91-a1e1b688cf5c" activityLinkId="798bac08-2ee7-4ca6-aa31-6c28b2b3a3ee">
+        <name xml:lang="en">concrete, medium strength</name>
+        <unitName xml:lang="en">m3</unitName>
+        <comment xml:lang="en">Literature value. The data employed in this study is derived from Maibach et al. (1999)</comment>
+        <uncertainty>
+          <lognormal meanValue="0.13" mu="-2.04" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="2190" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.0867579908675799" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="190" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="2380" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="5051360e-e3e9-4745-bf02-b510c4101537">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">37510: Non-refractory mortars and concretes</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="1719e193-a950-4883-a48d-2e9be397195e" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="061789-60-4" amount="0" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="e7a17355-8575-4be4-8c51-85e38b19b3f3" productionVolumeAmount="0">
+        <name xml:lang="en">pitch</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Literature value. The data employed in this study is derived from Maibach et al. (1999)</comment>
+        <uncertainty>
+          <undefined minValue="0" maxValue="0" standardDeviation95="0" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="1" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <synonym />
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.83" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">C content of bitumen in Tab 3.19, ecoinvent v2.2 report 6_IV</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="28" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Assumed equal to "coal tar".</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.83" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.83" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ced0e1fd-9cc3-4d4b-98ac-461060c8baed">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">34540: Oils and other products of the distillation of high temperature coal tar, and similar products; pitch and pitc[…]</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="0f0520de-ed6f-4d40-aac2-e91e6cce81a3" unitId="8266bd67-ebd3-4d31-b972-eee3cf0da36f" amount="1" intermediateExchangeId="9f999529-6d68-45a6-b35f-dffc79a362df" productionVolumeAmount="1.32236940655721">
+        <name xml:lang="en">canal</name>
+        <unitName xml:lang="en">m*year</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="53.8128191" isDefiningValue="false" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">This is a placeholder value that does not reflect real-world production volumes. This dataset does not currently require a real-world production volume to work in the database framework, and no actual data were collected yet. This has no negative effect on the results of the ecoinvent database. The placeholder value of this activity was scaled according to the nominal GDP of 2005 (source: United Nations, http://data.un.org/Glossary.aspx?q=GDP+%28current+US%24%29, accessed 20130726) to reflect an appropriate share of the global production volume, which is also a placeholder value.</productionVolumeComment>
+        <classification classificationId="901c6882-6208-40b7-a2f7-35baf65ce7fd">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">53232: Harbours, waterways and related facilities</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="d0b0f237-8a0e-4b71-8002-7a8be2fac2a3" unitId="77ae64fa-7e74-4252-9c3b-889c1cd20bfc" amount="3.42" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="759b89bd-3aa6-42ad-b767-5bb9ef5d331d" activityLinkId="6b196b75-14ca-45a8-8a3c-ef21c9623784">
+        <name xml:lang="en">electricity, medium voltage</name>
+        <unitName xml:lang="en">kWh</unitName>
+        <comment xml:lang="en">Literature value. Data for electricity consumption, predominately due the operation of sluices is derived from Enquête (1994) as quoted in Maibach et al. (1999). Maintenance and land use
+
+Further references:
+
+Enquête (1994) Schutz der Erdatmospäre, Verkehr, Band 4, Studienband, Teilband II. Enquête Kommission, Bonn</comment>
+        <uncertainty>
+          <lognormal meanValue="3.42" mu="1.23" variance="0.3" varianceWithPedigreeUncertainty="0.34" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="8c58a77e-289e-4069-bd0f-413c4f45e21b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">17100: Electrical energy</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="314aeda0-ae77-4c5b-b8d0-9b706d9be4ee" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="061789-60-4" amount="0.00864317185545142" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="e7a17355-8575-4be4-8c51-85e38b19b3f3" activityLinkId="5d6d480a-36ae-40ce-88b0-0161ef75c846">
+        <name xml:lang="en">pitch</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Literature value. The data employed in this study is derived from Maibach et al. (1999)</comment>
+        <uncertainty>
+          <lognormal meanValue="0.00864317185545142" mu="-4.751" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <synonym />
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.83" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">C content of bitumen in Tab 3.19, ecoinvent v2.2 report 6_IV</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="28" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Assumed equal to "coal tar".</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.83" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.83" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ced0e1fd-9cc3-4d4b-98ac-461060c8baed">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">34540: Oils and other products of the distillation of high temperature coal tar, and similar products; pitch and pitc[…]</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="98e8a23c-44dc-4697-9c61-9df980da6145" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="061789-60-4" amount="5.68281445485768E-05" sourceId="642a8c08-11c3-4daf-88fc-de5fb65771e8" sourceYear="1999" sourceFirstAuthor="Maibach M." intermediateExchangeId="e7a17355-8575-4be4-8c51-85e38b19b3f3" activityLinkId="94c2bdce-aa42-4beb-8880-8326180d1271">
+        <name xml:lang="en">pitch</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Literature value. The data employed in this study is derived from Maibach et al. (1999)</comment>
+        <uncertainty>
+          <lognormal meanValue="5.68281445485768E-05" mu="-9.775" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <synonym />
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.83" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">C content of bitumen in Tab 3.19, ecoinvent v2.2 report 6_IV</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="28" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Assumed equal to "coal tar".</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.83" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.83" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ced0e1fd-9cc3-4d4b-98ac-461060c8baed">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">34540: Oils and other products of the distillation of high temperature coal tar, and similar products; pitch and pitc[…]</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <elementaryExchange id="f0378171-d554-45f7-ad4b-c83ec29442d2" unitId="eb955b7c-7bed-401f-9c76-5db716ca3640" amount="42" elementaryExchangeId="c14ea750-4a9f-41fa-bcc1-4a1d84466f43">
+        <name xml:lang="en">Occupation, river, artificial</name>
+        <unitName xml:lang="en">m2*year</unitName>
+        <comment xml:lang="en">Literature value, representing occupied area in the 90'ties. Maintenance and land use</comment>
+        <uncertainty>
+          <lognormal meanValue="42" mu="3.738" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <synonym />
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="53a447e8-ca8a-4eb0-8fc8-822c4e1679b5" unitId="1017f68a-f818-4f9d-a34d-a31e7386f628" amount="0.169" elementaryExchangeId="a42347d2-09f1-405e-95dd-bf6ac03765d8" formula="CORINE 122a">
+        <name xml:lang="en">Transformation, to traffic area, road network</name>
+        <unitName xml:lang="en">m2</unitName>
+        <comment xml:lang="en">Estimation based on land occupation and an assumed life span of the canal of 118 years. Maintenance and land use</comment>
+        <uncertainty>
+          <lognormal meanValue="0.169" mu="-1.778" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="b689a740-f9a6-41b7-ad69-8db9169bf787" unitId="eb955b7c-7bed-401f-9c76-5db716ca3640" amount="20" elementaryExchangeId="26efe47c-92a5-4dea-b4d0-eac13e418a58">
+        <name xml:lang="en">Occupation, traffic area, road network</name>
+        <unitName xml:lang="en">m2*year</unitName>
+        <comment xml:lang="en">Literature value, representing occupied area in the 90'ties. Maintenance and land use</comment>
+        <uncertainty>
+          <lognormal meanValue="20" mu="2.996" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <synonym xml:lang="en">Strasse und Parkplätze, ohne Tankstellen, Gebäude für Unterhalt</synonym>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="1bc045e0-994d-4363-9fc3-672dd0232526" unitId="1017f68a-f818-4f9d-a34d-a31e7386f628" amount="0.356" elementaryExchangeId="090e9aa9-a9a9-4878-9634-3ad0ba7fbc91" formula="CORINE 511a">
+        <name xml:lang="en">Transformation, to river, artificial</name>
+        <unitName xml:lang="en">m2</unitName>
+        <comment xml:lang="en">Estimation based on land occupation and an assumed life span of the canal of 118 years. Maintenance and land use</comment>
+        <uncertainty>
+          <lognormal meanValue="0.356" mu="-1.033" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="c4bacdca-5851-4251-b9eb-3c816884e3a9" unitId="1017f68a-f818-4f9d-a34d-a31e7386f628" amount="0.525" elementaryExchangeId="29630a65-f38c-48a5-9744-c0121f586640" formula="CORINE x">
+        <name xml:lang="en">Transformation, from unspecified</name>
+        <unitName xml:lang="en">m2</unitName>
+        <comment xml:lang="en">Estimation based on land occupation and an assumed life span of the canal of 118 years. Maintenance and land use</comment>
+        <uncertainty>
+          <lognormal meanValue="0.525" mu="-0.6444" variance="0.04" varianceWithPedigreeUncertainty="0.08" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <samplingProcedure xml:lang="en">literature studies and own assumptions</samplingProcedure>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 1994 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2011-09-23" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="78" reviewedMinorRevision="5">
+        <otherDetails>Validation warnings:
+
+- Consider if it would be better to create this dataset as a child dataset relative to a parent dataset. See the ecoinvent Data Quality Guideline Chapter 4.2 for further advice.
+</otherDetails>
+      </review>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2019-05-08" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="82" reviewedMinorRevision="2">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- Mass and/or economic deficit in activity dataset exceeds either 0.1% of input or output sum:
+
+Property 'water in wet mass':
+ - Input='24,7', Output='0'
+ - Input &gt; output by 24,7 kg
+
+Property 'carbon content, fossil':
+ - Input='0,041941', Output='0'
+ - Input &gt; output by 0,041941 kg
+
+Property 'wet mass':
+ - Input='318,0887', Output='0'
+ - Input &gt; output by 318,0887 kg
+
+Property 'dry mass':
+ - Input='293,3887', Output='0'
+ - Input &gt; output by 293,3887 kg
+
+Property 'price':
+ - Input='0', Output='53,7'
+ - Input &lt; output by 53,7 EUR2005 (100% of output)
+
+
+- Property 'calculation property, kg=0' of master data exchange was removed from exchange 'pitch'.
+Amount of property 'water in wet mass=0' of exchange 'Occupation, river, artificial' deviates from the default amount in the master file.
+Amount of property 'carbon content, fossil=0' of exchange 'Occupation, river, artificial' deviates from the default amount in the master file.
+Amount of property 'carbon content, non-fossil=0' of exchange 'Occupation, river, artificial' deviates from the default amount in the master file.
+Amount of property 'wet mass=0' of exchange 'Occupation, river, artificial' deviates from the default amount in the master file.
+Amount of property 'dry mass=0' of exchange 'Occupation, river, artificial' deviates from the default amount in the master file.
+
+- The total water in wet mass of all input exchanges (24,7) and output exchanges (0) is unbalanced.
+
+- Uncertainty shall always be provided for all primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): water in wet mass=0, carbon content, fossil=0, carbon content, non-fossil=0, wet mass=0, dry mass=0, carbon content, non-fossil=0, dry mass=0, wet mass=0, water in wet mass=0, carbon content, fossil=0
+
+- Pedigree information shall always be provided for all uncertainties of primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): water in wet mass=0, carbon content, fossil=0, carbon content, non-fossil=0, wet mass=0, dry mass=0, carbon content, non-fossil=0, dry mass=0, wet mass=0, water in wet mass=0, carbon content, fossil=0
+
+</otherDetails>
+      </review>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2012-06-29" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="80" reviewedMinorRevision="5">
+        <otherDetails>Validation warnings:
+
+- Consider if it would be better to create this dataset as a child dataset relative to a parent dataset. See the ecoinvent Data Quality Guideline Chapter 4.2 for further advice.
+- Mass and/or economic deficit in activity dataset:
+
+Property 'wet mass':
+ - Input='325,8887', Output='0'
+ - Input &gt; output by 325,8887 kg
+
+Property 'dry mass':
+ - Input='306,3887', Output='0'
+ - Input &gt; output by 306,3887 kg
+
+Property 'carbon content, fossil':
+ - Input='0,041941', Output='0'
+ - Input &gt; output by 0,041941 kg
+
+
+- Amount of property 'wet mass=1' of exchange 'pitch' deviates from the default amount in the master file.
+Amount of property 'water content=0' of exchange 'pitch' deviates from the default amount in the master file.
+Amount of property 'dry mass=1' of exchange 'pitch' deviates from the default amount in the master file.
+Amount of property 'carbon content, non-fossil=0' of exchange 'pitch' deviates from the default amount in the master file.
+Amount of property 'water in wet mass=0' of exchange 'pitch' deviates from the default amount in the master file.
+Amount of property 'carbon content, fossil=0,83' of exchange 'pitch' deviates from the default amount in the master file.
+Amount of property 'dry mass=1' of exchange 'reinforcing steel' deviates from the default amount in the master file.
+Amount of property 'carbon content, fossil=0,004' of exchange 'reinforcing steel' deviates from the default amount in the master file.
+Amount of property 'water content=0' of exchange 'reinforcing steel' deviates from the default amount in the master file.
+Amount of property 'wet mass=1' of exchange 'reinforcing steel' deviates from the default amount in the master file.
+Amount of property 'water in wet mass=0' of exchange 'reinforcing steel' deviates from the default amount in the master file.
+Amount of property 'carbon content, non-fossil=0' of exchange 'reinforcing steel' deviates from the default amount in the master file.
+
+</otherDetails>
+      </review>
+      <review reviewerId="35d091e9-38c2-4037-9efe-a73673c57123" reviewerName="Emilia Moreno Ruiz" reviewerEmail="moreno@ecoinvent.org" reviewDate="2019-05-08" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="82" reviewedMinorRevision="2">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="9a963412-20a7-428b-8740-3582e217c4b6" reviewerName="Carl Vadenbo" reviewerEmail="vadenbo@ifu.baug.ethz.ch" reviewDate="2012-06-29" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="80" reviewedMinorRevision="5">
+        <details>
+          <text xml:lang="en" index="1">In preparation for the release of ecoinvent v3.0, the datasets 'canal RER' and 'maintenance, operation, canal RER'  in ecoinvent v2.2 were merged into the dataset 'canal construction, RER 1993-1994'.  The amounts of the exchanges were reviewed and were found to correspond to the disaggregated datasets. The uncertainty information has only been adjusted for geographical representativeness in GLO, and consequently needs to be revised before subsequent releases of the database. Despite this shortcoming, the new dataset was accepted for inclusion into the ecoinvent database on 2012.07.04.
+</text>
+        </details>
+      </review>
+      <review reviewerId="7771deb8-4a40-4409-8bc4-df0882e8dde6" reviewerName="Niels Jungbluth" reviewerEmail="ecoinvent@esu-services.ch" reviewDate="2003-08-29" reviewedMajorRelease="2" reviewedMinorRelease="2" reviewedMajorRevision="78" reviewedMinorRevision="2">
+        <details>
+          <text xml:lang="en" index="1">passed</text>
+        </details>
+      </review>
+      <review reviewerId="89ae408f-f095-4276-96ca-c871888cf632" reviewerName="Roland Hischier" reviewerEmail="roland.hischier@empa.ch" reviewDate="2011-09-23" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="78" reviewedMinorRevision="5">
+        <details>
+          <text xml:lang="en" index="1">Transfer of Documentation done.</text>
+        </details>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="e1abe6c4-1214-4fff-b68b-bb34c7d0b7da" isActiveAuthor="false" personName="Michael Spielmann (obsolete)" personEmail="eth.uns@ecoinvent.org" />
+      <dataGeneratorAndPublication personId="e1abe6c4-1214-4fff-b68b-bb34c7d0b7da" personName="Michael Spielmann (obsolete)" personEmail="eth.uns@ecoinvent.org" dataPublishedIn="2" publishedSourceId="24dd0a39-98dd-4c62-97bd-26bd3b144efe" publishedSourceYear="2007" publishedSourceFirstAuthor="Spielmann M." isCopyrightProtected="true" pageNumbers="Water Transport" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="85" minorRevision="0" internalSchemaVersion="2.0.10" defaultLanguage="en" creationTimestamp="2010-07-28T18:28:34" lastEditTimestamp="2012-06-29T09:52:02" fileGenerator="EcoEditor 2.4.58.7532" fileTimestamp="2012-06-29T09:52:02" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

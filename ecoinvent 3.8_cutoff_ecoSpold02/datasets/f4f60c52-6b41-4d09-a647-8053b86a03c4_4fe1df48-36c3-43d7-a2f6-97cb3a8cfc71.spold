@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="f4f60c52-6b41-4d09-a647-8053b86a03c4" activityNameId="2e607d2d-0a59-4d5b-96b3-75eef86d71a3" parentActivityId="2ce524fe-70aa-44c7-8e22-8339e3d84d0b" inheritanceDepth="-1" type="1" specialActivityType="0" energyValues="0">
+        <activityName xml:lang="en">printed wiring board mounting facility construction</activityName>
+        <includedActivitiesStart xml:lang="en">From unknown land use forseen for production site for printed wiring board mounting.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This dataset includes land use, buildings and facilities (machinery, cables, etc.) as well as the respective disposal activities of a plant for printed wiring board mounting. Emissions and wastes are not included.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="2">[This dataset was already contained in the ecoinvent database version 2. It was not individually updated during the transfer to ecoinvent version 3. Life Cycle Impact Assessment results may still have changed, as they are affected by changes in the supply chain, i.e. in other datasets. This dataset was generated following the ecoinvent quality guidelines for version 2. It may have been subject to central changes described in the ecoinvent version 3 change report (http://www.ecoinvent.org/database/ecoinvent-version-3/reports-of-changes/), and the results of the central updates were reviewed extensively. The changes added e.g. consistent water flows and other information throughout the database. The documentation of this dataset can be found in the ecoinvent reports of version 2, which are still available via the ecoinvent website. The change report linked above covers all central changes that were made during the conversion process.]</text>
+          <text xml:lang="en" index="1">This dataset represents one unit of production site for the mounting of printed wiring boards, comprising 6 SMT lines and 5 THT lines.It is based on a combined SMT and THT mounting plant as in more complex PWB constructions (like e.g. for computer motherboards) with an assumed output of 60'000 m2 or 192’000 kg per year over a time span of 25 years. . Main data based on own estimations, using rough information about Asian plants, infrastructure of the printed wiring board mounting plant datasets for the construction and dismantling of the different buildings as well as the technical equipment are used.</text>
+        </generalComment>
+        <tag>ConvertedDataset</tag>
+      </activity>
+      <classification classificationId="d1a5808c-6d4a-4d8c-a748-b9fef65b7ed1">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">4290:Construction of other civil engineering projects</classificationValue>
+      </classification>
+      <classification classificationId="88175bad-15b3-4caf-abdc-0326abc6cc83">
+        <classificationSystem xml:lang="en">EcoSpold01Categories</classificationSystem>
+        <classificationValue xml:lang="en">electronics/module</classificationValue>
+      </classification>
+      <geography geographyId="34dbbff8-88ce-11de-ad60-0019e336be3a">
+        <shortname xml:lang="en">GLO</shortname>
+        <comment>
+          <text xml:lang="en" index="1">This module relates to the global situation. </text>
+        </comment>
+      </geography>
+      <technology technologyLevel="3">
+        <comment>
+          <text xml:lang="en" index="1">Up-to-date SMT and THT mounting plant, based on information from literature and a plant visit in Switzerland</text>
+        </comment>
+      </technology>
+      <timePeriod startDate="2005-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="804dd3f2-14a0-4e13-887c-5f8368f60d8f" unitId="1017f68a-f818-4f9d-a34d-a31e7386f628" amount="5000" sourceId="2349c548-1d2c-46fd-bbad-b93abc019d7d" sourceYear="2007" sourceFirstAuthor="Hischier R." intermediateExchangeId="d72638dc-71b8-4c4f-b5c7-72cbe6bdd145" activityLinkId="be724c30-9465-4c62-83b5-0f92d5cde92f">
+        <name xml:lang="en">building, hall</name>
+        <unitName xml:lang="en">m2</unitName>
+        <comment>EcoSpold01Location=CH</comment>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China, assuming, based on literature, that it represents 50% of the overall surface of the production site and a life time of 
+25 years.</comment>
+        <uncertainty>
+          <lognormal meanValue="5000" mu="8.517" variance="0.27" varianceWithPedigreeUncertainty="0.448" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="5" />
+          <comment xml:lang="en">rough estimation</comment>
+        </uncertainty>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="b01c4db8-8617-4fe1-ad51-e3f3bb5576d3">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">531: Buildings</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="c1d24ab8-a598-4930-80f9-a1a937c46d62" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="12.5" intermediateExchangeId="1420606e-a2b3-460e-b199-2af9389762b6" activityLinkId="71515add-a7a4-47a6-ab85-ee8ae96f82fc">
+        <name xml:lang="en">printed wiring board mounting facility, through-hole mounting line</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment>EcoSpold01Location=GLO</comment>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China, assuming a life-span of 10 years, 2.5 times are taken into account here.</comment>
+        <uncertainty>
+          <lognormal meanValue="12.5" mu="2.526" variance="0.32" varianceWithPedigreeUncertainty="0.3761" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">estimation, based on Locascio (2000) and own plant visit</comment>
+        </uncertainty>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="f986e611-0d52-4a9c-a8c2-1329b9fee31f">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">53269: Other constructions for manufacturing</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="51ef40ad-9927-46f2-a234-3428c9ab215c" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="1" intermediateExchangeId="4fe1df48-36c3-43d7-a2f6-97cb3a8cfc71" productionVolumeAmount="1">
+        <name xml:lang="en">printed wiring board mounting facility</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Mounting plant for the mounting equipment in the case of surface mount technology (SMT) and through-hole technology (THT).</comment>
+        <comment>EcoSpold01Location=GLO</comment>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="48966935" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Convert from EU 27 price to the world by currency exchange rate.</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Dummy value to be replaced by measured, estimated or calculated value</productionVolumeComment>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="f986e611-0d52-4a9c-a8c2-1329b9fee31f">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">53269: Other constructions for manufacturing</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="14c69d38-4a7f-4259-8c9b-2e4bdc6b90ee" unitId="eb955b7c-7bed-401f-9c76-5db716ca3640" amount="50000" intermediateExchangeId="5911b1c9-b3ad-4e6e-893a-137262ad4f95" activityLinkId="458c9470-f567-40d3-9bf6-473edea03b41">
+        <name xml:lang="en">road, company, internal</name>
+        <unitName xml:lang="en">m2*year</unitName>
+        <comment xml:lang="en">Proxy with estimation, to represent internal streets and parking areas, roads, company, internal is used, based on the assumption that it represents 20% of the overall surface of the production site and a life time of 25 years.</comment>
+        <comment>EcoSpold01Location=CH</comment>
+        <uncertainty>
+          <lognormal meanValue="50000" mu="10.82" variance="0.27" varianceWithPedigreeUncertainty="0.448" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="5" />
+          <comment xml:lang="en">rough estimation</comment>
+        </uncertainty>
+        <classification classificationId="2836a67d-b184-4323-be1b-8a93c340ca8f">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">53211: Highways (except elevated highways), streets and roads</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="dc73fb66-b32b-4261-8c7d-0002b4bc2ffa" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="20000" intermediateExchangeId="006863b7-d736-4eb6-bbf8-648d292184ad" activityLinkId="25be7505-27ec-4ead-9475-d8c62c4028b5">
+        <name xml:lang="en">building, multi-storey</name>
+        <unitName xml:lang="en">m3</unitName>
+        <comment xml:lang="en">Proxy with calculation, to represent administration buildings building, multi storey is used, based on the assumption that it represents 20% of the overall surface of the production site, an average height of 10 m and a life time of 25 years.</comment>
+        <comment>EcoSpold01Location=RER</comment>
+        <uncertainty>
+          <lognormal meanValue="20000" mu="9.903" variance="0.27" varianceWithPedigreeUncertainty="0.448" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="5" />
+          <comment xml:lang="en">rough estimation</comment>
+        </uncertainty>
+        <classification classificationId="b01c4db8-8617-4fe1-ad51-e3f3bb5576d3">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">531: Buildings</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="66b77da5-6d22-4399-b89d-a013de99700b" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="15" intermediateExchangeId="61627325-4a8f-4405-946c-1a9f1d19521f" activityLinkId="4f71c8d4-39d8-44ba-b343-c44c3279e12d">
+        <name xml:lang="en">printed wiring board mounting facility, surface mounting line</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China, assuming a life-span of 10 years, 2.5 times are taken into account here.</comment>
+        <comment>EcoSpold01Location=GLO</comment>
+        <uncertainty>
+          <lognormal meanValue="15" mu="2.708" variance="0.32" varianceWithPedigreeUncertainty="0.3761" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">estimation, based on Locascio (2000) and own plant visit</comment>
+        </uncertainty>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="f986e611-0d52-4a9c-a8c2-1329b9fee31f">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">53269: Other constructions for manufacturing</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="0c593a56-38af-4872-a196-fd61dcf35b70" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="0" intermediateExchangeId="25c16b07-f651-44d7-b3cc-d982f3e11776" productionVolumeAmount="0">
+        <name xml:lang="en">used industrial electronic device</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value, from input of equipment.</comment>
+        <comment>EcoSpold01Location=CH</comment>
+        <uncertainty>
+          <undefined minValue="0" maxValue="0" standardDeviation95="0" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="1" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">calculated from input of equipment</comment>
+        </uncertainty>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="3.07245504455144E-05" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">The composition of an average industrial device was extracted from Tab 4.38 (ecoinvent v2.2 report 18_V). 88% steel, that was considered to have a C content of 0.012 (C content was calculated out of emission factors published in Commission Decision of 18 July 2007 establishing guidelines for the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (notified under document number C(2007) 3416)); 8% plastics (plastics C content was calculated using data in Tab A.2, ecoinvent v2.2 report 13_I); 3.2% PWB &amp; plugs (C content calculated using PWB composition)</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.0818694273513121" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">The composition of an average industrial device was extracted from Tab 4.38 (ecoinvent v2.2 report 18_V). 88% steel, that was considered to have a C content of 0.012 (C content was calculated out of emission factors published in Commission Decision of 18 July 2007 establishing guidelines for the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (notified under document number C(2007) 3416)); 8% plastics (plastics C content was calculated using data in Tab A.2, ecoinvent v2.2 report 13_I); 3.2% PWB &amp; plugs (C content calculated using PWB composition)</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.0819001519017576" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.0819001519017576" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from the production volume of printed wiring board mounting facility in proportion to the respective output amounts.</productionVolumeComment>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <classification classificationId="5f29a8d8-03d5-430d-b504-5bc91545a88b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39990: Other wastes n.e.c.</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="712bd2f4-8cc1-4662-b184-ac10f2031362" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="-71185" intermediateExchangeId="25c16b07-f651-44d7-b3cc-d982f3e11776" activityLinkId="1c1eb5eb-dbb0-463e-ab37-289dd51848a0" productionVolumeAmount="309500">
+        <name xml:lang="en">used industrial electronic device</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value, from input of equipment.</comment>
+        <comment>EcoSpold01Location=CH</comment>
+        <uncertainty>
+          <lognormal meanValue="-71185" mu="11.17" variance="0.32" varianceWithPedigreeUncertainty="0.3761" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">calculated from input of equipment</comment>
+        </uncertainty>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="3.07245504455144E-05" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">The composition of an average industrial device was extracted from Tab 4.38 (ecoinvent v2.2 report 18_V). 88% steel, that was considered to have a C content of 0.012 (C content was calculated out of emission factors published in Commission Decision of 18 July 2007 establishing guidelines for the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (notified under document number C(2007) 3416)); 8% plastics (plastics C content was calculated using data in Tab A.2, ecoinvent v2.2 report 13_I); 3.2% PWB &amp; plugs (C content calculated using PWB composition)</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.0818694273513121" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">The composition of an average industrial device was extracted from Tab 4.38 (ecoinvent v2.2 report 18_V). 88% steel, that was considered to have a C content of 0.012 (C content was calculated out of emission factors published in Commission Decision of 18 July 2007 establishing guidelines for the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (notified under document number C(2007) 3416)); 8% plastics (plastics C content was calculated using data in Tab A.2, ecoinvent v2.2 report 13_I); 3.2% PWB &amp; plugs (C content calculated using PWB composition)</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.0819001519017576" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.0819001519017576" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <classification classificationId="5f29a8d8-03d5-430d-b504-5bc91545a88b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39990: Other wastes n.e.c.</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="4305c507-c3c9-4d76-bcb3-56f3a4c233a0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="-238315" intermediateExchangeId="25c16b07-f651-44d7-b3cc-d982f3e11776" activityLinkId="d4cbad2c-5011-460f-939e-3d8bcb15fc12" productionVolumeAmount="309500">
+        <name xml:lang="en">used industrial electronic device</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value, from input of equipment.</comment>
+        <comment>EcoSpold01Location=CH</comment>
+        <uncertainty>
+          <lognormal meanValue="-238315" mu="12.38" variance="0.32" varianceWithPedigreeUncertainty="0.3761" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">calculated from input of equipment</comment>
+        </uncertainty>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="3.07245504455144E-05" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">The composition of an average industrial device was extracted from Tab 4.38 (ecoinvent v2.2 report 18_V). 88% steel, that was considered to have a C content of 0.012 (C content was calculated out of emission factors published in Commission Decision of 18 July 2007 establishing guidelines for the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (notified under document number C(2007) 3416)); 8% plastics (plastics C content was calculated using data in Tab A.2, ecoinvent v2.2 report 13_I); 3.2% PWB &amp; plugs (C content calculated using PWB composition)</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.0818694273513121" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">The composition of an average industrial device was extracted from Tab 4.38 (ecoinvent v2.2 report 18_V). 88% steel, that was considered to have a C content of 0.012 (C content was calculated out of emission factors published in Commission Decision of 18 July 2007 establishing guidelines for the monitoring and reporting of greenhouse gas emissions pursuant to Directive 2003/87/EC of the European Parliament and of the Council (notified under document number C(2007) 3416)); 8% plastics (plastics C content was calculated using data in Tab A.2, ecoinvent v2.2 report 13_I); 3.2% PWB &amp; plugs (C content calculated using PWB composition)</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.0819001519017576" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.0819001519017576" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <classification classificationId="5f29a8d8-03d5-430d-b504-5bc91545a88b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39990: Other wastes n.e.c.</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <elementaryExchange id="94822532-8f63-444d-b818-43bb42da5c0d" unitId="1017f68a-f818-4f9d-a34d-a31e7386f628" amount="10000" elementaryExchangeId="4624deff-2016-41d4-b2bf-3db8dab88779" formula="CORINE 121a">
+        <name xml:lang="en">Transformation, to industrial area</name>
+        <unitName xml:lang="en">m2</unitName>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China and own estimation.</comment>
+        <uncertainty>
+          <lognormal meanValue="10000" mu="9.21" variance="0.14" varianceWithPedigreeUncertainty="0.1961" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">own estimation, based on overall information from several chinese producers</comment>
+        </uncertainty>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="61f6ad24-5d70-463a-97ba-a2bf41e71596" unitId="1017f68a-f818-4f9d-a34d-a31e7386f628" amount="10000" elementaryExchangeId="29630a65-f38c-48a5-9744-c0121f586640" formula="CORINE x">
+        <name xml:lang="en">Transformation, from unspecified</name>
+        <unitName xml:lang="en">m2</unitName>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China and own assumptions, 12 month used to construction and dismantling of the whole plant.</comment>
+        <uncertainty>
+          <lognormal meanValue="10000" mu="9.21" variance="0.14" varianceWithPedigreeUncertainty="0.1961" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">own estimation, based on overall information from several chinese producers</comment>
+        </uncertainty>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="ab8a2f3c-7017-4e34-9670-1b6cb558d9ff" unitId="eb955b7c-7bed-401f-9c76-5db716ca3640" amount="250000" elementaryExchangeId="fe9c3a98-a6d2-452d-a9a4-a13e64f1b95b">
+        <name xml:lang="en">Occupation, industrial area</name>
+        <unitName xml:lang="en">m2*year</unitName>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China and own assumptions.</comment>
+        <uncertainty>
+          <lognormal meanValue="250000" mu="12.43" variance="0.06" varianceWithPedigreeUncertainty="0.1161" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">own estimation, based on overall information from several chinese producers</comment>
+        </uncertainty>
+        <synonym />
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+      <elementaryExchange id="3bbb9b33-3404-4cea-9e10-856f8a46529f" unitId="eb955b7c-7bed-401f-9c76-5db716ca3640" amount="20000" elementaryExchangeId="4b6b9b76-3199-4bd0-b11d-f8f2efbeac4e">
+        <name xml:lang="en">Occupation, construction site</name>
+        <unitName xml:lang="en">m2*year</unitName>
+        <comment xml:lang="en">Estimation, based on the description of several PC motherboard mounting facilities in China and own assumptions.</comment>
+        <uncertainty>
+          <lognormal meanValue="20000" mu="9.903" variance="0.06" varianceWithPedigreeUncertainty="0.1161" />
+          <pedigreeMatrix reliability="4" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="1" />
+          <comment xml:lang="en">own estimation, based on overall information from several chinese producers</comment>
+        </uncertainty>
+        <synonym />
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <compartment subcompartmentId="7d704b6f-d455-4f41-9c28-50b4f372f315">
+          <compartment xml:lang="en">natural resource</compartment>
+          <subcompartment xml:lang="en">land</subcompartment>
+        </compartment>
+        <inputGroup>4</inputGroup>
+      </elementaryExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <samplingProcedure xml:lang="en">Literature &amp; own estimations</samplingProcedure>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2005 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+      <review reviewerId="55b093c6-58f6-4adf-8dcd-91bce8c4bdc7" reviewerName="Rolf Frischknecht" reviewerEmail="esu-services@ecoinvent.org" reviewDate="2007-11-08" reviewedMajorRelease="2" reviewedMinorRelease="2" reviewedMajorRevision="23" reviewedMinorRevision="1">
+        <details>
+          <text xml:lang="en" index="1">passed.</text>
+        </details>
+      </review>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2011-09-21" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="23" reviewedMinorRevision="4">
+        <details>
+          <text xml:lang="en" index="0">- Validation passed.
+</text>
+        </details>
+        <otherDetails xml:lang="en">- Validation passed.
+</otherDetails>
+      </review>
+      <review reviewerId="89ae408f-f095-4276-96ca-c871888cf632" reviewerName="Roland Hischier" reviewerEmail="roland.hischier@empa.ch" reviewDate="2011-09-21" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="23" reviewedMinorRevision="4">
+        <details>
+          <text xml:lang="en" index="0">Transfer of documentation done.</text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="89ae408f-f095-4276-96ca-c871888cf632" isActiveAuthor="false" personName="Roland Hischier" personEmail="roland.hischier@empa.ch" />
+      <dataGeneratorAndPublication personId="89ae408f-f095-4276-96ca-c871888cf632" personName="Roland Hischier" personEmail="roland.hischier@empa.ch" dataPublishedIn="2" publishedSourceId="f6bc0bb2-ee4a-4847-bc92-242dca5f5a70" publishedSourceYear="2007" publishedSourceFirstAuthor="Hischier R." isCopyrightProtected="true" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="25" minorRevision="0" internalSchemaVersion="2.0.10" defaultLanguage="en" creationTimestamp="2010-07-28T18:51:23" lastEditTimestamp="2011-09-20T15:52:50" fileGenerator="EcoEditor 2.0.43.6348" fileTimestamp="2011-09-20T15:52:50" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

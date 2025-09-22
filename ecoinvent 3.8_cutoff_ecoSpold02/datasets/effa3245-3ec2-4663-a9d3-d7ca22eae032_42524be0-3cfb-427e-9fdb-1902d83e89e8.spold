@@ -1,0 +1,1609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="effa3245-3ec2-4663-a9d3-d7ca22eae032" activityNameId="31ccf14a-e041-59bc-aeb3-f4713668a424" parentActivityId="0d518ac3-9dcd-48e8-98c7-5f774a94eaed" inheritanceDepth="-1" type="1" specialActivityType="0">
+        <activityName xml:lang="en">building operation, hostel</activityName>
+        <synonym xml:lang="en">backpacker hotel</synonym>
+        <synonym xml:lang="en">hostel</synonym>
+        <synonym xml:lang="en">backpacker hostel</synonym>
+        <includedActivitiesStart xml:lang="en">This dataset is modelled to represent the service of operating a hostel. It includes: energy and water consumption, furniture and in-room textiles (such as bed linen, bed mattrasses and curtains), electric and electronic equipment used in guest rooms and on hostel premises (including bulbs), cleaning and in-room consumables. Activities include hotel operations and infrastructure based on 1 guest night stay and the lifeframe of the hotel building of 75 years. The case study hostel includes an indoor laundry facility, so laundry related environmental aspects are included in water and electricity consumption as well as cleaning consumables.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">Activities end with guest departure from hotel premises. Due to data availability, the following processes have been excluded: room equipment (on-table lamp, door lock), bathroom equipment (showers, mirrors). </includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="1">This dataset represents the operation of a tourist accommodation facility classed as a hostel, located in Rio de Janeiro, RJ, Brazil.  It was first opened in 2016 although the building where the hostel resides was constructed in 1959. Prior to becoming a hostel, the building was used as residence. The hostel has the capacity to host 30 guests and offers rooms of the following types (total number of rooms is given in brackets): double (2) and shared use (3). The hostel has 3 floors with a games room in the underground, a lobby and a pool on the ground floor, and the bedrooms and kitchen in the first floor. This hostel does not serve breakfast. The laundry is done in the hostel dependecies and there is no parking available on site. The hostel occupies a total area of 365,49 m2 where the building itself occupies the plot of 172,65 m2. The average annual occupancy of the hostel is 58% which is equal to 6300 guest nights per year. </text>
+        </generalComment>
+        <tag>single enterprise data</tag>
+      </activity>
+      <classification classificationId="a16b303d-d3d2-40a5-934a-8648c24dfe9a">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">5510:Short term accommodation activities</classificationValue>
+      </classification>
+      <geography geographyId="0a2c8c66-7d7e-11de-9ae2-0019e336be3a">
+        <shortname xml:lang="en">BR</shortname>
+        <comment>
+          <text xml:lang="en" index="1">The hostel is based in the city of Rio de Janeiro, RJ, Brazil. </text>
+        </comment>
+      </geography>
+      <technology technologyLevel="3">
+        <comment>
+          <text xml:lang="en" index="1">Technology in use is considered current.</text>
+        </comment>
+      </technology>
+      <timePeriod startDate="2017-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true">
+        <comment>
+          <text xml:lang="en" index="1">The survey was done in the year 2017 with the data provided covering the operational year 2016-2017. </text>
+        </comment>
+      </timePeriod>
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="1fa2b157-2a9d-4498-abd0-5cd59a5e00aa" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="1.98412698412698E-05" isCalculatedAmount="true" mathematicalRelation="1*(lifetime/8)/(lifetime_guests*occupancy_y)" intermediateExchangeId="23c2e49a-1b1e-494a-a96a-945fdac9fa3b" activityLinkId="9dbcc971-78d3-49d6-8838-7e49fe09ced3">
+        <name xml:lang="en">vacuum cleaner</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Estimated value. No primary data on the number of vacuum cleaners in use by the hostel but assumed that at least one vacuum cleaner is present for housekeeping purposes. The amount of exchange is calculated as: amount of input product * (lifetime of the hotel/lifetime of the product) / (number of guests during the lifetime of the hotel * hotel occupancy rate). Assumed average service life of a vacuum cleaner is 8 years. Source: Gallego-Schmid et al. 2016. Life cycle environmental impacts of vacuum cleaners and the effects of European regulation. Science of the Total Environment, 559, 192-203. </comment>
+        <uncertainty>
+          <lognormal meanValue="1.98412698412698E-05" mu="-10.83" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">hoover</synonym>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="2.59" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">fossil carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="4.45" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="8" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="4.45" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="2.59" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="11.5255" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ecfade36-7e87-4003-b1b1-157bb250e87c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">88744: Consumer electronics manufacturing services</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="478670a5-fc0f-46b7-a543-586013b3e068" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="1.05820105820106E-05" isCalculatedAmount="true" mathematicalRelation="1*(lifetime/15)/(lifetime_guests*occupancy_y)" intermediateExchangeId="cf47d9e8-58e4-41f9-bde9-4f938fdc8c7b" activityLinkId="64eaeaac-248e-405e-92dc-987df2445363">
+        <name xml:lang="en">cookstove</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Assumed average service life of a cookstove is 15 years. Source: Jungbluth 1997. Life-Cycle-Assessment for Stoves and Ovens. UNS Working Paper No. 16, August 1997.</comment>
+        <uncertainty>
+          <lognormal meanValue="1.05820105820106E-05" mu="-11.46" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">electric cookstove</synonym>
+        <synonym xml:lang="en">stove</synonym>
+        <synonym xml:lang="en">gas cookstove</synonym>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="57.9" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="15" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="3.22" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">fossil carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="57.9" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="3.22" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="186.438" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="761a1365-831d-4766-8f27-282bf84db96c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">4482: Domestic cooking and heating equipment, non-electric</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="41ba6241-6dc5-457b-867d-8a9358523b3a" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="3.17460317460317E-05" isCalculatedAmount="true" mathematicalRelation="1*(lifetime/5)/(lifetime_guests*occupancy_y)" intermediateExchangeId="3528e43c-5083-4538-a8dc-15838d61312d" activityLinkId="08bdb961-ab07-4605-bfd3-e37ca3e23d11">
+        <name xml:lang="en">coffee maker</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Assumed average service life of a coffee maker is 5 years. Source: Ashby 2009. Materials and the Environment: Eco-Informed Material Choice. Elsevier, Burlington, USA</comment>
+        <uncertainty>
+          <lognormal meanValue="3.17460317460317E-05" mu="-10.36" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">coffee machine</synonym>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.857611" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">fossil carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="5" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1.9" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1.9" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.857611" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="1.6294609" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="024b0ff2-7648-4363-82d2-ddf861dec440">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">44816: Other small electric domestic appliances (including vacuum cleaners, kitchen waste disposers, food mixers, sha[…]</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="1f538083-0ce0-4565-956a-2443d8b16649" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="3.17460317460317E-05" isCalculatedAmount="true" mathematicalRelation="2*(lifetime/10)/(lifetime_guests*occupancy_y)" intermediateExchangeId="efccec02-11ea-40fb-8ca9-0d4afcff3777" activityLinkId="8f04d97f-a59d-4421-ad0f-a6e2e2412bf3">
+        <name xml:lang="en">television</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Average service life of a television is assumed to be equal to 10 years. Source: Feng and Ma 2009. The energy consumption and environmental impacts of a color TV set in China. Journal of Cleaner Production, 17,13-25.</comment>
+        <uncertainty>
+          <lognormal meanValue="3.17460317460317E-05" mu="-10.36" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">television</synonym>
+        <synonym xml:lang="en">tv</synonym>
+        <synonym xml:lang="en">tv set</synonym>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="10" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">As proposed by Dodbiba et al. 2008. Source: 2008, Dodbiba, G., Takahashi, K., Sadaki, J., Fujita, T., The recycling of plastic wastes from discarded TV sets: comparing energy recovery with mechanical recycling in the context of life cycle assessment, Journal of Cleaner Production, 16, 458-470, 0 - Undefined</comment>
+        </property>
+        <classification classificationId="ecfade36-7e87-4003-b1b1-157bb250e87c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">88744: Consumer electronics manufacturing services</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="b409903b-6ca0-4d59-a786-aeb05edf961d" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="0.00432900432900433" isCalculatedAmount="true" mathematicalRelation="30*(lifetime/1.1)/(lifetime_guests*occupancy_y)" intermediateExchangeId="11b9d045-7252-4741-895d-e7a7851b91de" activityLinkId="0abb134e-b558-4fca-ae25-dcb3c627db28">
+        <name xml:lang="en">compact fluorescent lamp</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Average service life of a bulb is assumed to be equal to 1.1 year. Source: Elijošiutė et al. 2012. Life Cycle Assessment of Compact Fluorescent and Incandescent Lamps: Comparative Analysis. Environmental Research, Engineering and Management, 3(61), 65-72. 
+</comment>
+        <uncertainty>
+          <lognormal meanValue="0.00432900432900433" mu="-5.442" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">compact fluorescent lamp</synonym>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.009542" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="1" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">Calculated from Elijosiute et al. 2012 who estimate the life time of a bulb to be eqaul to 10000 hours which equates to circa 1 year.</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0.075" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.075" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.009542" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.00071565" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="9385526e-0355-4d2e-9f9e-27f7d0c2443e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">4653: Lighting equipment</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="3e4b1d2b-035e-4793-a4ff-d9aabc66f2e6" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="waste_text" amount="-0.00261904761904762" isCalculatedAmount="true" mathematicalRelation="(cotton)*-1" intermediateExchangeId="11b71553-cc51-438e-8cb5-0337836737ae" activityLinkId="dc94cce0-5b69-4532-875f-ab6c1eb49632" productionVolumeAmount="5082" productionVolumeMathematicalRelation="waste_text*RP_PV/RP">
+        <name xml:lang="en">waste textile, soiled</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">The amount of waste material is assumed to be equal to the amount of respective input material, textile, knit cotton.</comment>
+        <uncertainty>
+          <lognormal meanValue="-0.00261904761904762" mu="-5.945" variance="0.0006" varianceWithPedigreeUncertainty="0.004025" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.570519480519481" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="14.45" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Value taken from the general comment of the treatment dataset.</comment>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="waste_text_price_EUR2005" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.333333333333333" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.75" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.25" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.570519480519481" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.427889610389611" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from production volume of reference product using the relative outputs.</productionVolumeComment>
+        <classification classificationId="555d4947-3964-4529-ab70-20468dfee0bd">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39270: Waste, parings and scrap of plastics</classificationValue>
+        </classification>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e7dfca01-c56d-4bd5-97c0-a3eb2cb539e8" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="nylon" casNumber="025038-54-4" amount="0.000793650793650793" isCalculatedAmount="true" mathematicalRelation="(5*10)*(lifetime/10)/(lifetime_guests*occupancy_y)" intermediateExchangeId="d16b5d3f-b5e4-45b6-9a04-23cde05220c0" activityLinkId="f23e2fc5-c3f3-40a6-a862-f0c523855bb4">
+        <name xml:lang="en">nylon 6</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. Represents here curtains made of nylon. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). An average curtain is assumed to have a weight of 5 kg. Source: Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018.  Average service life of a curtain is assumed to be equal to average service life of a carpet which is 10 years. Source: Greenspec 2018. Whole life costing: carpets. Available from: http://www.greenspec.co.uk/building-design/carpets/ Accessed 16 March 2018. In terms of outputs assumed to have gone to waste polyethylene. 
+</comment>
+        <uncertainty>
+          <lognormal meanValue="0.000793650793650793" mu="-7.139" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.63716814159292" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">It is a chain of caprolactam molecules, originating from aminocarboxylic acids - here caproic acid or caprolactam. The structure of nylon 6 is -(NH-(CH2)5-CO)n-, C6H11NO (ecoinvent v2.2 report 11_II). MW=113 g/mol</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="30.9" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Assumed equal to Nylon-66. Reference: Walters, R. N., Hackett, S. M. and Lyon, R. E. (2000) ‘Heats of combustion of high temperature polymers’, Fire and Materials, 24(5), pp. 245–252. doi: 10.1002/1099-1018(200009/10)24:5&lt;245::AID-FAM744&gt;3.0.CO;2-7.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.63716814159292" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.63716814159292" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="6c0ea8cd-054e-4ebd-8670-67b800327ae9">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">347: Plastics in primary forms</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="da0b0281-578f-4f61-bc68-e27808daf224" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="1.58730158730159E-05" isCalculatedAmount="true" mathematicalRelation="1*(lifetime/10)/(lifetime_guests*occupancy_y)" intermediateExchangeId="8d220649-94e4-47e9-8e86-50e7e03c06dc" activityLinkId="efd62f45-27af-461d-b839-2a207d87da27">
+        <name xml:lang="en">washing machine</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product *  (lifetime of the hotel/lifetime of the product) / (number of guests during the lifetime of the hotel * hotel occupancy rate). Assumed average service life of a washing machine is 10 years. Source: Yuan et al. 2016. Life cycle assessment of horizontal-axis washing machines in China. Int J Life Cycle Assess, 21, 15-28.</comment>
+        <uncertainty>
+          <lognormal meanValue="1.58730158730159E-05" mu="-11.05" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">laundry machine</synonym>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="10" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">Based on the estimate from Yuan et al. 2016. Source: Yuan et al. 2016, 2016, Yuan, Z., Zhang, Y., and Liu, X., Life cycle assessment of horizontal-axis washing machines in China, International Journal of Life Cycle Asse, 21, 15-28, 1 - Article</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="7a4702a0-6f66-44a4-8dcf-45c03ca66dab">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">971: Washing, cleaning and dyeing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="5fed7677-d550-4487-9d59-3f92b418fdd9" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" variableName="wastewater" amount="-0.0266666666666667" isCalculatedAmount="true" mathematicalRelation="(tap_water/1000)*-1" intermediateExchangeId="e8a51ec1-60cb-4ead-a948-ad1142c61918" activityLinkId="6e5aa015-da83-46eb-b89b-f3ca4d9253bc" productionVolumeAmount="51744.0000000001" productionVolumeMathematicalRelation="wastewater*RP_PV/RP">
+        <name xml:lang="en">wastewater, average</name>
+        <unitName xml:lang="en">m3</unitName>
+        <comment xml:lang="en">The amount of waste material is assumed to be equal to the amount of respective input material, tap water, with conversion from kg to m3. 1 m3 of water is assumed to be equal to 1000 kg of water. </comment>
+        <uncertainty>
+          <lognormal meanValue="-0.0266666666666667" mu="-3.624" variance="0.0006" varianceWithPedigreeUncertainty="0.004025" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="wastewater_price_EUR2005" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.194039401033427" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">0.0673 kg TOC/m3 (Tab A.17, ecoinvent v2.2 report 13_I). TOC was considered as Total Carbon.</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1000" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Density of water was assumed that of tap water 1kg/L, that is 1000kg/m3.</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="2882.20060970917" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.346836774601289" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">The addition of compounds in water, listed in Tab A.17-20 from ecoinvent v2.2 report 13_I, has been used as an estimate of dry mass is wastewater. In this case, elementary composition has been expressed as molecular composition, whenever possible. This approach has been used when the addition of compunds in wastewater was bigger than the minimal mineral content estimated using the chemical properties of tap water in ecoinvent v2.2 report 8, Tab 93.1.</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="999.653163225399" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">wet mass-dry mass</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.194039401033427" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.0672999999999998" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from production volume of reference product using the relative outputs.</productionVolumeComment>
+        <classification classificationId="34f49fca-a18e-48df-a635-ee7e24ef6dbb">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39920: Sewage sludge</classificationValue>
+        </classification>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="bed56fe1-ab3f-45b5-b7bf-b8e9d531c4f1" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="2.11640211640212E-06" isCalculatedAmount="true" mathematicalRelation="1/(lifetime_guests*occupancy_y)" intermediateExchangeId="0baef2ba-2a7f-4e42-8ed9-3d5f7d5be107" activityLinkId="98bd810c-47b1-4d00-b88a-da3ed97220fe">
+        <name xml:lang="en">building, hostel</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of infrastructure required is calculated based on the lifetime capacity (see properties).;activityLink introduced to establish a direct link to the corresponding regional supply of this product</comment>
+        <uncertainty>
+          <lognormal meanValue="2.11640211640212E-06" mu="-13.07" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" variableName="lifetime" amount="75" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">Estimated value. The lifetime of a hotel building is assumed to be equal to 75 years which is an average of the 50-100 years' estimates available in the literature. Source: Filimonau et al. 2011. Reviewing the carbon footprint analysis of hotels: Life Cycle Energy Analysis (LCEA) as a holistic method for carbon impact appraisal of tourist accommodation. Journal of Cleaner Production, 19, 1917-1930.</comment>
+        </property>
+        <property propertyId="5b66c906-de94-4a06-9037-498de5498f82" variableName="lifetime_guests" amount="821250" isDefiningValue="false" mathematicalRelation="30*365*lifetime" isCalculatedAmount="true" unitId="5dc11308-c00e-4c91-8d8d-8a458a5ea968">
+          <name xml:lang="en">lifetime capacity</name>
+          <unitName xml:lang="en">guest night</unitName>
+          <comment xml:lang="en">The total capacity of the hostel is 30 guests. The lifetime capacity is calculated accordingly.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="90c3f252-dd5f-4526-9adb-9a1a8c6affff" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="cotton" amount="0.00261904761904762" isCalculatedAmount="true" mathematicalRelation="(60*1,1/4)*(lifetime/1)/(lifetime_guests*occupancy_y)" intermediateExchangeId="c4230712-ca79-435b-bb28-37041635b772" activityLinkId="2a3378ec-31b9-4fa3-97e0-b972c897e07a">
+        <name xml:lang="en">textile, knit cotton</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value from the total number of linen units used by the hotel. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). It is assumed that, on average, 4 linen units make 1 kg in weight. Source: Filimonau et al. 2011. Reviewing the carbon footprint analysis of hotels: Life Cycle Energy Analysis (LCEA) as a holistic method for carbon impact appraisal of tourist accommodation. Journal of Cleaner Production, 19, 1917-1930. Assumed average service life is 1 year (data from survey). The amount accounts for 10% fabric loss in the cotton textile manufacturing process. Source: Baydar, G., Ciliz, N., and Mammadov, A., 2015. Life cycle assessment of cotton textile products in Turkey. Journal of Cleaner Production, 104(A), 213-223. </comment>
+        <uncertainty>
+          <lognormal meanValue="0.00261904761904762" mu="-5.945" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.46" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.46" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.46" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="badf6ee7-174d-45e2-9d7a-3536cf8a1e0a">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">28190: Other knitted or crocheted fabrics</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="ef27b7ea-1940-4c68-bf53-40ab1b12a3e3" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="scrap_steel" casNumber="7439-89-6" amount="-0.0019047619047619" isCalculatedAmount="true" mathematicalRelation="(steel)*-1" intermediateExchangeId="d1a4a803-c563-4740-84cf-3c21a488bd74" activityLinkId="b6772c94-41b7-44ab-a9e7-b4e95f70b857" productionVolumeAmount="3695.99999999999" productionVolumeMathematicalRelation="scrap_steel*RP_PV/RP">
+        <name xml:lang="en">scrap steel</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. The amount is set equal to the amount of input product, steel. </comment>
+        <uncertainty>
+          <lognormal meanValue="-0.0019047619047619" mu="-6.263" variance="0.0006" varianceWithPedigreeUncertainty="0.004025" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="scrap_steel_price_EUR2005" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Tab A.3, ecoinvent v2.2 report 13_I</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Tab A.3, ecoinvent v2.2 report 13_I</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from production volume of reference product using the relative outputs.</productionVolumeComment>
+        <classification classificationId="49a5cb0e-a492-40f3-84b9-6d06674709da">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39310: Slag, dross, scalings and other waste from the manufacture of iron or steel</classificationValue>
+        </classification>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="f5ce96cb-f4fe-4805-8d6a-db248ea919c5" unitId="980b811e-3905-4797-82a5-173f5568bc7e" amount="0.808888888888888" isCalculatedAmount="true" mathematicalRelation="104*49*(lifetime)/(lifetime_guests*occupancy_y)&#xD;&#xA;" intermediateExchangeId="71e2f1db-a2c5-44d0-8337-dfff15be974d" activityLinkId="b8574d48-d43c-48f9-a91d-a93fa6af87c1">
+        <name xml:lang="en">heat, district or industrial, other than natural gas</name>
+        <unitName xml:lang="en">MJ</unitName>
+        <comment xml:lang="en">Calculated value with conversion made from kg of LPG. Assuming 1 kg of LPG is equal to 49 MJ. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel) / (number of guests during the lifetime of the hostel * hostel occupancy rate).</comment>
+        <uncertainty>
+          <lognormal meanValue="0.808888888888888" mu="-0.2121" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="1" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+        </property>
+        <property propertyId="09345cd3-5275-4440-8046-3ae837e4fcaf" amount="1.05263157894737" isDefiningValue="false" mathematicalRelation="1/0.95" isCalculatedAmount="true" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">corresponding fuel use, propane, furnace &gt;100kW</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <uncertainty>
+            <lognormal meanValue="1.05263157894737" mu="0.05129" variance="0.0006" varianceWithPedigreeUncertainty="0.1306" />
+            <pedigreeMatrix reliability="5" completeness="5" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="4" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">Lower heating value of the fuel input related to the heat/electricity output, taken directly from ecoinvent v3.0 dataset "heat production, natural gas, at industrial furnace &gt;100kW, GLO 2000".</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="da9e0ee4-0a34-499e-9f51-82a5235d243c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">17300: Steam and hot water</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="24befabe-506f-43cf-b6a8-dff9a5577262" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" casNumber="007732-18-5" amount="0.0493714285714285" isCalculatedAmount="true" mathematicalRelation="360*0.864*(lifetime)/(lifetime_guests*occupancy_y)" intermediateExchangeId="cfc90fee-20f0-451a-8e50-a5bd859d3feb" activityLinkId="e583d47e-5141-4985-9310-ba0a6dba6ab7">
+        <name xml:lang="en">water, completely softened</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. From the dataset for "cleaning consumables production" GLO 2011-2013, on average cleaning products contain 86% of water. Based on the literature source Golsteijn (2015) the dataset used to represent the water flow is "water, completely softened, at plant", version 2 dataset which corresponds to ecoinvent version 3 dataset "water, completely softened, from decarbonised waterm at user". The amount of water needed is therefore calculated based on the vale of 86% calculated based on Golsteijn (2015) and the amount of cleaning consumable which are expressed as 100% active substance.
+
+Laura Golsteijn, 2015, A compilation of life cycle studies for six household detergent product categories in Europe: the basis for product-specific A.I.S.E. Charter Advanced Sustainability Profiles</comment>
+        <uncertainty>
+          <lognormal meanValue="0.0493714285714285" mu="-3.008" variance="0.0006" varianceWithPedigreeUncertainty="0.0454" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="5" furtherTechnologyCorrelation="4" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ced3d107-ae48-4f1e-801e-3b956776120c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">18000: Natural water</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="994e9ea3-312f-41b9-bbe0-78e63662515e" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="tap_water" casNumber="7732-18-5" amount="26.6666666666667" isCalculatedAmount="true" mathematicalRelation="168*1000*(lifetime)/(lifetime_guests*occupancy_y)&#xD;&#xA;&#xD;&#xA;" intermediateExchangeId="c5adb1fb-872e-4446-a3bb-c4b61aa4bd45" activityLinkId="fb2260a4-79b2-4ac6-b5a2-8d7067d26f78">
+        <name xml:lang="en">tap water</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value based on consumption data from the hostel survey provided in m3. Assuming 1 m3 of water is equal to1000 kg of water. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel) / (number of guests during the lifetime of the hostel * hostel occupancy rate).</comment>
+        <uncertainty>
+          <lognormal meanValue="26.6666666666667" mu="3.283" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.00033747615607878" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Mineral content was estimated using the chemical properties of tap water in ecoinvent v2.2 report 8, Tab 93.1.</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.999662523843921" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">wet mass-dry mass</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="2962.17" isDefiningValue="false" isCalculatedAmount="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water in wet mass/dry mass</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.00178990835661632" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Bicarbonate content is 2.93 mol/m3. CO2 content is 0.1 mol/m3 (ecoinvent v2.2 report 8, Tab 93.1).</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.00178990835661632" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="6.04051391924162E-07" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="ced3d107-ae48-4f1e-801e-3b956776120c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">18000: Natural water</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="4690d51b-31b3-4aeb-8cb8-877faadc7439" unitId="5dc11308-c00e-4c91-8d8d-8a458a5ea968" variableName="RP" amount="1" intermediateExchangeId="42524be0-3cfb-427e-9fdb-1902d83e89e8" productionVolumeAmount="1940400" productionVolumeVariableName="RP_PV" productionVolumeMathematicalRelation="((lifetime_guests*occupancy_y)/lifetime)*308">
+        <name xml:lang="en">building operation, hostel</name>
+        <unitName xml:lang="en">guest night</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="RP_price_EUR2005" amount="2.14534134158157" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Annual production volume is estimated based on the number of hotel guests in the case study hostel (data from hotel survey) multiplied by the number of hostels in Brazil. The case study hostel reported the annual production volume of 6300 guest nights. In 2017 it was estimate that there were 10314 hotels in Brazil (Source: JLL, FOHB and ABR.  Lodging Industry in Numbers - Brazil 2017. Available from: http://www.jll.com.br/brazil/pt-br/relatorios/175/hotelaria-em-numeros-2017) Accessed 27 March 2018. A study from the Brazilian Institute of Geography and Statistics (IBGE, 2012) showed that 46,9% of tourism accomodations in  main urban areas in Brazil are hotels and 1,4% are hostels. (Source: IBGE, 2012.   Pesquisa de Serviços de Hospedagem 2011- Municípios das Capitais, Regiões Metropolitanas das Capitais e Regiões Integradas Available from: ftp://ftp.ibge.gov.br/Comercio_e_Servicos/Pesquisa_Servicos_de_Hospedagem/2011/psh2011.pdf. Accessed 27 March 2018). By equivalence, if 46,9% = 10314; 1,4% = 308 hostel in Brazil. Assuming the annual production is fairly equal across all luxury Brazilian hotels, the annual production volume for the whole destination can be estimated as 6300*308 = 1.940.400 guests night. </productionVolumeComment>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e83fe3bd-bf94-43b7-9fb7-e823c511c83b" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="steel" amount="0.0019047619047619" isCalculatedAmount="true" mathematicalRelation="(15*12)*(lifetime/15)/(lifetime_guests*occupancy_y)" intermediateExchangeId="8cb650d5-8a48-4719-81b1-2080b3b4387f" activityLinkId="678f119e-7567-45a9-b4fe-ed83077c6c75">
+        <name xml:lang="en">steel, low-alloyed, hot rolled</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. Represents here 14 chairs and 1 shelf made of steel. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (lifetime capacity). Steel chair (unit) is assumed to have a weight of 12 kg, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. The shelf was assumed to weight the same amount as one steel chair. Average service life of all pieces of furniture is assumed to be equal to 15 years. This represents service life of an average piece of furniture. Source: European Commission 2013. BACKGROUND REPORT. Revision of Ecolabel and Green Public Procurement criteria for the product group Wooden Furniture. September 2013. Available from: http://susproc.jrc.ec.europa.eu/furniture/docs/Background_report_Furniture_September_2013.pdf Accessed 19 March 2018. In terms of outputs assumed to have gone to scrap steel. </comment>
+        <uncertainty>
+          <lognormal meanValue="0.0019047619047619" mu="-6.263" variance="0.0006" varianceWithPedigreeUncertainty="0.004025" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Low alloyed steel composition given in Tab. 3.2 ecoinvent v2.2 report 10_partII.</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.005" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Low alloyed steel composition given in Tab. 3.2 ecoinvent v2.2 report 10_partII. Steel assumed to have a C content of 0.5%</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="0" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Non combustible products are assumed to have an LHV equal to zero (0).</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.005" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.005" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="e2786b2b-9e97-4ba9-908a-8d8e11f1fc5d">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">4121: Flat-rolled products of steel, not further worked than hot-rolled</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="d1d3dbdb-a789-441e-9ab8-203ab5171f4a" unitId="77ae64fa-7e74-4252-9c3b-889c1cd20bfc" amount="1.71574074074074" isCalculatedAmount="true" mathematicalRelation="10800*(lifetime)/(lifetime_guests*occupancy_y)+(2/3.6*cotton)" intermediateExchangeId="d69294d7-8d64-4915-a896-9996a014c410" activityLinkId="b068d2fa-1154-46e3-9aae-60da7b4ffa4a">
+        <name xml:lang="en">electricity, low voltage</name>
+        <unitName xml:lang="en">kWh</unitName>
+        <comment xml:lang="en">Data from the hostel survey. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel) / (number of guests during the lifetime of the hostel * hostel occupancy rate). The amount also includes electricity requirements to produce cotton textile products from raw cotton. It is estimated that 2 MJ of electricity is required to produce 1 kg of cotton textile product. This accounts for 10% fabric loss in the cotton textile manufacturing process. Source: Baydar, G., Ciliz, N., and Mammadov, A., 2015. Life cycle assessment of cotton textile products in Turkey. Journal of Cleaner Production, 104(A), 213-223. </comment>
+        <uncertainty>
+          <lognormal meanValue="1.71574074074074" mu="0.5398" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <classification classificationId="8c58a77e-289e-4069-bd0f-413c4f45e21b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">17100: Electrical energy</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="547c21b4-2ec3-4d87-bb67-94f15dd18fba" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="0.019047619047619" isCalculatedAmount="true" mathematicalRelation="120*lifetime/(lifetime_guests*occupancy_y)" intermediateExchangeId="3fc068d9-71cf-5f55-8e15-1675bbc38caf" activityLinkId="1c55c7a2-2279-4bd1-b84d-52843b75a5fd">
+        <name xml:lang="en">non-ionic surfactant</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel) / (number of guests during the lifetime of the hostel * hostel occupancy rate).  In terms of outputs assumed to have gone to wastewater.</comment>
+        <uncertainty>
+          <lognormal meanValue="0.019047619047619" mu="-3.961" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <classification classificationId="2f4a2f91-9a23-4149-a82f-de8e8abb1019">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">35310: Organic surface active agents, except soap</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="1b53d996-261d-40e6-aceb-c66e60382941" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="7.93650793650793E-05" isCalculatedAmount="true" mathematicalRelation="2*(lifetime/4)/(lifetime_guests*occupancy_y)&#xD;&#xA;&#xD;&#xA;" intermediateExchangeId="6a5c8503-639b-4251-988b-07548f7d658c" activityLinkId="46ed5b8e-21dc-4d6e-a0a6-d26eea1b4063">
+        <name xml:lang="en">computer, laptop</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Assumed average service life of a computer is 4 years. Source: Choi et al. 2006. Life Cycle Assessment of a Personal Computer and its Effective Recycling Rate. Int J LCA, 11 (2), 122 – 128.</comment>
+        <uncertainty>
+          <lognormal meanValue="7.93650793650793E-05" mu="-9.441" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="3.15" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="3.15" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">total weight with expansion base  3.15 kg</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.257799441732779" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="1.26619898687548E-05" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.257812103722648" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.81210812672634" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="7f8450fa-c630-4df5-a465-b9a4c482933c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">45220: Portable automatic data processing machines weighing not more than 10 kg, such as laptops, notebooks and sub-n[…]</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="3afd8992-eb7b-45c6-98dd-a9c38e88fe4a" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="msw" amount="-2.85257142857143" isCalculatedAmount="true" mathematicalRelation="((37,44*480)*(lifetime)/(lifetime_guests*occupancy_y))*-1" intermediateExchangeId="27da8130-82ba-485c-a800-b89efdcb0491" activityLinkId="7d27bf10-2ce3-4f3d-af81-8a658da5db81" productionVolumeAmount="5535129.6" productionVolumeMathematicalRelation="msw*RP_PV/RP">
+        <name xml:lang="en">municipal solid waste</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. The amount of municipal solid waste was calculated based on the amount generated by year (37.44 m3) multiplied by its densisty assuming garbage, household rubbish, weigh(s) 0.48 gram per (cubic centimeter), https://www.aqua-calc.com/calculate/volume-to-weightmaterial </comment>
+        <uncertainty>
+          <lognormal meanValue="-2.85257142857143" mu="1.048" variance="0.0006" varianceWithPedigreeUncertainty="0.0454" />
+          <pedigreeMatrix reliability="3" completeness="4" temporalCorrelation="2" geographicalCorrelation="4" furtherTechnologyCorrelation="4" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.297016861219196" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.229" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.171548638132296" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">MSW composition in tab 4.1, ecoinvent v2.2 report 13_I. C content referred to 1 kg DM</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.261654993514916" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">MSW composition in tab 4.1, ecoinvent v2.2 report 13_I. C content referred to 1 kg DM</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.771" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">wet mass-water mass</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="11.74" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Value taken from the general comment of the treatment dataset.</comment>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="msw_price_EUR2005" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.433203631647212" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.334" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from primary data collection with the hostel.</productionVolumeComment>
+        <classification classificationId="595a05b0-c7e6-4681-b3ee-b0f59c85c9f2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39910: Municipal waste</classificationValue>
+        </classification>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="17483032-37ba-461d-866c-8a8b0437e9bb" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="furniture_w" amount="0.0271957671957672" isCalculatedAmount="true" mathematicalRelation="(2*25)*(lifetime/15)/(lifetime_guests*occupancy_y)+(37*6)*(lifetime/15)/(lifetime_guests*occupancy_y)+(23*19)*(lifetime/15)/(lifetime_guests*occupancy_y)+(55*6)*(lifetime/15)/(lifetime_guests*occupancy_y)+(7*28)*(lifetime/15)/(lifetime_guests*occupancy_y)+(5*5)*(lifetime/15)/(lifetime_guests*occupancy_y)+(35*6)*(lifetime/15)/(lifetime_guests*occupancy_y)+(22*50)*(lifetime/15)/(lifetime_guests*occupancy_y)&#xD;&#xA;" intermediateExchangeId="436edb09-864e-42b1-9a06-a017cb24099a" activityLinkId="aafeea23-6cac-4699-ac7b-a294ee8265ce">
+        <name xml:lang="en">furniture, wooden</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Estimated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Assumed average service life of all pieces of furniture is 15 years. This represents service life of an average piece of furniture. Source: European Commission 2013. BACKGROUND REPORT. Revision of Ecolabel and Green Public Procurement criteria for the product group Wooden Furniture. September 2013. Available from: http://susproc.jrc.ec.europa.eu/furniture/docs/Background_report_Furniture_September_2013.pdf Accessed 19 March 2018. 
+This exchange represents the following: Double bed (unit) is assumed to have a weight of 25 kg, no headboard, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. Sofas (unit) Sofa is assumed to have a weight of 37 kg, two seater, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. Tables/Desks (unit) Table is assumed to have a weight of 23 kg, medium, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. Wardrobe (unit) is assumed to have a weight of 55 kg (double wardrobe), Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. Chairs (unit) Chair is assumed to have a weight of 7 kg, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. Coat stand is assumed to have a weight of 5 kg, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. Shelves are assumed to have weight of 35 kg, http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdfBunk bed (unit) Bunk bed is assumed to have a weight of 50 kg, no headboard, Furniture re-use Network, 2009. Average weights. Available from: http://democracy.york.gov.uk/documents/s2116/Annex%20C%20REcycling%20Report%20frnweights2005.pdf Accessed 13 January 2018. </comment>
+        <uncertainty>
+          <lognormal meanValue="0.0271957671957672" mu="-3.605" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" variableName="furniture_w_lifetime" amount="15" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">Source: JRC (2013) Wooden Furniture. BACKGROUND REPORT. Revision of Ecolabel and Green Public Procurement criteria for the product group. Retrieved from: http://susproc.jrc.ec.europa.eu/furniture/docs/Background_report_Furniture_September_2013.pdf, accessed 9Feb2018 </comment>
+        </property>
+        <classification classificationId="e37d5917-38a9-4f3c-9bfc-9819b1e82978">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">381: Furniture</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e19f724d-c827-41d0-8867-081c1d2d4c11" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="waste_polyeth" casNumber="9002-88-4" amount="-0.000793650793650793" isCalculatedAmount="true" mathematicalRelation="(nylon)*-1" intermediateExchangeId="7ee0ddc3-924d-4339-b9bf-7856af6a698f" activityLinkId="dbd7f717-4478-40cc-a512-8490259768fd" productionVolumeAmount="1540" productionVolumeMathematicalRelation="waste_polyeth*RP_PV/RP">
+        <name xml:lang="en">waste polyethylene</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. Represents here waste nylon 6. </comment>
+        <uncertainty>
+          <lognormal meanValue="-0.000793650793650793" mu="-7.139" variance="0.0006" varianceWithPedigreeUncertainty="0.004025" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="waste_polyeth_price_EUR2005" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.004" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.825301204819277" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">C content in 1 kg DM was calculated using data in Tab A.1, ecoinvent v2.2 report 13_I</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.996" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">wet mass-water mass</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.00401606425702811" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="42.47" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Value taken from the general comment of the treatment dataset.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.825301204819277" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.822" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from production volume of reference product using the relative outputs.</productionVolumeComment>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <classification classificationId="555d4947-3964-4529-ab70-20468dfee0bd">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39270: Waste, parings and scrap of plastics</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="efd4e165-1fce-4166-af8d-9062e174104f" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="0.000952380952380952" isCalculatedAmount="true" mathematicalRelation="(30)*(lifetime/5)/(lifetime_guests*occupancy_y)" intermediateExchangeId="0600b4a8-f284-47d9-87d8-3a18c3f3da1b" activityLinkId="7a075728-5dbe-473e-ba8b-801f7a050925">
+        <name xml:lang="en">mattress</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hotel/lifetime of the product) / (number of guests during the lifetime of the hotel * hotel occupancy rate). Average service life of a mattress is assumed to be equal to 5 years. Source: Traveller 2017. How often do hotels change their mattresses? Available from: http://www.traveller.com.au/everyone-asks-how-often-do-hotels-change-their-mattresses-guv2kt Accessed 16 March 2018. </comment>
+        <uncertainty>
+          <lognormal meanValue="0.000952380952380952" mu="-6.957" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="20.1278" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Calculated value. The value of the mattress dry mass is the sum of all dry masses of input materials to the mattress manufacture extracted from Lanoe et al (2013). </comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.29026" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Calculated value. The value of the mattress non fossil carbon content is the sum of all non fossil carbon content of input materials to the mattress manufacture extracted from Lanoe et al (2013). </comment>
+        </property>
+        <property propertyId="53338e64-f7ea-4948-b342-3fc6e3d3c302" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">weight</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Literature value. 2013, Thomas Lanoë, Carla L. Simões and Ricardo Simoes, mproving the environmental performance of bedding products by using life cycle assessment at the design stage. , Journal of Cleaner Production, 52, 155 - 164, 1 - Article. Based on the weighted average of the weight of spring matress (weight 32.127kg) and foam mattress (weight 29.627kg) based on the production volume (spring mattress production volume 61771420 units, foam mattress production 53234890 units).</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="5.185479565" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">Calculated value. The value of the mattress fossil carbon content is the sum of all fossil carbon content of input materials to the mattress manufacture extracted from Lanoe et al (2013). </comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" variableName="mat_WM" amount="20.128" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Calculated value. The value of the mattress wet mass is the sum of all wet masses of input materials to the mattress manufacture extracted from Lanoe et al (2013). </comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="5.475739565" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="110.214590816407" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="d64e5f3d-7ad3-43c7-889e-8e1c44a8c850">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">3815: Mattress supports; mattresses, fitted with springs or stuffed or internally fitted with any material or of cell[…]</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="a4bc31e7-dc89-4f4e-b456-7b5d9aa08a99" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" variableName="clean" amount="0.00777142857142857" isCalculatedAmount="true" mathematicalRelation="360*0.136*(lifetime)/(lifetime_guests*occupancy_y)" intermediateExchangeId="5bfb6885-a0a0-4f4c-921a-34db393e8dcb" activityLinkId="86326597-1642-48c0-be80-ba52d1ff31ba">
+        <name xml:lang="en">cleaning consumables, without water, in 13.6% solution state</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Combined of all instances of use across the hostel operations. Represents the following cleaning luquids: window cleaner, bleach, washing up liquid, insect killer, pine disinfector, odour eliminator. In terms of outputs assumed to have gone to wastewater. As the product "cleaning consumables" is expressed as 100% active substance, the amount of cleaning consumables is multiplied by the average concentration of active substance. According to Golsteijn (2015) the average water content of cleaning consumables is 86.4%, the necessary water input is accounted for with the flow "water, compeltely softened, from decarbonised water, at user". For more information on how the cleaning consumables dataset was created please refer to the relevant dataset in ecoinvent.
+
+2015, Laura Golsteijn, A compilation of life cycle studies for six household detergent product categories in Europe: the basis for product-specific A.I.S.E. Charter Advanced Sustainability Profiles</comment>
+        <uncertainty>
+          <lognormal meanValue="0.00777142857142857" mu="-4.857" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">cleaning product</synonym>
+        <synonym xml:lang="en">cleaning agent</synonym>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" variableName="clean_C_content_non_fossil" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="1" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" variableName="clean_WM" amount="1" isDefiningValue="false" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0" isDefiningValue="false" isCalculatedAmount="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" variableName="clean_C_content_fossil" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">fossil carbon content on a dry matter basis</comment>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="12.22" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">LHV is calculated based on the Carbon content of the product. More details can be found on the respective documentation.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="97b8d3d4-58ed-4a4a-aebe-16c41b254f09">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">353: Soap, cleaning preparations, perfumes and toilet preparations</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="deb78096-ff31-4088-b564-11bdc176c8e0" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="0.0104761904761905" isCalculatedAmount="true" mathematicalRelation="(6600*0.01)*(lifetime)/(lifetime_guests*occupancy_y)&#xD;&#xA;&#xD;&#xA;" intermediateExchangeId="e04720d0-1b18-41bd-b729-93cfc5f862ab" activityLinkId="6f123135-58e0-4e4c-b556-19d5e71ea15e">
+        <name xml:lang="en">tissue paper</name>
+        <unitName xml:lang="en">kg</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Conversion from meters to kg has been made assuming a roll of 25 meters weights 250 g, so 1 kg of tissue paper is equal to 100 meters. Source:  Sainsburys 2018. Andrex Toilet Paper. Available from: https://www.sainsburys.co.uk/webapp/wcs/stores/servlet/gb/groceries/andrex-toilet-tissue--classic-white-16x241-sheets?langId=44&amp;storeId=10151&amp;krypto=6KE3AoChB8jlwzzYGlgparsN%2BBruZBOjUaSVm%2BCnwAT0LLJPLAalDm9DhCtUDzK5uFGmUkJJ%2FMIaDVx%2BGRGKIHdBUxaNbCTzmIQiBcpr497qZYrRt4Kvvy%2BLLO40d8j3%2BY4eQ%2Fk%2BK4BXsq0FOjWLrDLelOp5CVxrDysmNwGM26k%3D&amp;ddkey=https%3Agb%2Fgroceries%2Fandrex-toilet-tissue--classic-white-16x241-sheets Accessed 16 January 2018. In terms of outputs, assumed to have gone to wastewater. </comment>
+        <uncertainty>
+          <lognormal meanValue="0.0104761904761905" mu="-4.559" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.361689922272958" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.055" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.945" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="2.22E-05" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.0582010582010582" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="10.22" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">LHV is calculated based on the Carbon content of the product. More details can be found on the respective documentation.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.361712122272958" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.341817955547945" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="408b1cd9-2009-4e46-82f7-f9fd1e28314c">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">321: Pulp, paper and paperboard</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e467a15b-10a0-4cf2-9abf-956fd2ac05ce" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="6.34920634920635E-05" isCalculatedAmount="true" mathematicalRelation="4*(lifetime/10)/(lifetime_guests*occupancy_y)" intermediateExchangeId="8fe05e0c-037b-4a27-9f9c-1e3fe9326b36" activityLinkId="252b5d7c-b18f-4d4f-b31c-3b99ce90754d">
+        <name xml:lang="en">refrigerator</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Assumed average service life of a refrigerator is 10 years. Source: Xiao et al. 2015. A life-cycle assessment of household refrigerators in China. Journal of Cleaner Production, 95, 301-310</comment>
+        <uncertainty>
+          <lognormal meanValue="6.34920634920635E-05" mu="-9.665" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <synonym xml:lang="en">fridge</synonym>
+        <synonym xml:lang="en">double-door refrigerator</synonym>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="10" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">Source: Xiao, R. et al. 2015, 2015, Xiao, R., Zhang, Y., Liu, X., and Yuan, Z., A life-cycle assessment of household refrigerators in China, Journal of Cleaner Production, 95, 301-310, 1 - Article</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="b8f81d89-33a9-400b-82ee-aecdcbbd30d2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">4481: Domestic electric appliances; non-electric refrigerators and clothes drying machines</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="3dbd428c-44e2-46c9-9865-893756d7d4d3" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="1.98412698412698E-05" isCalculatedAmount="true" mathematicalRelation="1*(lifetime/8)/(lifetime_guests*occupancy_y)" intermediateExchangeId="a90c5322-b943-44d1-8f95-bc7e31a72990" activityLinkId="91566ab3-cdd5-4b67-a2c5-3448bacba2f4">
+        <name xml:lang="en">microwave oven</name>
+        <unitName xml:lang="en">unit</unitName>
+        <comment xml:lang="en">Calculated value. The amount of exchange is calculated as: amount of input product * (lifetime of the hostel/lifetime of the product) / (number of guests during the lifetime of the hostel * hostel occupancy rate). Assumed average service life of a microwave oven is 8 years. Source: Gallego-Schmid et al. 2018. Environmental assessment of microwaves and the effect of European energy efficiency and waste management legislation. Science of the Total Environment, 618, 487-499.</comment>
+        <uncertainty>
+          <lognormal meanValue="1.98412698412698E-05" mu="-10.83" variance="0.3" varianceWithPedigreeUncertainty="0.303425" />
+          <pedigreeMatrix reliability="2" completeness="4" temporalCorrelation="2" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+          <comment xml:lang="en"></comment>
+        </uncertainty>
+        <property propertyId="964f8b50-ce16-4364-835a-a3db5fb760b0" amount="8" isDefiningValue="false" unitId="2cf92850-0f92-4004-9dba-a6ceb6a414c2">
+          <name xml:lang="en">lifetime</name>
+          <unitName xml:lang="en">year</unitName>
+          <comment xml:lang="en">Source: Gallego-Schmid et al. 2018, 2018, Gallego-Schmid, A., Mendoza, J.M.F.,  Azapagic, A., Environmental assessment of microwaves and the effect of European energy efficiency and waste management legislation. , Science of the Total Environment, 618, 487-499, 1 - Article</comment>
+        </property>
+        <classification classificationId="74b735b5-0670-4d84-b239-510f9be02522">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">44821: Cooking appliances and plate warmers, non-electric, domestic, of iron or steel</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <parameter parameterId="aaca23df-a74f-45eb-b1c3-c460fee33865" variableName="occupancy_y" mathematicalRelation="(525*12)/(30*365)" isCalculatedAmount="true" amount="0.575342465753425">
+        <name xml:lang="en">occupancy rate/year</name>
+        <unitName xml:lang="en">dimensionless</unitName>
+        <comment xml:lang="en">The hostel reports a occupancy of 525 guests per month. Its full capacity is 30 guests per day. The occupancy rate was calculated accordingly,</comment>
+      </parameter>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <samplingProcedure xml:lang="en">Primary data from the hotel supplemented with literature-based calculations and estimates, where appropriate. </samplingProcedure>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2018 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2018-06-13" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="2" reviewedMinorRevision="6">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- Mass and/or economic deficit in activity dataset exceeds either 0.1% of input or output sum:
+
+Property 'carbon content, fossil':
+ - Input='0,102254573176865', Output='0,377944888380953'
+ - Input &lt; output by 0,275690315204088 kg (72,94% of output)
+
+Property 'wet mass':
+ - Input='26,7601086832612', Output='29,5245555555556'
+ - Input &lt; output by 2,76444687229437 kg (9,36% of output)
+
+Property 'water in wet mass':
+ - Input='26,7076149215522', Output='27,3113144796615'
+ - Input &lt; output by 0,603699558109255 kg (2,21% of output)
+
+Property 'carbon content, non-fossil':
+ - Input='0,010349585994095', Output='0,578381679646259'
+ - Input &lt; output by 0,568032093652164 kg (98,21% of output)
+
+Property 'dry mass':
+ - Input='0,0524935712328079', Output='2,21324107589413'
+ - Input &lt; output by 2,16074750466132 kg (97,63% of output)
+
+
+- Property 'carbon content, non-fossil=0,008094461' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'carbon content, fossil=0,032893302' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'dry mass=0,944616419' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'wet mass=1' of master data exchange was removed from exchange 'furniture, wooden'.
+Amount of property 'corresponding fuel use, propane, furnace &gt;100kW=1,05263157894737' of exchange 'heat, district or industrial, other than natural gas' deviates from the default amount in the master file.
+Property 'weight=0' of master data exchange was removed from exchange 'compact fluorescent bulb'.
+Property 'weight=0' of master data exchange was removed from exchange 'television'.
+Property 'weight=0' of master data exchange was removed from exchange 'coffee maker'.
+Property 'weight=0' of master data exchange was removed from exchange 'cookstove'.
+Property 'weight=0' of master data exchange was removed from exchange 'refrigerator'.
+Property 'weight=0' of master data exchange was removed from exchange 'microwave oven'.
+Amount of property 'carbon content, fossil=0' of exchange 'cleaning consumables, without water, in 13.6% solution state' deviates from the default amount in the master file.
+Amount of property 'carbon content, non-fossil=0' of exchange 'cleaning consumables, without water, in 13.6% solution state' deviates from the default amount in the master file.
+Property 'weight=0' of master data exchange was removed from exchange 'vacuum cleaner'.
+Amount of property 'heating value, net=0' of exchange 'municipal solid waste' deviates from the default amount in the master file.
+Property 'weight=0' of master data exchange was removed from exchange 'washing machine'.
+
+- The total water in wet mass of all input exchanges (26,7076149215522) and output exchanges (27,3113144796615) is unbalanced.
+
+- Uncertainty shall always be provided for all primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): water in wet mass=999,653163225399, carbon content, fossil=0, wet mass=1000, dry mass=0,346836774601289, water content=2882,20060970917, carbon content, non-fossil=0,194039401033427, dry mass=0,75, carbon content, fossil=0, wet mass=1, carbon content, non-fossil=0,570519480519481, water in wet mass=0,25, water content=0,333333333333333, dry mass=0,771, carbon content, non-fossil=0,261654993514916, carbon content, fossil=0,171548638132296, water content=0,297016861219196, wet mass=1, heating value, net=0, water in wet mass=0,229, water content=0,00401606425702811, dry mass=0,996, carbon content, non-fossil=0, carbon content, fossil=0,825301204819277, water in wet mass=0,004, wet mass=1, wet mass=1, water in wet mass=0, water content=0, dry mass=1, carbon content, non-fossil=0, carbon content, fossil=0
+ -- Parameter(s): occupancy rate/year
+
+- Pedigree information shall always be provided for all uncertainties of primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): water in wet mass=999,653163225399, carbon content, fossil=0, wet mass=1000, dry mass=0,346836774601289, water content=2882,20060970917, carbon content, non-fossil=0,194039401033427, dry mass=0,75, carbon content, fossil=0, wet mass=1, carbon content, non-fossil=0,570519480519481, water in wet mass=0,25, water content=0,333333333333333, dry mass=0,771, carbon content, non-fossil=0,261654993514916, carbon content, fossil=0,171548638132296, water content=0,297016861219196, wet mass=1, heating value, net=0, water in wet mass=0,229, water content=0,00401606425702811, dry mass=0,996, carbon content, non-fossil=0, carbon content, fossil=0,825301204819277, water in wet mass=0,004, wet mass=1, wet mass=1, water in wet mass=0, water content=0, dry mass=1, carbon content, non-fossil=0, carbon content, fossil=0
+ -- Parameter(s): occupancy rate/year
+
+- Production volume of local datasets for a specific activity, time period, and macro-economic scenario must not exceed 99,5% of the production volume of the corresponding global.
+
+ Warning: -  Exchange 'wastewater, average', global (2017-2018) production volume 51744,0000000001, sum of all non-global production volumes 51744,0000000001. Local datasets used in calculation: BR (2017-2018) PV: 51744,0000000001
+ Warning: -  Exchange 'waste textile, soiled', global (2017-2018) production volume 5082, sum of all non-global production volumes 5082. Local datasets used in calculation: BR (2017-2018) PV: 5082
+ Warning: -  Exchange 'municipal solid waste', global (2017-2018) production volume 5535129,6, sum of all non-global production volumes 5535129,6. Local datasets used in calculation: BR (2017-2018) PV: 5535129,6
+ Warning: -  Exchange 'waste polyethylene', global (2017-2018) production volume 1540, sum of all non-global production volumes 1540. Local datasets used in calculation: BR (2017-2018) PV: 1540
+ Warning: -  Exchange 'building operation, hostel (BR)', global (2017-2018) production volume 1940400, sum of all non-global production volumes 1940400. Local datasets used in calculation: BR (2017-2018) PV: 1940400
+ Warning: -  Exchange 'scrap steel', global (2017-2018) production volume 3695,99999999999, sum of all non-global production volumes 3695,99999999999. Local datasets used in calculation: BR (2017-2018) PV: 3695,99999999999
+
+</otherDetails>
+      </review>
+      <review reviewerId="f86c02d3-2c12-4c25-ad03-33af05bcfe63" reviewerName="Tereza Levova" reviewerEmail="levova@ecoinvent.org" reviewDate="2018-06-13" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="2" reviewedMinorRevision="6">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="f86c02d3-2c12-4c25-ad03-33af05bcfe63" reviewerName="Tereza Levova" reviewerEmail="levova@ecoinvent.org" reviewDate="2018-06-08" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="1" reviewedMinorRevision="3">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="ebf45305-b87c-4d3d-b74f-fbc6677bca1b" reviewerName="Lucia Valsasina" reviewerEmail="valsasina@ecoinvent.org" reviewDate="2018-04-09" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="45">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2018-06-08" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="1" reviewedMinorRevision="3">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- Mass and/or economic deficit in activity dataset exceeds either 0.1% of input or output sum:
+
+Property 'wet mass':
+ - Input='27,1267833346898', Output='29,5245555555556'
+ - Input &lt; output by 2,3977722208658 kg (8,12% of output)
+
+Property 'carbon content, non-fossil':
+ - Input='0,116779512776175', Output='0,578381679646259'
+ - Input &lt; output by 0,461602166870084 kg (79,81% of output)
+
+Property 'carbon content, fossil':
+ - Input='2,00361959223882', Output='0,377944888380953'
+ - Input &gt; output by 1,62567470385786 kg (430,14% of output)
+
+Property 'water in wet mass':
+ - Input='26,7076149215522', Output='27,3113144796615'
+ - Input &lt; output by 0,603699558109255 kg (2,21% of output)
+
+Property 'dry mass':
+ - Input='0,419164579232808', Output='2,21324107589413'
+ - Input &lt; output by 1,79407649666132 kg (81,06% of output)
+
+
+- Property 'weight=0' of master data exchange was removed from exchange 'washing machine'.
+Amount of property 'heating value, net=0' of exchange 'municipal solid waste' deviates from the default amount in the master file.
+Amount of property 'carbon content, fossil=0' of exchange 'cleaning consumables, without water, in 13.6% solution state' deviates from the default amount in the master file.
+Amount of property 'carbon content, non-fossil=0' of exchange 'cleaning consumables, without water, in 13.6% solution state' deviates from the default amount in the master file.
+Property 'weight=0' of master data exchange was removed from exchange 'vacuum cleaner'.
+Property 'weight=0' of master data exchange was removed from exchange 'microwave oven'.
+Property 'weight=0' of master data exchange was removed from exchange 'cookstove'.
+Property 'weight=0' of master data exchange was removed from exchange 'coffee maker'.
+Property 'weight=0' of master data exchange was removed from exchange 'refrigerator'.
+Property 'weight=0' of master data exchange was removed from exchange 'television'.
+Property 'weight=0' of master data exchange was removed from exchange 'compact fluorescent bulb'.
+Amount of property 'corresponding fuel use, propane, furnace &gt;100kW=1,05263157894737' of exchange 'heat, district or industrial, other than natural gas' deviates from the default amount in the master file.
+Property 'dry mass=0,944616419' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'wet mass=1' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'carbon content, non-fossil=0,008094461' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'carbon content, fossil=0,032893302' of master data exchange was removed from exchange 'furniture, wooden'.
+
+- The total water in wet mass of all input exchanges (26,7076149215522) and output exchanges (27,3113144796615) is unbalanced.
+
+- Uncertainty shall always be provided for all primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): carbon content, fossil=0, carbon content, non-fossil=0, water content=0, dry mass=1, water in wet mass=0, wet mass=1, carbon content, fossil=0,825301204819277, water in wet mass=0,004, wet mass=1, dry mass=0,996, water content=0,00401606425702811, carbon content, non-fossil=0, carbon content, non-fossil=0,261654993514916, dry mass=0,771, water in wet mass=0,229, carbon content, fossil=0,171548638132296, water content=0,297016861219196, heating value, net=0, wet mass=1, water content=0,333333333333333, dry mass=0,75, carbon content, non-fossil=0,570519480519481, carbon content, fossil=0, water in wet mass=0,25, wet mass=1, dry mass=0,346836774601289, water content=2882,20060970917, wet mass=1000, carbon content, non-fossil=0,194039401033427, water in wet mass=999,653163225399, carbon content, fossil=0
+ -- Parameter(s): occupancy rate/year
+
+- Pedigree information shall always be provided for all uncertainties of primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): carbon content, fossil=0, carbon content, non-fossil=0, water content=0, dry mass=1, water in wet mass=0, wet mass=1, carbon content, fossil=0,825301204819277, water in wet mass=0,004, wet mass=1, dry mass=0,996, water content=0,00401606425702811, carbon content, non-fossil=0, carbon content, non-fossil=0,261654993514916, dry mass=0,771, water in wet mass=0,229, carbon content, fossil=0,171548638132296, water content=0,297016861219196, heating value, net=0, wet mass=1, water content=0,333333333333333, dry mass=0,75, carbon content, non-fossil=0,570519480519481, carbon content, fossil=0, water in wet mass=0,25, wet mass=1, dry mass=0,346836774601289, water content=2882,20060970917, wet mass=1000, carbon content, non-fossil=0,194039401033427, water in wet mass=999,653163225399, carbon content, fossil=0
+ -- Parameter(s): occupancy rate/year
+
+- Production volume of local datasets for a specific activity, time period, and macro-economic scenario must not exceed 99,5% of the production volume of the corresponding global.
+
+ Warning: -  Exchange 'scrap steel', global (2017-2018) production volume 3695,99999999999, sum of all non-global production volumes 3695,99999999999. Local datasets used in calculation: BR (2017-2018) PV: 3695,99999999999
+ Warning: -  Exchange 'building operation, hostel (BR)', global (2017-2018) production volume 1940400, sum of all non-global production volumes 1940400. Local datasets used in calculation: BR (2017-2018) PV: 1940400
+ Warning: -  Exchange 'waste polyethylene', global (2017-2018) production volume 1540, sum of all non-global production volumes 1540. Local datasets used in calculation: BR (2017-2018) PV: 1540
+ Warning: -  Exchange 'municipal solid waste', global (2017-2018) production volume 5535129,6, sum of all non-global production volumes 5535129,6. Local datasets used in calculation: BR (2017-2018) PV: 5535129,6
+ Warning: -  Exchange 'waste textile, soiled', global (2017-2018) production volume 5082, sum of all non-global production volumes 5082. Local datasets used in calculation: BR (2017-2018) PV: 5082
+ Warning: -  Exchange 'wastewater, average', global (2017-2018) production volume 51744,0000000001, sum of all non-global production volumes 51744,0000000001. Local datasets used in calculation: BR (2017-2018) PV: 51744,0000000001
+
+</otherDetails>
+      </review>
+      <review reviewerId="d5ef5759-87f1-4ab1-a090-9e14b3f6b1ee" reviewerName="Valentina Castellani" reviewerEmail="Valentina.CASTELLANI@ec.europa.eu" reviewDate="2018-04-09" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="45">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="35d091e9-38c2-4037-9efe-a73673c57123" reviewerName="Emilia Moreno Ruiz" reviewerEmail="moreno@ecoinvent.org" reviewDate="2018-04-09" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="42">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2018-05-18" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="45">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- Mass and/or economic deficit in activity dataset exceeds either 0.1% of input or output sum:
+
+Property 'carbon content, non-fossil':
+ - Input='1,43489754515358', Output='0,578381679646259'
+ - Input &gt; output by 0,856515865507322 kg (148,09% of output)
+
+Property 'water in wet mass':
+ - Input='26,7076149215522', Output='27,3113144796615'
+ - Input &lt; output by 0,603699558109255 kg (2,21% of output)
+
+Property 'carbon content, fossil':
+ - Input='13,6754260332271', Output='0,377944888380953'
+ - Input &gt; output by 13,2974811448461 kg (3518,37% of output)
+
+Property 'dry mass':
+ - Input='0,869285313137571', Output='2,21324107589413'
+ - Input &lt; output by 1,34395576275656 kg (60,72% of output)
+
+Property 'wet mass':
+ - Input='27,5769002346898', Output='29,5245555555556'
+ - Input &lt; output by 1,9476553208658 kg (6,6% of output)
+
+
+- Property 'carbon content, fossil=0,032893302' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'dry mass=0,944616419' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'wet mass=1' of master data exchange was removed from exchange 'furniture, wooden'.
+Property 'carbon content, non-fossil=0,008094461' of master data exchange was removed from exchange 'furniture, wooden'.
+Amount of property 'corresponding fuel use, propane, furnace &gt;100kW=1,05263157894737' of exchange 'heat, district or industrial, other than natural gas' deviates from the default amount in the master file.
+Property 'weight=0' of master data exchange was removed from exchange 'compact fluorescent bulb'.
+Property 'weight=0' of master data exchange was removed from exchange 'television'.
+Property 'weight=0' of master data exchange was removed from exchange 'refrigerator'.
+Property 'weight=0' of master data exchange was removed from exchange 'cookstove'.
+Property 'weight=0' of master data exchange was removed from exchange 'coffee maker'.
+Property 'weight=0' of master data exchange was removed from exchange 'microwave oven'.
+Property 'weight=0' of master data exchange was removed from exchange 'vacuum cleaner'.
+Amount of property 'carbon content, non-fossil=0' of exchange 'cleaning consumables, without water, in 13.6% solution state' deviates from the default amount in the master file.
+Amount of property 'carbon content, fossil=0' of exchange 'cleaning consumables, without water, in 13.6% solution state' deviates from the default amount in the master file.
+Amount of property 'heating value, net=0' of exchange 'municipal solid waste' deviates from the default amount in the master file.
+Property 'weight=0' of master data exchange was removed from exchange 'washing machine'.
+
+- The total water in wet mass of all input exchanges (26,7076149215522) and output exchanges (27,3113144796615) is unbalanced.
+
+- The dataset contains user added exchange master data entries. The following user added exchanges do not contain product information data. Please consider adding the appropriate data before submitting the dataset for review.
+ - building, hostel (BR)
+
+- Uncertainty shall always be provided for all primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): wet mass=1000, carbon content, fossil=0, carbon content, non-fossil=0,194039401033427, dry mass=0,346836774601289, water content=2882,20060970917, water in wet mass=999,653163225399, water in wet mass=0,25, wet mass=1, carbon content, non-fossil=0,570519480519481, water content=0,333333333333333, dry mass=0,75, carbon content, fossil=0, water content=0,297016861219196, wet mass=1, water in wet mass=0,229, carbon content, fossil=0,171548638132296, carbon content, non-fossil=0,261654993514916, dry mass=0,771, heating value, net=0, water content=0,00401606425702811, carbon content, non-fossil=0, water in wet mass=0,004, carbon content, fossil=0,825301204819277, wet mass=1, dry mass=0,996, water in wet mass=0, water content=0, carbon content, non-fossil=0, carbon content, fossil=0, wet mass=1, dry mass=1
+ -- Parameter(s): occupancy rate/year
+
+- Pedigree information shall always be provided for all uncertainties of primary data inputs (exchange amounts, properties and parameters), except for the amount and properties of reference products.
+ -- Property(ies): wet mass=1000, carbon content, fossil=0, carbon content, non-fossil=0,194039401033427, dry mass=0,346836774601289, water content=2882,20060970917, water in wet mass=999,653163225399, water in wet mass=0,25, wet mass=1, carbon content, non-fossil=0,570519480519481, water content=0,333333333333333, dry mass=0,75, carbon content, fossil=0, water content=0,297016861219196, wet mass=1, water in wet mass=0,229, carbon content, fossil=0,171548638132296, carbon content, non-fossil=0,261654993514916, dry mass=0,771, heating value, net=0, water content=0,00401606425702811, carbon content, non-fossil=0, water in wet mass=0,004, carbon content, fossil=0,825301204819277, wet mass=1, dry mass=0,996, water in wet mass=0, water content=0, carbon content, non-fossil=0, carbon content, fossil=0, wet mass=1, dry mass=1
+ -- Parameter(s): occupancy rate/year
+
+- Production volume of local datasets for a specific activity, time period, and macro-economic scenario must not exceed 99,5% of the production volume of the corresponding global.
+
+ Warning: -  Exchange 'wastewater, average', global (2017-2018) production volume 51744,0000000001, sum of all non-global production volumes 51744,0000000001. Local datasets used in calculation: BR (2017-2018) PV: 51744,0000000001
+ Warning: -  Exchange 'waste textile, soiled', global (2017-2018) production volume 5082, sum of all non-global production volumes 5082. Local datasets used in calculation: BR (2017-2018) PV: 5082
+ Warning: -  Exchange 'municipal solid waste', global (2017-2018) production volume 5535129,6, sum of all non-global production volumes 5535129,6. Local datasets used in calculation: BR (2017-2018) PV: 5535129,6
+ Warning: -  Exchange 'waste polyethylene', global (2017-2018) production volume 1540, sum of all non-global production volumes 1540. Local datasets used in calculation: BR (2017-2018) PV: 1540
+ Warning: -  Exchange 'building operation, hostel (BR)', global (2017-2018) production volume 1940400, sum of all non-global production volumes 1940400. Local datasets used in calculation: BR (2017-2018) PV: 1940400
+ Warning: -  Exchange 'scrap steel', global (2017-2018) production volume 3695,99999999999, sum of all non-global production volumes 3695,99999999999. Local datasets used in calculation: BR (2017-2018) PV: 3695,99999999999
+
+- The input exchange 'building, hostel (BR)' does not have an activity link and therefore requires a market for that input to be available. If the market is not available the dataset will be put on hold at the end of its review and will remain on hold until such a market has been accepted into the ecoinvent database.
+- The input exchange 'mattress, polyurethane foam' does not have an activity link and therefore requires a market for that input to be available. If the market is not available the dataset will be put on hold at the end of its review and will remain on hold until such a market has been accepted into the ecoinvent database.
+
+</otherDetails>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="f06ef1d1-61e8-4c26-8ad0-de2193c430ff" isActiveAuthor="true" personName="Marina Santa Rosa Rocha" personEmail="marinasrr@poli.ufrj.br" />
+      <dataGeneratorAndPublication personId="f06ef1d1-61e8-4c26-8ad0-de2193c430ff" personName="Marina Santa Rosa Rocha" personEmail="marinasrr@poli.ufrj.br" publishedSourceId="75b3c9cb-40f0-44cb-a32a-289d2a5502cf" publishedSourceYear="2018" publishedSourceFirstAuthor="Filimonau, V" isCopyrightProtected="true" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="6" minorRevision="0" internalSchemaVersion="2.0.12" defaultLanguage="en" creationTimestamp="2018-03-23T14:31:10" lastEditTimestamp="2018-06-13T16:15:16" fileGenerator="EcoEditor 3.11.1000.30" fileTimestamp="2018-06-13T16:15:16" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

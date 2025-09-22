@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="d08c3d7f-9c93-4530-b997-34589b09dfbf" activityNameId="5805ac0f-2008-460e-9a8d-3f754a6064f5" parentActivityId="4ccf14d8-110c-4c25-99c8-5205c22a1840" inheritanceDepth="-1" type="1" specialActivityType="1">
+        <activityName xml:lang="en">market for operation, dried roughage store, air dried, solar</activityName>
+        <includedActivitiesStart xml:lang="en">This activity starts with the service generation.
+</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This activity ends with the service supplied to its consumers. Transport or losses are considered irrelevant for this product.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="1">This is a market activity. Each market represents the consumption mix of a product in a given geography, connecting suppliers with consumers of the same product in the same geographical area. Markets group the producers and also the imports of the product (if relevant) within the same geographical area. They also account for transport to the consumer and for the losses during that process, when relevant.</text>
+          <text xml:lang="en" index="4">This is delivering the service of 'operation, dried roughage store, air dried, solar' referring to 1 kg of dry matter of final product of hay. It includes expenditures of infrastructure (storage facility) and electricity consumption necessary for the process. A user can employ the right amount of this process by matching the amount of dry matter (DM) in the hay he/she wishes to model with an equal amount of this process.</text>
+          <text xml:lang="en" index="3">This market contains no transport or losses, as they are irrelevant for the delivered product.</text>
+          <text xml:lang="en" index="2">This is the market for  'operation, dried roughage store, air dried, solar', in the Global geography.</text>
+        </generalComment>
+        <tag>ConvertedDataset</tag>
+      </activity>
+      <classification classificationId="5d8c60ab-17f8-4ba6-99ca-a72b75f66cf3">
+        <classificationSystem xml:lang="en">EcoSpold01Categories</classificationSystem>
+        <classificationValue xml:lang="en">agricultural means of production/buildings</classificationValue>
+      </classification>
+      <classification classificationId="2fbefa76-b10b-4120-9966-682ad1b66329">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">0163:Post-harvest crop activities</classificationValue>
+      </classification>
+      <geography geographyId="34dbbff8-88ce-11de-ad60-0019e336be3a">
+        <shortname xml:lang="en">GLO</shortname>
+      </geography>
+      <technology technologyLevel="0" />
+      <timePeriod startDate="2011-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="60e2ea0a-0a5f-4b9c-bca2-849e7d28511d" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="1" intermediateExchangeId="43edbd86-ddc0-4934-9a4f-776bdf2c6406" productionVolumeAmount="931832797427.653">
+        <name xml:lang="en">operation, dried roughage store, air dried, solar</name>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.0236974655445018" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="cbf9b263-1377-4f5a-b2d4-7c07b3ebfed3">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86111: Post-harvest crop services</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="3a7f2fad-fa8d-49a5-8c43-7bb7ce485103" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="0.00444285714285714" intermediateExchangeId="43edbd86-ddc0-4934-9a4f-776bdf2c6406" activityLinkId="0cebf614-cc7a-40a8-8c4a-6b28cdd6dd1a" productionVolumeAmount="4140000000">
+        <name xml:lang="en">operation, dried roughage store, air dried, solar</name>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.0236974655445018" isDefiningValue="false" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="cbf9b263-1377-4f5a-b2d4-7c07b3ebfed3">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86111: Post-harvest crop services</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="73c3f7ca-fd5f-4019-a93e-d758efa9beda" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="0.0084169747315735" intermediateExchangeId="43edbd86-ddc0-4934-9a4f-776bdf2c6406" activityLinkId="17a0c01e-0fe1-4a1e-9a9b-80a09cdbdf7c" productionVolumeAmount="7843213110">
+        <name xml:lang="en">operation, dried roughage store, air dried, solar</name>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.0236974655445018" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="cbf9b263-1377-4f5a-b2d4-7c07b3ebfed3">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86111: Post-harvest crop services</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="4c831a92-2f8c-4ddd-88f3-1e88ed4ec636" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="0.987140168125569" intermediateExchangeId="43edbd86-ddc0-4934-9a4f-776bdf2c6406" activityLinkId="60e599fc-2e54-4504-8d64-fe8469f810e7" productionVolumeAmount="919849584317.653">
+        <name xml:lang="en">operation, dried roughage store, air dried, solar</name>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.0236974655445018" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="cbf9b263-1377-4f5a-b2d4-7c07b3ebfed3">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86111: Post-harvest crop services</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2011 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="c4597934-ecac-422c-b431-382e85fdcb83" isActiveAuthor="false" personName="[System]" personEmail="support@ecoinvent.org" />
+      <dataGeneratorAndPublication personId="c4597934-ecac-422c-b431-382e85fdcb83" personName="[System]" personEmail="support@ecoinvent.org" isCopyrightProtected="false" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="3" minorRevision="1" internalSchemaVersion="2.0.11" defaultLanguage="en" creationTimestamp="2011-08-02T09:57:21" lastEditTimestamp="2011-08-02T09:57:21" fileGenerator="Database Layer" fileTimestamp="2011-08-02T09:57:21" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="93d3e3e4-c275-490f-960b-494a10accaec" activityNameId="312508f0-8609-4d37-9af5-b7fab1d3b793" parentActivityId="62526926-1baa-45cd-bb77-1bcd531ca6a3" inheritanceDepth="-1" type="1" specialActivityType="1">
+        <activityName xml:lang="en">market for fodder loading, by self-loading trailer</activityName>
+        <includedActivitiesStart xml:lang="en">This activity starts with the service generation.
+</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This activity ends with the service supplied to its consumers. Transport or losses are considered irrelevant for this product.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="1">This is a market activity. Each market represents the consumption mix of a product in a given geography, connecting suppliers with consumers of the same product in the same geographical area. Markets group the producers and also the imports of the product (if relevant) within the same geographical area. They also account for transport to the consumer and for the losses during that process, when relevant.</text>
+          <text xml:lang="en" index="4">This is delivering the service of 'fodder loading, by self-loading trailer' of 1 m3. It includes the use of diesel powered mobile infrastructure (tractors, machinery). Diesel combustion linearly affects direct emissions. Hence, a user can model the right amount of this service by using information on diesel consumption. For example: If within the user's model diesel consumption is 0.2 kg of diesel per m3 while in this service it is 0.1 kg/m3, the user can model with 2 m3 of this service.</text>
+          <text xml:lang="en" index="3">This market contains no transport or losses, as they are irrelevant for the delivered product.</text>
+          <text xml:lang="en" index="2">This is the market for  'fodder loading, by self-loading trailer', in the Global geography.</text>
+        </generalComment>
+        <tag>ConvertedDataset</tag>
+      </activity>
+      <classification classificationId="bbe2eb06-fac9-48bb-9610-f402b9d3f2d0">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">0161:Support activities for crop production</classificationValue>
+      </classification>
+      <classification classificationId="172439b6-30ab-4388-9bbd-d9c22990ed53">
+        <classificationSystem xml:lang="en">EcoSpold01Categories</classificationSystem>
+        <classificationValue xml:lang="en">agricultural means of production/work processes</classificationValue>
+      </classification>
+      <geography geographyId="34dbbff8-88ce-11de-ad60-0019e336be3a">
+        <shortname xml:lang="en">GLO</shortname>
+      </geography>
+      <technology technologyLevel="0" />
+      <timePeriod startDate="2011-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="75cb1d17-e6fd-496e-b129-f06bfecca6e2" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="1" intermediateExchangeId="92b3c2d6-e5bf-4b2e-b2ac-1352d6640b58" productionVolumeAmount="139541326859.402">
+        <name xml:lang="en">fodder loading, by self-loading trailer</name>
+        <unitName xml:lang="en">m3</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.57914912839115" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="9e7f8bed-9018-4539-89ea-18d3e1842700" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="0.00129045934813342" intermediateExchangeId="92b3c2d6-e5bf-4b2e-b2ac-1352d6640b58" activityLinkId="74de15bf-8685-4839-8ffc-d5b6cc6ca79e" productionVolumeAmount="180072409.696656">
+        <name xml:lang="en">fodder loading, by self-loading trailer</name>
+        <unitName xml:lang="en">m3</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.57914912839115" isDefiningValue="false" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="24ca240d-b73d-4a4f-b344-314e0681a9aa" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="0" intermediateExchangeId="92b3c2d6-e5bf-4b2e-b2ac-1352d6640b58" activityLinkId="64840c31-e917-467f-89d6-7b42a52c66d6" productionVolumeAmount="0">
+        <name xml:lang="en">fodder loading, by self-loading trailer</name>
+        <unitName xml:lang="en">m3</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.57914912839115" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="adbf98a3-587c-4256-9cb3-fb04d5de3e8c" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="0.998709540651867" intermediateExchangeId="92b3c2d6-e5bf-4b2e-b2ac-1352d6640b58" activityLinkId="7518daa0-36e8-40dc-9196-c6c7c4f4fbd8" productionVolumeAmount="139361254449.705">
+        <name xml:lang="en">fodder loading, by self-loading trailer</name>
+        <unitName xml:lang="en">m3</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.57914912839115" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Calculated based on inputs: The price of the product has been calculated as a sum of the values of the material and energy inputs for this product. This value is therefore a rough estimation. It may underestimate the real price since there are additional expenses when producing any product. These expences can include for example labour costs, treatment of waste materials and profit for the producer. Please consider carefully whether this level of data quality is acceptable for your application.</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2011 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="c4597934-ecac-422c-b431-382e85fdcb83" isActiveAuthor="false" personName="[System]" personEmail="support@ecoinvent.org" />
+      <dataGeneratorAndPublication personId="c4597934-ecac-422c-b431-382e85fdcb83" personName="[System]" personEmail="support@ecoinvent.org" isCopyrightProtected="false" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="3" minorRevision="1" internalSchemaVersion="2.0.11" defaultLanguage="en" creationTimestamp="2011-08-02T09:57:31" lastEditTimestamp="2011-08-02T09:57:31" fileGenerator="Database Layer" fileTimestamp="2011-08-02T09:57:31" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

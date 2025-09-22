@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="77f35b22-bd17-488e-b9b2-d4371e2d4490" activityNameId="7c70589b-b4be-4515-bfd3-f9a3b4e4a536" parentActivityId="c6a8cdc8-dfb3-43c4-a9c7-50c75a8de2ef" inheritanceDepth="-1" type="1" specialActivityType="1">
+        <activityName xml:lang="en">market for willow stem cutting, for planting</activityName>
+        <includedActivitiesStart xml:lang="en">This activity starts at the gate of the activities that produce 'willow stem cutting, for planting',  within the geography of Global.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This activity ends with the supply of  willow stem cutting, for planting', to the consumers of this product. Transport or losses are considered irrelevant for this product.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="1">This is a market activity. Each market represents the consumption mix of a product in a given geography, connecting suppliers with consumers of the same product in the same geographical area. Markets group the producers and also the imports of the product (if relevant) within the same geographical area. They also account for transport to the consumer and for the losses during that process, when relevant.</text>
+          <text xml:lang="en" index="4">This product is a willow stem cutting, that is usedfor plant propagation. It has an average mass of 20g per piece (fresh matter), while the yield is 100,000 stem cuttings per hectare. The process includes machine operations and machinery, storage, end-of -life, land use and  direct field emissions.</text>
+          <text xml:lang="en" index="3">This product is generally considered to be used at the production site.  Therefore, the market does not contain any transport.</text>
+          <text xml:lang="en" index="2">This is the market for  'willow stem cutting, for planting', in the Global geography.</text>
+        </generalComment>
+      </activity>
+      <classification classificationId="890a4180-9426-49f0-a088-b0ff3aaf8f27">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">0130:Plant propagation</classificationValue>
+      </classification>
+      <geography geographyId="34dbbff8-88ce-11de-ad60-0019e336be3a">
+        <shortname xml:lang="en">GLO</shortname>
+      </geography>
+      <technology technologyLevel="0" />
+      <timePeriod startDate="2012-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="8b27795c-9afc-4c08-ad58-e944ad2eff43" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" variableName="willow_stem_cutting" amount="1" intermediateExchangeId="d773e4cf-c13f-4ebb-966e-ea14b712ff62" productionVolumeAmount="93750353.6037425">
+        <name xml:lang="en">willow stem cutting, for planting</name>
+        <unitName xml:lang="en">unit</unitName>
+        <synonym xml:lang="en">Salix</synonym>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" variableName="willow_stem_cutti_C_content_non_fossil_0" amount="0.48" isDefiningValue="true" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis;BIOBIB - A Database for biofuels. http://www.vt.tuwien.ac.at/biobib/biobib.html.</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" variableName="willow_stem_cutting_WM" amount="0.02" isDefiningValue="true" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">20 g = average wet mass per piece of stem cutting (Hölscher et al. 2007)</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" variableName="willow_stem_cutting_WWM" amount="0.0096" isDefiningValue="true" mathematicalRelation="willow_stem_cutting_WM- willow_stem_cutting_DM" isCalculatedAmount="true" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" variableName="willow_stem_cutting_water_content" amount="0.923076923076923" isDefiningValue="true" mathematicalRelation="willow_stem_cutting_WWM/ willow_stem_cutting_DM" isCalculatedAmount="true" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" variableName="willow_stem_cutting_DM" amount="0.0104" isDefiningValue="true" mathematicalRelation="willow_stem_cutting_WM*0.52" isCalculatedAmount="true" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Dry matter content of wet mass: 52% (Hölscher et al. 2007)</comment>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.05" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Assumption, Price for willow stem is equal to price for miscanthus rhizome (per weight). The price for a rhizome lays between 0,15 and 0.20 EUR/rhizome. A rizhome weights around 70 g. A willow stem, around 20g. Information based on prices at producer in Germany (Fachagentur Nachwachsende Rohstoffe) http://www.bio-energie.de/heizen-mit-holz/miscanthus/</comment>
+        </property>
+        <property propertyId="6bc8ac5e-cc4c-45fb-93dc-53c0e45091df" amount="0.199" isDefiningValue="true" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">energy content</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.199" mu="-1.614" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">This is a calculated weighted average.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.48" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.004992" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="4a6b84a4-5918-4632-ad78-e2c0c69c0274">
+          <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+          <classificationValue xml:lang="en">012:Growing of perennial crops</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="0ba0ac2c-928e-494f-8c85-0aba89e1052c" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="0.0498777923789434" intermediateExchangeId="d773e4cf-c13f-4ebb-966e-ea14b712ff62" activityLinkId="2ccf3a62-800e-4924-bc3c-4fd1daa113b2" productionVolumeAmount="4676060.6725">
+        <name xml:lang="en">willow stem cutting, for planting</name>
+        <unitName xml:lang="en">unit</unitName>
+        <synonym xml:lang="en">Salix</synonym>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0.02" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" sourceId="a43ac289-ffe3-4af1-bc33-f7238677e51d" sourceYear="2007" sourceFirstAuthor="Hölscher T.">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.02" mu="-3.912" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">20 g = average wet mass per piece of stem cutting (Hölscher et al. 2007)</comment>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.05" isDefiningValue="true" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Assumption, Price for willow stem is equal to price for miscanthus rhizome (per weight). The price for a rhizome lays between 0,15 and 0.20 EUR/rhizome. A rizhome weights around 70 g. A willow stem, around 20g. Information based on prices at producer in Germany (Fachagentur Nachwachsende Rohstoffe) http://www.bio-energie.de/heizen-mit-holz/miscanthus/</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.0104" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="true" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.0104" mu="-4.566" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">Dry matter content of wet mass: 52% (Hölscher et al. 2007)</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.923076923076923" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="true" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.923076923076923" mu="-0.08004" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.48" isDefiningValue="true" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45" sourceId="a43ac289-ffe3-4af1-bc33-f7238677e51d" sourceYear="2007" sourceFirstAuthor="Hölscher T.">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.48" mu="-0.734" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis;BIOBIB - A Database for biofuels. http://www.vt.tuwien.ac.at/biobib/biobib.html.</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.0096" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="true" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.0096" mu="-4.646" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="6bc8ac5e-cc4c-45fb-93dc-53c0e45091df" amount="0.199" isDefiningValue="true" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">energy content</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.199" mu="-1.614" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">as gross calorific value (when relevant). "Willow" &gt; gross calorific value in BIOBIB - A Database for biofuels (http://www.vt.tuwien.ac.at/biobib/biobib.html).</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.48" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.004992" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="4a6b84a4-5918-4632-ad78-e2c0c69c0274">
+          <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+          <classificationValue xml:lang="en">012:Growing of perennial crops</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="ac3c248f-b37e-4825-9f01-937cf65880f5" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="0.950122207621057" intermediateExchangeId="d773e4cf-c13f-4ebb-966e-ea14b712ff62" activityLinkId="53de8b12-2cca-483b-aa6f-9191b617ea17" productionVolumeAmount="89074292.9312425">
+        <name xml:lang="en">willow stem cutting, for planting</name>
+        <unitName xml:lang="en">unit</unitName>
+        <synonym xml:lang="en">Salix</synonym>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.923076923076923" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="true" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.923076923076923" mu="-0.08004" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">water content on a dry matter basis</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.0096" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="true" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.0096" mu="-4.646" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">water content on a wet matter basis</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.0104" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="true" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.0104" mu="-4.566" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">Dry matter content of wet mass: 52% (Hölscher et al. 2007)</comment>
+        </property>
+        <property propertyId="6bc8ac5e-cc4c-45fb-93dc-53c0e45091df" amount="0.199" isDefiningValue="true" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">energy content</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.199" mu="-1.614" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">as gross calorific value (when relevant). "Willow" &gt; gross calorific value in BIOBIB - A Database for biofuels (http://www.vt.tuwien.ac.at/biobib/biobib.html).</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="0.02" isDefiningValue="true" mathematicalRelation="" isCalculatedAmount="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" sourceId="a43ac289-ffe3-4af1-bc33-f7238677e51d" sourceYear="2007" sourceFirstAuthor="Hölscher T.">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.02" mu="-3.912" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">20 g = average wet mass per piece of stem cutting (Hölscher et al. 2007)</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0.48" isDefiningValue="true" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45" sourceId="a43ac289-ffe3-4af1-bc33-f7238677e51d" sourceYear="2007" sourceFirstAuthor="Hölscher T.">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.48" mu="-0.734" variance="0.0006" varianceWithPedigreeUncertainty="0.041925" />
+            <pedigreeMatrix reliability="2" completeness="2" temporalCorrelation="5" geographicalCorrelation="2" furtherTechnologyCorrelation="2" />
+            <comment xml:lang="en"></comment>
+          </uncertainty>
+          <comment xml:lang="en">biogene carbon content on a dry matter basis;BIOBIB - A Database for biofuels. http://www.vt.tuwien.ac.at/biobib/biobib.html.</comment>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.05" isDefiningValue="true" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Assumption, Price for willow stem is equal to price for miscanthus rhizome (per weight). The price for a rhizome lays between 0,15 and 0.20 EUR/rhizome. A rizhome weights around 70 g. A willow stem, around 20g. Information based on prices at producer in Germany (Fachagentur Nachwachsende Rohstoffe) http://www.bio-energie.de/heizen-mit-holz/miscanthus/</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.48" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.004992" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <classification classificationId="39afb89e-b8b3-4a64-ae59-adc9ad3bdb4e">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">86119: Other support services to crop production</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="4a6b84a4-5918-4632-ad78-e2c0c69c0274">
+          <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+          <classificationValue xml:lang="en">012:Growing of perennial crops</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2012 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2014-05-31" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="2" reviewedMinorRevision="1">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- Amount of property 'dry mass=0,0104' of exchange 'willow stem cutting, for planting' deviates from the default amount in the master file.
+Amount of property 'water in wet mass=0,0096' of exchange 'willow stem cutting, for planting' deviates from the default amount in the master file.
+Amount of property 'water content=0,923076923077' of exchange 'willow stem cutting, for planting' deviates from the default amount in the master file.
+
+- The total water in wet mass of all input exchanges (0) and output exchanges (0,0096) is unbalanced.
+</otherDetails>
+      </review>
+      <review reviewerId="87296ea5-2149-44c3-8e36-b1256c92666a" reviewerName="Gregor Wernet" reviewerEmail="wernet@ecoinvent.org" reviewDate="2014-05-31" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="2" reviewedMinorRevision="1">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="8eccf3fe-5531-43de-ae57-61564ca77b5a" isActiveAuthor="false" personName="Guillaume Bourgault" personEmail="bourgault@ecoinvent.org" />
+      <dataGeneratorAndPublication personId="c4597934-ecac-422c-b431-382e85fdcb83" personName="[System]" personEmail="support@ecoinvent.org" isCopyrightProtected="false" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="4" minorRevision="0" internalSchemaVersion="2.0.11" defaultLanguage="en" creationTimestamp="2012-06-26T19:58:10" fileGenerator="Database Layer" fileTimestamp="2012-06-26T19:58:10" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="9bcde640-53be-42ab-851f-ebca0665ed13" activityNameId="fdf038b3-ff57-44f6-b5b3-f6208e5e756a" parentActivityId="e6fa39ac-95bd-4dca-a84b-1550ac332b70" inheritanceDepth="-1" type="1" specialActivityType="10">
+        <activityName xml:lang="en">market group for land use change, forest, intensive</activityName>
+        <includedActivitiesStart xml:lang="en">This activity starts at the gate of markets that deliver 'land use change, forest, intensive', in geographies contained within the geography of this dataset.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This activity ends with the supply of 'land use change, forest, intensive',  to the consumers of this product within the geography of Brazil.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="2">This is the market group for 'land use change, forest, intensive', in Brazil.</text>
+          <text xml:lang="en" index="1">This dataset is a market group. Market groups represent a 'market of markets'. Their purpose is to group a set of markets into larger, geographically relevant datasets.
+Market groups are created for convenience and ease of use. They only group other markets and/or market groups contained within their geography.
+Losses and relevant exchanges (transport, transport infrastructure, etc.) are not included in this dataset. They are present in the contained markets.  </text>
+        </generalComment>
+      </activity>
+      <classification classificationId="6c31832b-67aa-4b6a-b4ce-23aa4fe64a59">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">0210:Silviculture and other forestry activities</classificationValue>
+      </classification>
+      <geography geographyId="0a2c8c66-7d7e-11de-9ae2-0019e336be3a">
+        <shortname xml:lang="en">BR</shortname>
+      </geography>
+      <technology technologyLevel="0" />
+      <timePeriod startDate="2017-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="238b8cc8-082f-40ea-8cbd-b3f46f2d96c1" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="1" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" productionVolumeAmount="324125.47041672">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="09dc21c0-2634-4aef-9a24-068e14c410ad" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.119955795283141" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="30d95748-3dc6-42c0-822e-3ed782b8d8a9" productionVolumeAmount="38880.72857536">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="330973da-6ad8-4824-b3ce-7971198a66dc" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0447380053535342" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="4240a63b-9532-4e22-85fe-66c18340af39" productionVolumeAmount="14500.72703072">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="fb68eea4-f346-4b73-a950-b3513f16f75f" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0259625437296887" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="32db6171-1861-4d02-b0a9-89bc8d43fd54" productionVolumeAmount="8415.12169960002">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="2a8a217f-20a1-47a2-af55-f42b550cc649" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0412784918324327" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="7d8b5583-989a-454e-a6fb-41e6fd0aa8c4" productionVolumeAmount="13379.41058328">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="b7e76d63-fa7a-4949-af9a-06a9342a9da0" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.162038901202535" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="a48dbd79-fb7a-43da-8490-5f111ee27854" productionVolumeAmount="52520.93507808">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="3f453551-3b60-46b3-97f9-ef563c6935bb" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0357531587371426" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="408993bf-13b1-4431-896b-76e36a4c255b" productionVolumeAmount="11588.50939456">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e7355fb4-8fed-48ef-9547-2875b74ff8ea" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0249802309390566" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="d6347e8c-930b-4de0-87e7-c140b239362a" productionVolumeAmount="8096.72910424002">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e6a71f60-cb66-4eb3-8129-a0330d6505dc" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0055543189538465" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="a46e11a2-48ce-41ad-aa1f-d538e76fa1ed" productionVolumeAmount="1800.29624376">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="57669dcd-a714-40ca-bcb9-4422611e9337" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.180875989839815" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="41df7c6f-6765-458f-a0df-175c0c22abca" productionVolumeAmount="58626.51529392">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="e3fbba99-b443-4824-9dc9-c77057430c38" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.126658775074291" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="e6632d81-4174-41b1-86b9-62d797538001" productionVolumeAmount="41053.33505336">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="a35ef2d1-7e25-4cc5-a2a3-e11331493816" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.209783227461202" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="104949e7-50cb-47af-b669-b091165170c2" productionVolumeAmount="67996.0872864">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="34fe1a49-774c-430e-b75a-9e0c3acf92e1" unitId="86bbe475-8a8f-44d8-914c-e398787e7121" amount="0.0224205615933142" intermediateExchangeId="75edc073-be76-5bc1-82a1-7be1ce500aaa" activityLinkId="498eb0ed-7b1b-4d78-bcca-00350215e61b" productionVolumeAmount="7267.07507344002">
+        <name xml:lang="en">land use change, forest, intensive</name>
+        <unitName xml:lang="en">ha</unitName>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">No price assigned.</comment>
+        </property>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="01bf1d04-21b2-46f5-b720-e7232c040c2b">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">7: Financial and related services; real estate services; and rental and leasing services</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness percent="100" systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <samplingProcedure xml:lang="en">Represents all markets contained in the geography of the dataset.</samplingProcedure>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2017 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+      <review reviewerId="35d091e9-38c2-4037-9efe-a73673c57123" reviewerName="Emilia Moreno Ruiz" reviewerEmail="moreno@ecoinvent.org" reviewDate="2018-04-15" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="3">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2018-04-15" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="3">
+        <details>
+          <text xml:lang="en" index="0">- Validation passed.
+</text>
+        </details>
+        <otherDetails xml:lang="en">- Validation passed.
+</otherDetails>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="28f608ef-9ac6-4db4-8447-a4360122dfd5" isActiveAuthor="false" personName="Renan Novaes" personEmail="renan.milagres@embrapa.br" />
+      <dataGeneratorAndPublication personId="28f608ef-9ac6-4db4-8447-a4360122dfd5" personName="Renan Novaes" personEmail="renan.milagres@embrapa.br" isCopyrightProtected="true" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="3" minorRevision="0" internalSchemaVersion="2.0.12" defaultLanguage="en" creationTimestamp="2018-04-15T16:31:32" lastEditTimestamp="2018-04-15T16:35:21" fileGenerator="EcoEditor 3.8.600.15190" fileTimestamp="2018-04-15T16:35:21" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

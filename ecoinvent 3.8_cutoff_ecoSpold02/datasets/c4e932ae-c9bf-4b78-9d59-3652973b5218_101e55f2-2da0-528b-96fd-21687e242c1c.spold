@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="c4e932ae-c9bf-4b78-9d59-3652973b5218" activityNameId="2aef20d8-3195-5d39-8011-82c1c96b4b19" parentActivityId="3d79939c-28d8-50db-b426-3cfcd720a130" inheritanceDepth="-1" type="1" specialActivityType="1">
+        <activityName xml:lang="en">market for waste polyethylene, for recycling, unsorted</activityName>
+        <includedActivitiesStart xml:lang="en">Activity starts with the collection of unsorted waste PET for recycling.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This activity includes input of collection containers and transportation requirements to the sorting/recycling facility </includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="3">Transport from producers to consumers of this product in the geography covered by the market is included.</text>
+          <text xml:lang="en" index="2">This is the market for  'waste polyethylene, for recycling, unsorted', in the Global geography.</text>
+          <text xml:lang="en" index="1">This is a market activity, representing a treatment mix. In the case of products needing treatment, market mixes are supplied by the activities treating the product in the geography defined by the market, and they supply the activities needing to treat the product, as they have generated it as a by-product in the Undefined processes (present as a negative input in system models). Transport to the treating facility or losses are also accounted in this type of markets, when relevant.</text>
+        </generalComment>
+      </activity>
+      <classification classificationId="c5c111f2-7555-4858-a8c4-2fe82e255c7f">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">3811:Collection of non-hazardous waste</classificationValue>
+      </classification>
+      <geography geographyId="7846b897-7c04-4f9f-b607-2b83fcd9a74c">
+        <shortname xml:lang="en">RoW</shortname>
+        <comment>
+          <text xml:lang="en" index="1">This dataset is a weighted average built from the following geographies: Europe without Switzerland, US, CH.</text>
+        </comment>
+      </geography>
+      <technology />
+      <timePeriod startDate="2010-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="40e4c928-45c0-4ff1-aab0-c0946421e44c" unitId="ae252091-811b-461b-8e89-8f3075639eb1" amount="9.42945770216725E-05" intermediateExchangeId="6bcb7d07-3c26-45c4-a87a-ead2ac75a66a" activityLinkId="b5d4085a-a1ab-478c-ac0f-3b4e8e622791">
+        <name xml:lang="en">transport, passenger car, large size, diesel, EURO 4</name>
+        <unitName xml:lang="en">km</unitName>
+        <uncertainty>
+          <lognormal meanValue="9.42945770216725E-05" mu="-9.269" variance="0.0006" varianceWithPedigreeUncertainty="0.0426" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="0d3a65bf-dfa1-4137-980b-c94e817a9470">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">64119: Other land transportation services of passengers, n.e.c.</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="7d373b0d-a3aa-4cd8-8d77-75697b9dd9a1" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="1" intermediateExchangeId="101e55f2-2da0-528b-96fd-21687e242c1c" productionVolumeAmount="1" productionVolumeMathematicalRelation="">
+        <name xml:lang="en">waste polyethylene, for recycling, unsorted</name>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="42.47" mathematicalRelation="" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Assumed equal to "waste polyethylene".</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.81" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="0.026694045174538" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="0.026" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.974" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0.0315" isDefiningValue="false" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Convert from EU 27 price to the world by currency exchange rate.</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.81" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.78894" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated global production volume (PV) based on sum of the regional production volume for Europe without Switzerland, Switzerland, and the US.</productionVolumeComment>
+        <classification classificationId="555d4947-3964-4529-ab70-20468dfee0bd">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39270: Waste, parings and scrap of plastics</classificationValue>
+        </classification>
+        <classification classificationId="a20a9e2f-b3f0-40fd-8358-f8adf7f419c4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Recyclable</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="2c82e1f7-f22b-4b85-b19d-f38e52de22ec" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="0" intermediateExchangeId="f9895e44-5657-47fc-8eec-a4985e2bce2e" productionVolumeAmount="0">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO3</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <undefined minValue="0" maxValue="0" standardDeviation95="0" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="1" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="84d796b2-32f8-4c04-8bd1-a9e4743feb6e" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="9.37788807731824E-06" intermediateExchangeId="fb655769-10d8-446b-87f8-44ca60e20ed9" activityLinkId="1114cd92-e1d6-422d-8055-e1528e2238d1">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO4</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="9.37788807731824E-06" mu="-11.58" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="435a95f5-ca16-4826-8b10-2e961a165d01" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="0" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" productionVolumeAmount="0">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <undefined minValue="0" maxValue="0" standardDeviation95="0" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="1" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="8a2c8bde-e231-4c68-a892-dac0404f02db" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="8.93088309279741E-05" intermediateExchangeId="c691b775-a65a-4b77-a588-c8c6cd01c725" activityLinkId="146a3249-065b-46dc-8df0-3a299f6a1612">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO6</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="8.93088309279741E-05" mu="-9.323" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="61a7130a-6d49-496d-b895-6d686a38faf0" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="0.859595413784198" intermediateExchangeId="fea783cd-1b3e-47ed-a4a1-346094ebc39a" activityLinkId="2efe848c-e2a9-4220-81c7-50e970742c75">
+        <name xml:lang="en">transport, freight, lorry &gt;32 metric ton, EURO4</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="0.859595413784198" mu="-0.1513" variance="0.0006" varianceWithPedigreeUncertainty="0.0906" />
+          <pedigreeMatrix reliability="5" completeness="5" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="6d9da164-14e8-454c-af0f-3a292fd4acff" unitId="5b972631-34e3-4db7-a615-f6931770a0cb" amount="1" intermediateExchangeId="026c1068-871f-57e5-8fda-30d989615214" activityLinkId="2f2128dc-e7c0-43d6-8b37-0f9db5686e98">
+        <name xml:lang="en">container, for collection of post-consumer waste plastic for recycling</name>
+        <unitName xml:lang="en">unit</unitName>
+        <uncertainty>
+          <lognormal meanValue="1" mu="0" variance="0.0006" varianceWithPedigreeUncertainty="0.0906" />
+          <pedigreeMatrix reliability="5" completeness="5" temporalCorrelation="5" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <classification classificationId="a4d67b99-325b-41c0-bb3d-b7dd6ee42b3a">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">36990: Articles of plastics n.e.c.</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="33a3b4bf-a32f-4802-9786-2f98d5e959e7" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="0" intermediateExchangeId="f4e8b38b-d6c7-423b-bc9c-13b4a13d55f8" productionVolumeAmount="0">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO5</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <undefined minValue="0" maxValue="0" standardDeviation95="0" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="1" geographicalCorrelation="1" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="10007a12-884d-4662-a4ea-72d5c5d0a94f" unitId="487df68b-4994-4027-8fdc-a4dc298257b7" amount="1" intermediateExchangeId="101e55f2-2da0-528b-96fd-21687e242c1c" activityLinkId="b9b49ac3-e5df-4570-b274-714780d5467a" productionVolumeAmount="1">
+        <name xml:lang="en">waste polyethylene, for recycling, unsorted</name>
+        <unitName xml:lang="en">kg</unitName>
+        <property propertyId="48c987bb-3144-4872-b5c7-b1389c40be25" amount="42.47" isDefiningValue="false" unitId="980b811e-3905-4797-82a5-173f5568bc7e">
+          <name xml:lang="en">heating value, net</name>
+          <unitName xml:lang="en">MJ</unitName>
+          <comment xml:lang="en">Assumed equal to "waste polyethylene".</comment>
+        </property>
+        <classification classificationId="555d4947-3964-4529-ab70-20468dfee0bd">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39270: Waste, parings and scrap of plastics</classificationValue>
+        </classification>
+        <classification classificationId="a20a9e2f-b3f0-40fd-8358-f8adf7f419c4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Recyclable</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="a72660fb-3989-4e27-a244-11022fb900b8" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="2.20730441593476E-06" intermediateExchangeId="f9895e44-5657-47fc-8eec-a4985e2bce2e" activityLinkId="ee935e63-dc3f-4a68-94c2-3b5ff7805e83">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO3</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="2.20730441593476E-06" mu="-13.02" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="889bfe02-cea9-4fe9-858b-26115a979a31" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="2.04655257267707E-05" intermediateExchangeId="f9895e44-5657-47fc-8eec-a4985e2bce2e" activityLinkId="3100db40-40d9-4915-b186-601c511952ba">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO3</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="2.04655257267707E-05" mu="-10.8" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="cf88ac87-66ea-4950-8f78-967236f8abdf" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="6.61152179168864E-07" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" activityLinkId="d51e220b-8409-4bad-b3b6-f99c6b2ffcc4">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="6.61152179168864E-07" mu="-14.23" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="f7774052-cf47-4e92-b429-bbf924a0bf79" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="1.47762425144954E-07" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" activityLinkId="77c7af38-75ec-4014-beb5-ee331f95205d">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="1.47762425144954E-07" mu="-15.73" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="9903ace6-b0d2-418d-b3b5-7cb83bd3b113" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="1.83175632508942E-07" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" activityLinkId="bb21d806-04e1-400b-89a9-d5c7a078ddb4">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="1.83175632508942E-07" mu="-15.51" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="aac4fa82-10dd-4ef2-b040-38e75782e87d" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="7.22202945430858E-07" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" activityLinkId="4f2c4048-dcfa-4961-b876-71ebb51b7858">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="7.22202945430858E-07" mu="-14.14" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="ca07331e-0c73-4b16-ab1c-339383a29727" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="4.63838968818297E-08" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" activityLinkId="0cdcc953-3776-4b00-84ba-f3f5b0aa1211">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="4.63838968818297E-08" mu="-16.89" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="927d1741-42d0-4b8b-8293-5c239cb34046" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="9.12136230370482E-07" intermediateExchangeId="0ace02fa-eca5-482d-a829-c18e46a52db4" activityLinkId="768e776f-d09b-4350-938a-1c203c752e4d">
+        <name xml:lang="en">transport, freight train</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="9.12136230370482E-07" mu="-13.91" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="d3a7e1bd-527a-4941-905b-e2bea12a7944">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6512: Railway transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="78119ba6-e62e-4eb6-ba9b-8948c9f74450" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="2.08607524551415E-05" intermediateExchangeId="f4e8b38b-d6c7-423b-bc9c-13b4a13d55f8" activityLinkId="38d2304d-edc6-45c4-aa6d-29aa79e20c1a">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO5</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="2.08607524551415E-05" mu="-10.78" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="7c4470a1-590e-4269-a552-71b1e9fe88c3" unitId="2f4daad7-5331-4f14-930c-d8bca924557d" amount="0.000120061025139155" intermediateExchangeId="f4e8b38b-d6c7-423b-bc9c-13b4a13d55f8" activityLinkId="89fdb2d8-35af-4a18-8b4f-0235178c4d74">
+        <name xml:lang="en">transport, freight, lorry 16-32 metric ton, EURO5</name>
+        <unitName xml:lang="en">metric ton*km</unitName>
+        <uncertainty>
+          <lognormal meanValue="0.000120061025139155" mu="-9.028" variance="0.0006" varianceWithPedigreeUncertainty="0.0046" />
+          <pedigreeMatrix reliability="1" completeness="1" temporalCorrelation="3" geographicalCorrelation="5" furtherTechnologyCorrelation="1" />
+        </uncertainty>
+        <classification classificationId="951f8f36-8fb0-47a1-b6f8-acb10713cca2">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">6511: Road transport services of freight</classificationValue>
+        </classification>
+        <classification classificationId="39b0f0ab-1a2f-401b-9f4d-6e39400760a4">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">allocatable product</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <samplingProcedure xml:lang="en">Uncertainty estimation according to the pedigree matrix</samplingProcedure>
+      </representativeness>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2017-08-10" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="2">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- The total water in wet mass of all input exchanges (0,026) and output exchanges (0) is unbalanced.
+
+- The following negative reference products could not be identified as materials for treatment. A market is missing for the negative reference product.
+ - waste polyethylene, for recycling, unsorted
+
+- The input exchange 'container, for collection of post-consumer waste plastic for recycling' does not have an activity link and therefore requires a market for that input to be available. If the market is not available the dataset will be put on hold at the end of its review and will remain on hold until such a market has been accepted into the ecoinvent database.
+
+</otherDetails>
+      </review>
+      <review reviewerId="66109d31-fb99-4a5f-aedd-5424b4a57ebc" reviewerName="Ivan Muñoz Ortiz" reviewerEmail="im@lca-net.com" reviewDate="2017-08-10" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="2">
+        <details>
+          <text xml:lang="en" index="0"></text>
+        </details>
+        <otherDetails xml:lang="en"></otherDetails>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="3860cfbd-a932-45c0-90c7-658d5bea9ea3" isActiveAuthor="true" personName="Thomas Kägi" personEmail="t.kaegi@carbotech.ch" />
+      <dataGeneratorAndPublication personId="3860cfbd-a932-45c0-90c7-658d5bea9ea3" personName="Thomas Kägi" personEmail="t.kaegi@carbotech.ch" publishedSourceId="08b30482-96b3-4811-a707-78422c8e8180" publishedSourceYear="2017" publishedSourceFirstAuthor="Kägi T." isCopyrightProtected="true" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="4" minorRevision="0" internalSchemaVersion="2.0.12" defaultLanguage="en" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

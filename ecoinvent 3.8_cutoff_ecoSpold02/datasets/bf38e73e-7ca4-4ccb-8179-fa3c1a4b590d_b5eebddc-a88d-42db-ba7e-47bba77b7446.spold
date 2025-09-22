@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ecoSpold xmlns="http://www.EcoInvent.org/EcoSpold02">
+  <childActivityDataset>
+    <activityDescription>
+      <activity id="bf38e73e-7ca4-4ccb-8179-fa3c1a4b590d" activityNameId="c0821675-3f08-4bc2-a86d-738fab472eed" parentActivityId="e6d5131e-11f7-4a64-a479-bf7dea2a771c" inheritanceDepth="-1" type="1" specialActivityType="0">
+        <activityName xml:lang="en">treatment of wastewater from ground granulated blast furnace slag production</activityName>
+        <includedActivitiesStart xml:lang="en">From the reception of wastewater from ground granulated slag production at wastewater treatment plant.</includedActivitiesStart>
+        <includedActivitiesEnd xml:lang="en">This activity ends with the transformation of wastewater from ground granulated blast furnace slag into wastewater from pig iron production, for which a treatment activity exists in the database. This activity currently does not include any resource use or emissions arising from the treatment of the wastewater, which are instead approximated by the the treatment of wastewater from pig iron production.</includedActivitiesEnd>
+        <generalComment>
+          <text xml:lang="en" index="1">This dataset represents  the treatment of wastewater from gound granulated blast furnace slag production. The dataset currently only transforms the negative reference product 'wastewater from ground granulated blast furnace slag production' into the exchange for wastewater from pig iron production, for which a treatment activity already exists in the database. This simplified modelling approach serves as a rough approximation of the resource use and emissions arising from the wastewater treatment process. [This dataset for  treatment of wastewater from gound granulated blast furnace slag production is foreseen to be revised once parameterized datasets for wastewater treatment becomes available in the database.]</text>
+        </generalComment>
+      </activity>
+      <classification classificationId="a84d0ee4-d77c-4905-b876-3ef60873c763">
+        <classificationSystem xml:lang="en">ISIC rev.4 ecoinvent</classificationSystem>
+        <classificationValue xml:lang="en">3700:Sewerage</classificationValue>
+      </classification>
+      <geography geographyId="13d387f6-7d7e-11de-9ae2-0019e336be3a">
+        <shortname xml:lang="en">US</shortname>
+      </geography>
+      <technology technologyLevel="3" />
+      <timePeriod startDate="2001-01-01" endDate="2021-12-31" isDataValidForEntirePeriod="true" />
+      <macroEconomicScenario macroEconomicScenarioId="d9f57f0a-a01f-42eb-a57b-8f18d6635801">
+        <name xml:lang="en">Business-as-Usual</name>
+      </macroEconomicScenario>
+    </activityDescription>
+    <flowData>
+      <intermediateExchange id="b1db34fe-0ff2-47ef-9cb5-aade37d81443" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" amount="-1" isCalculatedAmount="true" mathematicalRelation="((-1)*wastewater_input)*-1" intermediateExchangeId="64d5b86f-0965-4051-89cc-9580ac0ee5cf" activityLinkId="c2444d81-fe8b-4702-b341-ea4de1677409" productionVolumeAmount="1015000000" productionVolumeMathematicalRelation="apv_wastewater_GGBFS">
+        <name xml:lang="en">wastewater from pig iron production</name>
+        <unitName xml:lang="en">m3</unitName>
+        <comment xml:lang="en">Conversion of 'wastewater from ground granulated blast furnace slag' to 'wastewater from pig iron production'</comment>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1000" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Density of water was assumed that of tap water 1kg/L, that is 1000kg/m3.</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="2962.17230710238" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="1.21490064591197E-05" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">TOC = 0.0000041 kg/m3 (Tab A.19, ecoinvent v2.2 report 13_I). TOC was considered as Total Carbon.</comment>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.33747615607878" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Tap water dry mass was used as an estimation of the wastewater dry mass. This approach was chosen when the addition of compunds in wastewater was smaller than the mineral content estimated using the chemical properties of tap water in ecoinvent v2.2 report 8, Tab 93.1.</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="999.662523843921" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">wet mass-dry mass</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="1.21490064591197E-05" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="4.09999999999999E-06" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Calculated from production volume of reference product using the relative outputs.</productionVolumeComment>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <classification classificationId="34f49fca-a18e-48df-a635-ee7e24ef6dbb">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39920: Sewage sludge</classificationValue>
+        </classification>
+        <inputGroup>5</inputGroup>
+      </intermediateExchange>
+      <intermediateExchange id="388b69a4-0d3d-4ea7-91ce-5f34184a578e" unitId="de5b3c87-0e35-4fb0-9765-4f3ba34c99e5" variableName="wastewater_input" amount="-1" intermediateExchangeId="b5eebddc-a88d-42db-ba7e-47bba77b7446" productionVolumeAmount="1015000000" productionVolumeVariableName="apv_wastewater_GGBFS" productionVolumeMathematicalRelation="">
+        <name xml:lang="en">wastewater from ground granulated blast furnace slag production</name>
+        <unitName xml:lang="en">m3</unitName>
+        <comment xml:lang="en">Typical pollutant loads of wastewater from blast furnace slag granulation (TO BE IMPLEMENTED AS PROPERTIES OF EXCHANGE). Values are given for each pollutant as average/StDev [g/l]: Pb 2.52/1.10 x10-6; Cr 2.41/1.08 x10-6; Cu 4.06/2.05 x10-6; Zn 20.92/3.62 x10-6; Cd 0.20/0.01 x10-6; Ni 3.74/1.98 x10-6; Fe 0.44/0.61 x10-3; Cl 262.96/57.60 x10-3; AOX 21.63/13.18 x10-6; suspended solid 27.11/42.68 x10-3; DOC 4.70/1.46 x10-3; TOC 5.51/2.06 x10-3; COD 22.17/4.22 x10-3; HC (mineral oil hydrocarbons) 0.15/0.05 x10-3. Data found in EC (European Commission). 2011. Best Available Techniques (BAT) Reference Document for Iron and Steel Production - Draft in Progress (24 June 2011). EC, Joint Research Centre, Seville, Spain. [online] http://eippcb.jrc.es/reference/i&amp;s.html. Assessed in July 2011. Data  was based on random sample measurements from single plant in Brehmen (Germany) over the period of March 2000 to November 2006.</comment>
+        <property propertyId="468e50e8-1960-4eba-bc1a-a9938a301694" variableName="wastewater_input_c_Cl" amount="0.26296" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, chlorine</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.26296" mu="-1.336" variance="0.2" varianceWithPedigreeUncertainty="0.2561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Chlorine.    (CAS 007782-50-5)</comment>
+        </property>
+        <property propertyId="e7451d8a-77af-44e0-86cf-ccd17ac84509" variableName="wastewater_input_c_Cu" amount="4.06E-06" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, copper</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="4.06E-06" mu="-12.41" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Copper.    (CAS 007440-50-8)</comment>
+        </property>
+        <property propertyId="a9358458-9724-4f03-b622-106eda248916" amount="2225.4834697436" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">water content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">water mass/dry mass</comment>
+        </property>
+        <property propertyId="71bc04b9-abfe-4f30-ab8f-ba654c7ad296" variableName="wastewater_input_c_Pb" amount="2.52E-06" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, lead</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="2.52E-06" mu="-12.89" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Lead.    (CAS 007439-92-1)</comment>
+        </property>
+        <property propertyId="8b574e85-ff07-46bf-a753-f1271299dcf7" variableName="wastewater_input_c_Ni" amount="3.74E-06" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, nickel</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="3.74E-06" mu="-12.5" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Nickel.    (CAS 007440-02-0)</comment>
+        </property>
+        <property propertyId="38f94dd1-d5aa-41b8-b182-c0c42985d9dc" variableName="wastewater_input_price_EUR2005" amount="0" unitId="7b75baf0-cbee-45e6-bf66-af119da06553">
+          <name xml:lang="en">price</name>
+          <unitName xml:lang="en">EUR2005</unitName>
+          <comment xml:lang="en">Waste products are assigned a price of zero as they are assumed to require further treatment.</comment>
+        </property>
+        <property propertyId="c74c3729-e577-4081-b572-a283d2561a75" amount="0.0270740389920822" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">TOC =0.01216 kg/m3 (Tab A.20, ecoinvent v2.2 report 13_I). TOC was considered as Total Carbon.</comment>
+        </property>
+        <property propertyId="1111ac7e-20df-4ab4-9e02-57821894372c" variableName="wastewater_input_c_Cd" amount="2E-07" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, cadmium</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="2E-07" mu="-15.42" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Cadmium.    (CAS 007440-43-9)</comment>
+        </property>
+        <property propertyId="6d9e1462-80e3-4f10-b3f4-71febd6f1168" amount="999.550861251121" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">water in wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">wet mass-dry mass</comment>
+        </property>
+        <property propertyId="6393c14b-db78-445d-a47b-c0cb866a1b25" amount="0" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content, non-fossil</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+        </property>
+        <property propertyId="3a0af1d6-04c3-41c6-a3da-92c4f61e0eaa" amount="0.449138748878812" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">dry mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Considered as wastewater from concrete production. The addition of compounds in water, listed in Tab A.17-20 from ecoinvent v2.2 report 13_I, has been used as an estimate of dry mass is wastewater. In this case, elementary composition has been expressed as molecular composition, whenever possible. This approach has been used when the addition of compunds in wastewater was bigger than the minimal mineral content estimated using the chemical properties of tap water in ecoinvent v2.2 report 8, Tab 93.1.</comment>
+        </property>
+        <property propertyId="ebf21bca-b7cf-45d0-9d82-bfb80519a970" variableName="wastewater_input_c_Fe" amount="0.00044" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, iron</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.00044" mu="-7.729" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Iron.    (CAS 007439-89-6)</comment>
+        </property>
+        <property propertyId="a547f885-601d-4d52-9bf9-60f0cef06269" variableName="wastewater_input_c_TOC" amount="0.00551" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, TOC</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.00551" mu="-5.201" variance="0.2" varianceWithPedigreeUncertainty="0.2561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Total Organic Carbon</comment>
+        </property>
+        <property propertyId="fc26822f-6400-41a5-aac6-94b7088bdabe" variableName="wastewater_inpu_wastewater_c_suspsolid_0" amount="0.02711" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">suspended soilds, mass per volume</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.02711" mu="-3.608" variance="0.2" varianceWithPedigreeUncertainty="0.2561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Suspended soilds in wastewater [kg/m3]</comment>
+        </property>
+        <property propertyId="efe22a60-b1a3-4b33-a5ba-4bf575e0a889" variableName="wastewater_input_c_DOC" amount="0.0047" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, DOC</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.0047" mu="-5.36" variance="0.2" varianceWithPedigreeUncertainty="0.2561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Dissolved Organic Carbon</comment>
+        </property>
+        <property propertyId="6cc518c8-4769-40df-b2cf-03f9fe00b759" variableName="wastewater_input_c_Zn" amount="2.092E-05" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, zinc</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="2.092E-05" mu="-10.77" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Zinc.    (CAS 007440-66-6)</comment>
+        </property>
+        <property propertyId="3f469e9e-267a-4100-9f43-4297441dc726" variableName="wastewater_input_c_COD" amount="0.02217" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">COD, mass per volume</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="0.02217" mu="-3.809" variance="0.2" varianceWithPedigreeUncertainty="0.2561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Chemical Oxygen Demand as O2</comment>
+        </property>
+        <property propertyId="67f102e2-9cb6-4d20-aa16-bf74d8a03326" amount="1000" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">wet mass</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">Density of water was assumed that of tap water 1kg/L, that is 1000kg/m3.</comment>
+        </property>
+        <property propertyId="bca4bb32-f701-46bb-ba1e-bad477c19f7f" variableName="wastewater_input_c_Cr" amount="2.41E-06" isDefiningValue="true" unitId="cacb6d36-694d-4e4f-9e79-6c9c73146839" sourceId="404fe9a8-441b-4182-9e60-4b8614bae359" sourceYear="2011" sourceFirstAuthor="European Commission (EC)">
+          <name xml:lang="en">mass concentration, chromium</name>
+          <unitName xml:lang="en">kg/m3</unitName>
+          <uncertainty>
+            <lognormal meanValue="2.41E-06" mu="-12.94" variance="0.8" varianceWithPedigreeUncertainty="0.8561" />
+            <pedigreeMatrix reliability="1" completeness="5" temporalCorrelation="5" geographicalCorrelation="3" furtherTechnologyCorrelation="3" />
+            <comment xml:lang="en">Proxy value for variance of emissions to water sourced from ecoinvent Data Quality Guideline, table 10.2. </comment>
+          </uncertainty>
+          <comment xml:lang="en">Mass concentration of Chromium.    (CAS 007440-47-3)</comment>
+        </property>
+        <property propertyId="a301a838-7975-4d89-9e74-8eb77ad03cd1" amount="0.0270740389920822" isDefiningValue="false" unitId="577e242a-461f-44a7-922c-d8e1c3d2bf45">
+          <name xml:lang="en">carbon content</name>
+          <unitName xml:lang="en">dimensionless</unitName>
+          <comment xml:lang="en">carbon content on a dry matter basis (reserved; not for manual entry)</comment>
+        </property>
+        <property propertyId="f2283db2-62e4-467f-b9ac-c4f45be563b4" amount="0.01216" isDefiningValue="false" unitId="487df68b-4994-4027-8fdc-a4dc298257b7">
+          <name xml:lang="en">carbon allocation</name>
+          <unitName xml:lang="en">kg</unitName>
+          <comment xml:lang="en">carbon content per unit of product (reserved; not for manual entry)</comment>
+        </property>
+        <productionVolumeComment xml:lang="en">Estimated value. Production volume esitmated based on global production of granulated blast furnace slag (2.9 million metric tons in 2002) and a specific output of 0.35 m3 wastewater per ton.</productionVolumeComment>
+        <classification classificationId="34f49fca-a18e-48df-a635-ee7e24ef6dbb">
+          <classificationSystem xml:lang="en">CPC</classificationSystem>
+          <classificationValue xml:lang="en">39920: Sewage sludge</classificationValue>
+        </classification>
+        <classification classificationId="ee3238ec-ca7a-4ddc-af1b-e7c35957b9b6">
+          <classificationSystem xml:lang="en">By-product classification</classificationSystem>
+          <classificationValue xml:lang="en">Waste</classificationValue>
+        </classification>
+        <outputGroup>0</outputGroup>
+      </intermediateExchange>
+    </flowData>
+    <modellingAndValidation>
+      <representativeness systemModelId="290c1f85-4cc4-4fa1-b0c8-2cb7f4276dce">
+        <systemModelName xml:lang="en">Allocation, cut-off by classification</systemModelName>
+        <extrapolations xml:lang="en">This dataset has been extrapolated from year 2002 to the year of the calculation (2021). The uncertainty has been adjusted accordingly.</extrapolations>
+      </representativeness>
+      <review reviewerId="c4597934-ecac-422c-b431-382e85fdcb83" reviewerName="[System]" reviewerEmail="support@ecoinvent.org" reviewDate="2012-06-08" reviewedMajorRelease="3" reviewedMinorRelease="0" reviewedMajorRevision="0" reviewedMinorRevision="10">
+        <details />
+        <otherDetails xml:lang="en">Validation warnings:
+
+- Consider if it would be better to create this dataset as a child dataset relative to a parent dataset. See the ecoinvent Data Quality Guideline Chapter 4.2 for further advice.
+- Property 'carbon content, non-fossil=0' of master data exchange was removed from exchange 'wastewater from pig iron production'.
+Property 'carbon content, fossil=1,21490064591197E-05' of master data exchange was removed from exchange 'wastewater from pig iron production'.
+Property 'dry mass=0,33747615607878' of master data exchange was removed from exchange 'wastewater from pig iron production'.
+Property 'wet mass=1000' of master data exchange was removed from exchange 'wastewater from pig iron production'.
+Property 'water content=2962,17230710238' of master data exchange was removed from exchange 'wastewater from pig iron production'.
+Property 'water in wet mass=999,662523843921' of master data exchange was removed from exchange 'wastewater from pig iron production'.
+
+</otherDetails>
+      </review>
+    </modellingAndValidation>
+    <administrativeInformation>
+      <dataEntryBy personId="9a963412-20a7-428b-8740-3582e217c4b6" isActiveAuthor="false" personName="Carl Vadenbo" personEmail="vadenbo@ifu.baug.ethz.ch" />
+      <dataGeneratorAndPublication personId="9a963412-20a7-428b-8740-3582e217c4b6" personName="Carl Vadenbo" personEmail="vadenbo@ifu.baug.ethz.ch" isCopyrightProtected="true" accessRestrictedTo="1" />
+      <fileAttributes majorRelease="3" minorRelease="0" majorRevision="1" minorRevision="0" internalSchemaVersion="2.0.8" defaultLanguage="en" creationTimestamp="2012-04-20T12:50:50" lastEditTimestamp="2012-05-15T16:12:46" fileGenerator="EcoEditor 2.4.58.7470" fileTimestamp="2012-05-15T16:12:46" contextId="de659012-50c4-4e96-b54a-fc781bf987ab">
+        <contextName xml:lang="en">ecoinvent</contextName>
+      </fileAttributes>
+    </administrativeInformation>
+  </childActivityDataset>
+</ecoSpold>

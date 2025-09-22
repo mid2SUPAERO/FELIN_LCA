@@ -1,0 +1,10 @@
+*.csv
+!lca4mdao/data/*.csv
+*.html
+*.pyc
+*.png
+.idea/
+tests/
+build/
+dist/
+*.egg-info/

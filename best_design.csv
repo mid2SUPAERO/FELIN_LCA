@@ -1,0 +1,15 @@
+Parameter,Value,Unit
+Prop_mass_1,379.99999999999795,t
+Prop_mass_2,40.00000000753427,t
+OF_1,6.0,-
+OF_2,4.5,-
+CFRP_s1,0.1,-
+Al_s1,0.7,-
+Steel_s1,0.2,-
+CFRP_s2,0.1,-
+Al_s2,0.7,-
+Steel_s2,0.2,-
+ESA_Score,54.51677630036124,-
+Delta_V,8486.620125468196,m/s
+Altitude,1161.07545843538,km
+GLOW,464.8401557739442,t
