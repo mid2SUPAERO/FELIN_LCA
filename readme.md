@@ -1,10 +1,4 @@
-# FELIN - Framework for Evolutive Launcher optImizatioN
-
-FELIN is a framework for design and optimization of launch vehicle based on OpenMDAO
-
-## Getting Started
-
-Just clone (or download the files in the master) and you are set to go
+# FELIN_LCA
 
 ### Prerequisites
 
@@ -15,21 +9,23 @@ pip install openmdao
 pip install cma
 ```
 
-### Tutorial
+The interesting files created/updated are Launcher_Design_Problem.ipynb, where the optimization is performed, Launch_Vehicle_Group.py where all 4 disciplines are coupled, and the files inside Structure, Propulsion and Environment Folders, the modified files Dry_mass_stage_1.py, Mass_models.py, Propulsion.py, Environmental_Disicipline.py and Material_helpers.py.
 
-Please read the jupyter notebook for more details to use FELIN: Launcher_Design_Problem.ipynb 
+# Ecoinvent setup
+```
+import brightway2 as bw
 
+bw.projects.set_current("Project_name")
+bw.bw2setup()
 
-## Built using
-
-* [OpenMDAO](http://openmdao.org/) - An open-source framework for efficient multidisciplinary optimization.
-
-## Versioning
-
-Version 0.2
-
-## Authors
-
-* **Loic Brevault** - *ONERA* - [mailto](mailto:loic.brevault@onera.fr)
-* **Mathieu Balesdent** - *ONERA* - [mailto](mailto:mathieu.balesdent@onera.fr)
-* **Glen Sire** - *ONERA* - [mailto](mailto:glen.sire@onera.fr)
+fp = r'directory'
+if bw.Database("ecoinvent 3.8 cutoff").random() is None :
+    ei = bw.SingleOutputEcospold2Importer(fp, "ecoinvent 3.8 cutoff")
+    ei.apply_strategies()
+    ei.statistics()
+    ei.write_database()
+else :
+    print("ecoinvent 3.8 cutoff already imported")
+eco = bw.Database("ecoinvent 3.8 cutoff")
+print(eco.random())
+```
