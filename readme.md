@@ -29,3 +29,8 @@ else :
 eco = bw.Database("ecoinvent 3.8 cutoff")
 print(eco.random())
 ```
+
+
+#Changes made for changing the ratio of materials in the structure (k_SM) in order to minime environmental score
+
+<img width="974" height="202" alt="image" src="https://github.com/user-attachments/assets/50fe5a26-c33e-4e00-91b4-46eb097bb7ba" />
