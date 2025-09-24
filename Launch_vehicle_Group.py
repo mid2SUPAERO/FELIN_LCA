@@ -59,8 +59,9 @@ class Launcher_vehicle(Group):
         indeps.add_output('k_SM_thrust_frame', 0.81)  # Default 50% Al, 50% Composite
         # Interstage: k_SM ranges from 1.0 (100% Al) to 0.7 (100% Composite)
         indeps.add_output('k_SM_interstage', 0.85)    # Default 50% Al, 50% Composite
+        #Intertank: k_SM ranges from 1.0 (100% Al) to 0.8 (100% Composite)
+        indeps.add_output('k_SM_intertank', 0.9)  # Default 50% Al, 50% Composite
 
-        
         # Create cycle group
         cycle = self.add_subsystem('cycle', Group(), promotes=['*'])
         
@@ -75,7 +76,7 @@ class Launcher_vehicle(Group):
                                        promotes_inputs=['Diameter_stage_1','OF_stage_1',
                                                        'N_eng_stage_1','Diameter_stage_2','Isp_stage_1',
                                                        'Prop_mass_stage_1','Thrust_stage_1','Pdyn_max_dim',
-                                                       'k_SM_thrust_frame','k_SM_interstage'],
+                                                       'k_SM_thrust_frame','k_SM_interstage','k_SM_intertank'],
                                        promotes_outputs=['Dry_mass_stage_1'])
         
         # Structure Stage 2
@@ -120,8 +121,7 @@ class Launcher_vehicle(Group):
                                                     'pdyn_fallout','rho_fallout','distance_fallout'])
         
         # NEW: Environmental/LCA Discipline
-        Environmental = cycle.add_subsystem('Environmental', 
-                                           Environmental_Discipline.Environmental_Discipline_Comp())
+        Environmental = cycle.add_subsystem('Environmental', Environmental_Discipline.Environmental_Discipline_Comp())
         
         # Connect Stage 1 component masses to Environmental discipline
         self.connect('Struct_1.M_eng', 'Environmental.M_eng_stage_1')
@@ -145,8 +145,14 @@ class Launcher_vehicle(Group):
                     'Environmental.Al_fraction_interstage_stage_1')
         self.connect('Struct_1.Composite_fraction_interstage', 
                     'Environmental.Composite_fraction_interstage_stage_1')
+        self.connect('Struct_1.Al_fraction_intertank', 
+                    'Environmental.Al_fraction_intertank_stage_1')
+        self.connect('Struct_1.Composite_fraction_intertank', 
+                    'Environmental.Composite_fraction_intertank_stage_1')
         
         # Connect Stage 2 and propellant masses
         self.connect('Dry_mass_stage_2', 'Environmental.Dry_mass_stage_2')
         self.connect('Prop_mass_stage_1', 'Environmental.Prop_mass_stage_1')
         self.connect('Prop_mass_stage_2', 'Environmental.Prop_mass_stage_2')
+        self.connect('OF_stage_1', 'Environmental.OF_stage_1')
+        self.connect('OF_stage_2', 'Environmental.OF_stage_2')

@@ -108,7 +108,8 @@ def engine_mass(T, type_prop, feed):
 				b = 4.74402e-03;
 				c = -1.93920e01;
 				return a*(T)**2 + b*T+c	
-			
+
+'''		
 def thrust_frame_mass(T,M_eng,n_ax_max,N_eng,material,SSM):
     #See PhD thesis Castellini 2012, Polytechnico di Milano
 
@@ -120,6 +121,7 @@ def thrust_frame_mass(T,M_eng,n_ax_max,N_eng,material,SSM):
 		
 	#SSM = 2  # Structural Safety Margin
 	return (0.013*N_eng**0.795*(224.81*T)**0.579+0.01*N_eng*(M_eng/(0.45))**0.717)*0.45*(1.5*SSM*n_ax_max*9.80665)*k_SM
+'''
 
 # New function with k_SM as parameter for optimization
 def thrust_frame_mass_variable(T,M_eng,n_ax_max,N_eng,k_SM,SSM):
@@ -129,64 +131,63 @@ def thrust_frame_mass_variable(T,M_eng,n_ax_max,N_eng,k_SM,SSM):
     Note: Composite provides 38% mass reduction for thrust frame
     """
     return (0.013*N_eng**0.795*(224.81*T)**0.579+0.01*N_eng*(M_eng/(0.45))**0.717)*0.45*(1.5*SSM*n_ax_max*9.80665)*k_SM
-	
-def tank_mass(P_dyn_max,n_ax_max,P_tanks_Ox,P_tanks_F,V_FT,V_Ox,D,S_Ox,S_F,S_dome,S_totale,type_prop,config,type_stage,type_struct):
-    #See PhD thesis Castellini 2012, Polytechnico di Milano
+
+def tank_mass_variable(P_dyn_max,n_ax_max,P_tanks_Ox,P_tanks_F,V_FT,V_Ox,D,S_Ox,S_F,S_dome,S_totale,type_prop,config,type_stage,k_SM_intertank):
+	"""
+	Modified tank_mass function with variable k_SM for intertank
+	k_SM_intertank: material factor (1.0 = 100% Al, 0.8 = 100% Composite)
+	"""
+	#See PhD thesis Castellini 2012, Polytechnico di Milano
 
 	#Mass tanks
-	# Parametres
-	k1=1.15  #Material
+	k1 = 1.15  # Material
 	S_tot = S_totale
-	if config =='common_bulkhead':
-		k2 = (S_tot - 1.5*S_dome)/S_tot  
+	if config == 'common_bulkhead':
+		k2 = (S_tot - 1.5 * S_dome) / S_tot
 	elif config == 'intertank':
 		k2 = 1.
 
-	k3=1.3 #Vertical integration 
+	k3 = 1.3  # Vertical integration
 	k4_ref = 5.76404
-	k4=P_dyn_max**0.16/k4_ref
-	SSM=1.25  #Structural #Safety Margin
-	k_5_ref =  1.29134
-	k5=(SSM*n_ax_max)**0.15/k_5_ref
+	k4 = P_dyn_max ** 0.16 / k4_ref
+	SSM = 1.25  # Structural Safety Margin
+	k_5_ref = 1.29134
+	k5 = (SSM * n_ax_max) ** 0.15 / k_5_ref
 	k6_ref = 2.7862
-	k6_Ox=1.3012+1.4359*10**-6*P_tanks_Ox/k6_ref
-	k6_F=1.3012+1.4359*10**-6*P_tanks_F/k6_ref
+	k6_Ox = 1.3012 + 1.4359 * 10 ** -6 * P_tanks_Ox / k6_ref
+	k6_F = 1.3012 + 1.4359 * 10 ** -6 * P_tanks_F / k6_ref
 	### Mass Fuel tank
-	M_FT=np.prod(np.array([k1,k2,k3,k4,k5,k6_F]))*((V_FT*35.315)*0.4856+800)*0.4536
+	M_FT = np.prod(np.array([k1, k2, k3, k4, k5, k6_F])) * ((V_FT * 35.315) * 0.4856 + 800) * 0.4536
 	### Mass Ox tank
 
-	M_OxT = np.prod(np.array([k1,k2,k3,k4,k5,k6_Ox]))*((V_Ox*35.315)*0.4856+700)*0.4536
+	M_OxT = np.prod(np.array([k1, k2, k3, k4, k5, k6_Ox])) * ((V_Ox * 35.315) * 0.4856 + 700) * 0.4536
 	### Mass thermal protection
 	k_ins_Ox = 0.9765
 	k_ins_F = 1.2695
 
-	M_TPS_OxT=k_ins_Ox*S_Ox
-	
+	M_TPS_OxT = k_ins_Ox * S_Ox
+
 	if type_prop == 'Cryogenic':
-		M_TPS_FT = k_ins_F*S_F
-	else: 
+		M_TPS_FT = k_ins_F * S_F
+	else:
 		M_TPS_FT = 0
-		
+
 	if config == 'common_bulkhead':
 		M_inter_tank = 0
 	elif config == 'intertank':
-		if type_stage =='lower':
+		if type_stage == 'lower':
 			k_1 = 5.4015
 			k_2 = 0.5169
-		elif np.logical_or(type_stage == 'upper',type_stage == 'booster'):
+		elif np.logical_or(type_stage == 'upper', type_stage == 'booster'):
 			k_1 = 3.8664
 			k_2 = 0.6025
-			
+
 		k_it = 0.3
-		l_it = 2*k_it * D+0.5
-		if type_struct == 'Al':
-			k_SM = 1.
-		elif type_struct =='Composite':
-			k_SM = 0.8
-			
-		M_inter_tank = k_SM*k_1*D*np.pi*l_it*(D*3.2808)**k_2
-		
-	return M_FT,M_OxT,M_TPS_OxT,M_TPS_FT,M_inter_tank
+		l_it = 2 * k_it * D + 0.5
+		# Use the variable k_SM_intertank instead of fixed value
+		M_inter_tank = k_SM_intertank * k_1 * D * np.pi * l_it * (D * 3.2808) ** k_2
+
+	return M_FT, M_OxT, M_TPS_OxT, M_TPS_FT, M_inter_tank
 	
 def TVC_mass(T, techno):
     #See PhD thesis Castellini 2012, Polytechnico di Milano

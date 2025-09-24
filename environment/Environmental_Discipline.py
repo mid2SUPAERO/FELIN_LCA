@@ -63,7 +63,6 @@ ESA_METHODS = {
 }
 
 
-
 # ESA Normalization factors
 ESA_NORMALIZATION = {
     'GWP': 0.0001235,
@@ -110,8 +109,8 @@ ESA_WEIGHTS = {
 
 ECOINVENT_CODES = {
     # Structural materials
-    'aluminum_structure': ('ecoinvent 3.8 cutoff','8392648c098b86d088a9821ce11ed9dd'),  # Aluminum for structural parts
-    'aluminum_tank': ('ecoinvent 3.8 cutoff','03f6b6ba551e8541bf47842791abd3f7'),  # Aluminum-lithium alloy for tanks
+    'aluminum_7075': ('ecoinvent 3.8 cutoff','8392648c098b86d088a9821ce11ed9dd'),  # Aluminum for structural parts
+    'aluminum_lithium': ('ecoinvent 3.8 cutoff','03f6b6ba551e8541bf47842791abd3f7'),  # Aluminum-lithium alloy for tanks
     'cfrp': ('ecoinvent 3.8 cutoff','5f83b772ba1476f12d0b3ef634d4409b'),  # Carbon fiber reinforced plastic
     'steel': ('ecoinvent 3.8 cutoff','9b20aabdab5590c519bb3d717c77acf2'),  # High-strength steel
     'titanium': ('ecoinvent 3.8 cutoff','3412f692460ecd5ce8dcfcd5adb1c072'),  # Titanium alloy
@@ -138,6 +137,7 @@ COMPONENT_MATERIALS = {
     # Variable material components (affected by k_SM)
     'thrust_frame': 'variable',  # Al or Composite based on k_SM
     'interstage': 'variable',    # Al or Composite based on k_SM
+    'intertank': 'variable',     # Al or Composite based on k_SM
     
     # Fixed material components
     'tanks': 'aluminum_tank',    # Always aluminum-lithium alloy
@@ -146,9 +146,7 @@ COMPONENT_MATERIALS = {
     'tvc': 'mixed_tvc',          # 60% aluminum, 40% steel
     'avionics': 'electronics',   # Electronics
     'eps': 'electronics',        # Electrical power system
-    'intertank': 'aluminum_structure',  # Always aluminum (from Constants)
 }
-
 
 class Environmental_Discipline_Comp(ExplicitComponent):
     """
@@ -179,6 +177,8 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         self.add_input('Composite_fraction_thrust_frame_stage_1', val=0.0)
         self.add_input('Al_fraction_interstage_stage_1', val=1.0)
         self.add_input('Composite_fraction_interstage_stage_1', val=0.0)
+        self.add_input('Al_fraction_intertank_stage_1', val=1.0)
+        self.add_input('Composite_fraction_intertank_stage_1', val=0.0)
         
         # Stage 2 mass (simplified)
         self.add_input('Dry_mass_stage_2', val=3000.)
@@ -204,7 +204,8 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         self.add_output('LCA_score', val=1000.0)  # For compatibility
         
         # Material mass tracking (for analysis)
-        self.add_output('total_aluminum_kg', val=0.0)
+        self.add_output('total_aluminum_7075_kg', val=0.0)
+        self.add_output('total_aluminum_lithium_kg', val=0.0)
         self.add_output('total_composite_kg', val=0.0)
         self.add_output('total_steel_kg', val=0.0)
         self.add_output('total_other_kg', val=0.0)
@@ -228,7 +229,8 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         # ========================================
         
         # Initialize material accumulators
-        aluminum_total = 0.0
+        aluminum_7075 = 0.0
+        aluminum_lithium = 0.0
         composite_total = 0.0
         steel_total = 0.0
         titanium_total = 0.0
@@ -237,29 +239,30 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         
         # Stage 1 components with variable materials
         # Thrust frame (variable Al/Composite)
-        aluminum_total += inputs['M_thrust_frame_stage_1'][0] * inputs['Al_fraction_thrust_frame_stage_1'][0]
+        aluminum_7075 += inputs['M_thrust_frame_stage_1'][0] * inputs['Al_fraction_thrust_frame_stage_1'][0]
         composite_total += inputs['M_thrust_frame_stage_1'][0] * inputs['Composite_fraction_thrust_frame_stage_1'][0]
         
         # Interstage (variable Al/Composite)
-        aluminum_total += inputs['M_interstage_stage_1'][0] * inputs['Al_fraction_interstage_stage_1'][0]
+        aluminum_7075 += inputs['M_interstage_stage_1'][0] * inputs['Al_fraction_interstage_stage_1'][0]
         composite_total += inputs['M_interstage_stage_1'][0] * inputs['Composite_fraction_interstage_stage_1'][0]
+
+        # Intertank (variable Al/Composite)
+        aluminum_7075 += inputs['M_intertank_stage_1'][0] * inputs['Al_fraction_intertank_stage_1'][0]
+        composite_total += inputs['M_intertank_stage_1'][0] * inputs['Composite_fraction_intertank_stage_1'][0]
         
         # Fixed material components
         # Tanks (aluminum-lithium alloy)
-        aluminum_total += inputs['M_FT_stage_1'][0] + inputs['M_OxT_stage_1'][0]
-        
-        # Intertank (aluminum)
-        aluminum_total += inputs['M_intertank_stage_1'][0]
+        aluminum_lithium += inputs['M_FT_stage_1'][0] + inputs['M_OxT_stage_1'][0]
         
         # Engines (70% Al, 20% steel, 10% titanium)
         engine_mass = inputs['M_eng_stage_1'][0]
-        aluminum_total += engine_mass * 0.7
+        aluminum_lithium += engine_mass * 0.7
         steel_total += engine_mass * 0.2
         titanium_total += engine_mass * 0.1
         
         # TVC (60% Al, 40% steel)
         tvc_mass = inputs['M_TVC_stage_1'][0]
-        aluminum_total += tvc_mass * 0.6
+        aluminum_7075 += tvc_mass * 0.6
         steel_total += tvc_mass * 0.4
         
         # Thermal protection (polyurethane foam)
@@ -271,7 +274,8 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         # Stage 2 (simplified breakdown)
         # Assume: 50% Al, 20% Composite, 15% steel, 5% titanium, 10% other
         dry_mass_s2 = inputs['Dry_mass_stage_2'][0]
-        aluminum_total += dry_mass_s2 * 0.5
+        aluminum_7075 += dry_mass_s2 * 0.3
+        aluminum_lithium += dry_mass_s2 * 0.2
         composite_total += dry_mass_s2 * 0.2
         steel_total += dry_mass_s2 * 0.15
         titanium_total += dry_mass_s2 * 0.05
@@ -279,12 +283,13 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         polyurethane_total += dry_mass_s2 * 0.05
         
         # Store material totals
-        outputs['total_aluminum_kg'] = aluminum_total
+        outputs['total_aluminum_7075_kg'] = aluminum_7075
+        outputs['total_aluminum_lithium_kg'] = aluminum_lithium
         outputs['total_composite_kg'] = composite_total
         outputs['total_steel_kg'] = steel_total
         outputs['total_other_kg'] = titanium_total + polyurethane_total + electronics_total
 
-        total_dry_mass = (aluminum_total + composite_total + steel_total +
+        total_dry_mass = (aluminum_7075 + aluminum_lithium + composite_total + steel_total +
                   titanium_total + polyurethane_total + electronics_total)
 
         
@@ -302,6 +307,15 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         lh2_total = (prop_s1 * (1 / (1 + of_s1)) + 
                      prop_s2 * (1 / (1 + of_s2)))
         
+        print(f"LOX mass: {lox_total/1000:.1f} tonnes")
+        print(f"LH2 mass: {lh2_total/1000:.1f} tonnes")
+
+        # In Environmental_Discipline.py compute() method:
+        print("\n=== LCA DEBUG ===")
+        print(f"Structural mass: {total_dry_mass:.1f} kg")
+        print(f"LOX mass: {lox_total:.1f} kg") 
+        print(f"LH2 mass: {lh2_total:.1f} kg")
+        
         # ========================================
         # CREATE INVENTORY FOR LCA
         # ========================================
@@ -315,7 +329,8 @@ class Environmental_Discipline_Comp(ExplicitComponent):
             return bw.get_activity(ptr)
 
         amounts = {
-            'aluminum_structure': float(aluminum_total),
+            'aluminum_7075':      float(aluminum_7075),
+            'aluminum_lithium':   float(aluminum_lithium),
             'cfrp':               float(composite_total),
             'steel':              float(steel_total),
             'titanium':           float(titanium_total),
@@ -380,7 +395,7 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         # Stage-wise breakdown (simplified)
         # Allocate impacts proportionally to mass
         total_mass = total_dry_mass + lox_total + lh2_total
-        stage1_fraction = (aluminum_total * 0.7 + composite_total * 0.8) / total_mass
+        stage1_fraction = (aluminum_7075 * 0.7 + composite_total * 0.8) / total_mass
         stage2_fraction = dry_mass_s2 / total_mass
         propellant_fraction = (lox_total + lh2_total) / total_mass
         outputs['LCA_stage_1'] = outputs['LCA_score'][0] * stage1_fraction
