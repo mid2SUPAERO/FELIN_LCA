@@ -25,7 +25,7 @@ class Launcher_vehicle(Group):
         indeps.add_output('Mass_flow_rate_stage_1',300.)
         indeps.add_output('Mass_flow_rate_stage_2',200.)
         indeps.add_output('Thrust_stage_1',1000.)
-        indeps.add_output('Thrust_stage_2',1150.)
+        indeps.add_output('Thrust_stage_2',1000.)
         indeps.add_output('Pc_stage_1',80.)
         indeps.add_output('Pc_stage_2',60.)
         indeps.add_output('Pe_stage_1',1.)
@@ -45,7 +45,7 @@ class Launcher_vehicle(Group):
         indeps.add_output('Exit_nozzle_area_stage_2',3.6305)
         indeps.add_output('Delta_vertical_phase',10.)
         indeps.add_output('Delta_theta_pitch_over',1.)
-        indeps.add_output('is_fallout',1.)        
+        indeps.add_output('is_fallout',0.)        
         indeps.add_output('command_stage_1_exo',np.array([1.,1.]))
         
         # NEW: Material composition design variables
