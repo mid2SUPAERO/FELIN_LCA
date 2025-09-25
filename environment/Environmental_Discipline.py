@@ -62,7 +62,6 @@ ESA_METHODS = {
     'ADEPLmu':('EF v3.0', 'material resources: metals/minerals', 'abiotic depletion potential (ADP): elements (ultimate reserves)'),
 }
 
-
 # ESA Normalization factors
 ESA_NORMALIZATION = {
     'GWP': 0.0001235,
@@ -117,7 +116,7 @@ ECOINVENT_CODES = {
 
     # Insulation and other materials
     'polyurethane_foam': ('ecoinvent 3.8 cutoff','223d2ca85f5c350a6a043725a2b71226'),  # Thermal insulation
-    'electronics': ('ecoinvent 3.8 cutoff','52c4f6d2e1ec507b1ccc96056a761c0d'),  # Electronics/avionics
+    'electronics': ('ecoinvent 3.8 cutoff','b1b65fe4d00b29f2299c72b894a3c0a0'),  # Electronics/avionics
 
     # Propellants
     'lox': ('ecoinvent 3.8 cutoff','53b5def592497847e2d0b4d62f2c4456'),  # Liquid oxygen
@@ -125,7 +124,6 @@ ECOINVENT_CODES = {
 
     # Transport and energy
     'transport_ship': ('ecoinvent 3.8 cutoff','41205d7711c0fad4403e4c2f9284b083'),  # Ship transport
-    'transport_truck': ('ecoinvent 3.8 cutoff','7e3b4d9c1a6f2805b9d7c3e1f4a62938'),  # Truck transport
     'electricity': ('ecoinvent 3.8 cutoff','3855bf674145307cd56a3fac8c83b643'),  # Electricity, medium voltage
 }
 
@@ -227,6 +225,12 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         # ========================================
         # CALCULATE MATERIAL MASSES
         # ========================================
+
+        def get_scalar(val):
+            """Safely extract scalar from array or scalar input"""
+            if hasattr(val, '__len__'):
+                return float(val[0]) if len(val) > 0 else 0.0
+            return float(val)
         
         # Initialize material accumulators
         aluminum_7075 = 0.0
@@ -236,20 +240,31 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         titanium_total = 0.0
         polyurethane_total = 0.0
         electronics_total = 0.0
-        
-        # Stage 1 components with variable materials
-        # Thrust frame (variable Al/Composite)
-        aluminum_7075 += inputs['M_thrust_frame_stage_1'][0] * inputs['Al_fraction_thrust_frame_stage_1'][0]
-        composite_total += inputs['M_thrust_frame_stage_1'][0] * inputs['Composite_fraction_thrust_frame_stage_1'][0]
-        
-        # Interstage (variable Al/Composite)
-        aluminum_7075 += inputs['M_interstage_stage_1'][0] * inputs['Al_fraction_interstage_stage_1'][0]
-        composite_total += inputs['M_interstage_stage_1'][0] * inputs['Composite_fraction_interstage_stage_1'][0]
 
-        # Intertank (variable Al/Composite)
-        aluminum_7075 += inputs['M_intertank_stage_1'][0] * inputs['Al_fraction_intertank_stage_1'][0]
-        composite_total += inputs['M_intertank_stage_1'][0] * inputs['Composite_fraction_intertank_stage_1'][0]
+        # Stage 1 components with variable materials
+        # Use get_scalar for all inputs to handle arrays properly
+        m_thrust_frame = get_scalar(inputs['M_thrust_frame_stage_1'])
+        al_frac_tf = get_scalar(inputs['Al_fraction_thrust_frame_stage_1'])
+        comp_frac_tf = get_scalar(inputs['Composite_fraction_thrust_frame_stage_1'])
         
+        aluminum_7075 += m_thrust_frame * al_frac_tf
+        composite_total += m_thrust_frame * comp_frac_tf
+        
+        # Continue with other components...
+        m_interstage = get_scalar(inputs['M_interstage_stage_1'])
+        al_frac_is = get_scalar(inputs['Al_fraction_interstage_stage_1'])
+        comp_frac_is = get_scalar(inputs['Composite_fraction_interstage_stage_1'])
+        
+        aluminum_7075 += m_interstage * al_frac_is
+        composite_total += m_interstage * comp_frac_is
+
+        m_intertank = get_scalar(inputs['M_intertank_stage_1'])
+        al_frac_it = get_scalar(inputs['Al_fraction_intertank_stage_1'])
+        comp_frac_it = get_scalar(inputs['Composite_fraction_intertank_stage_1'])
+
+        aluminum_7075 += m_intertank * al_frac_it
+        composite_total += m_intertank * comp_frac_it
+
         # Fixed material components
         # Tanks (aluminum-lithium alloy)
         aluminum_lithium += inputs['M_FT_stage_1'][0] + inputs['M_OxT_stage_1'][0]
@@ -292,6 +307,18 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         total_dry_mass = (aluminum_7075 + aluminum_lithium + composite_total + steel_total +
                   titanium_total + polyurethane_total + electronics_total)
 
+        missing_codes = []
+        for key, code_tuple in ECOINVENT_CODES.items():
+            try:
+                act = bw.get_activity(code_tuple)
+            except:
+                missing_codes.append(key)
+                print(f"WARNING: Cannot find ecoinvent activity for {key}")
+        
+        if missing_codes:
+            print(f"Missing {len(missing_codes)} ecoinvent activities, using placeholders")
+            self._use_placeholder_impacts(outputs)
+            return
         
         # ========================================
         # CALCULATE PROPELLANT MASSES
@@ -401,6 +428,277 @@ class Environmental_Discipline_Comp(ExplicitComponent):
         outputs['LCA_stage_1'] = outputs['LCA_score'][0] * stage1_fraction
         outputs['LCA_stage_2'] = outputs['LCA_score'][0] * stage2_fraction
         outputs['LCA_propellants'] = outputs['LCA_score'][0] * propellant_fraction
+    
+        # ========================================
+        # DETAILED IMPACT BREAKDOWN DEBUGGING
+        # ========================================
+        
+        print("\n" + "="*80)
+        print("DETAILED LCA IMPACT BREAKDOWN")
+        print("="*80)
+        
+        # First, let's see the material quantities
+        print("\n--- MATERIAL QUANTITIES ---")
+        materials = {
+            'aluminum_7075': aluminum_7075,
+            'aluminum_lithium': aluminum_lithium,
+            'cfrp': composite_total,
+            'steel': steel_total,
+            'titanium': titanium_total,
+            'polyurethane_foam': polyurethane_total,
+            'electronics': electronics_total,
+            'lox': lox_total,
+            'lh2': lh2_total,
+        }
+        
+        for mat, qty in materials.items():
+            if qty > 0:
+                print(f"{mat:20s}: {qty:10.1f} kg ({qty/1000:7.2f} tonnes)")
+        
+        print(f"\nTransport (tkm):      {(total_dry_mass / 1000.0) * 7000.0:10.1f} tkm")
+        print(f"Electricity:          {total_dry_mass * 0.2:10.1f} kWh")
+        
+        # ========================================
+        # INDIVIDUAL MATERIAL IMPACT ANALYSIS
+        # ========================================
+        
+        print("\n" + "-"*80)
+        print("IMPACT PER MATERIAL (GWP and ADEPLmu)")
+        print("-"*80)
+        
+        def _act(ptr):
+            return bw.get_activity(ptr)
+        
+        # Test each material individually
+        material_impacts = {}
+        
+        for mat_name, qty in materials.items():
+            if qty > 0 and mat_name in ECOINVENT_CODES:
+                try:
+                    # Create inventory with just this material
+                    single_mat_inventory = {_act(ECOINVENT_CODES[mat_name]): qty}
+                    
+                    # Calculate GWP
+                    lca_gwp = bw.LCA(single_mat_inventory, ESA_METHODS['GWP'])
+                    lca_gwp.lci()
+                    lca_gwp.lcia()
+                    gwp_impact = lca_gwp.score
+                    
+                    # Calculate ADEPLmu (mineral depletion)
+                    lca_adeplmu = bw.LCA(single_mat_inventory, ESA_METHODS['ADEPLmu'])
+                    lca_adeplmu.lci()
+                    lca_adeplmu.lcia()
+                    adeplmu_impact = lca_adeplmu.score
+                    
+                    # Calculate FWTOX (freshwater ecotoxicity)
+                    lca_fwtox = bw.LCA(single_mat_inventory, ESA_METHODS['FWTOX'])
+                    lca_fwtox.lci()
+                    lca_fwtox.lcia()
+                    fwtox_impact = lca_fwtox.score
+                    
+                    material_impacts[mat_name] = {
+                        'quantity': qty,
+                        'GWP': gwp_impact,
+                        'ADEPLmu': adeplmu_impact,
+                        'FWTOX': fwtox_impact,
+                        'GWP_per_kg': gwp_impact / qty,
+                        'ADEPLmu_per_kg': adeplmu_impact / qty,
+                        'FWTOX_per_kg': fwtox_impact / qty,
+                    }
+                    
+                    print(f"\n{mat_name}:")
+                    print(f"  Quantity:        {qty:10.1f} kg")
+                    print(f"  GWP total:       {gwp_impact:10.1f} kg CO2-eq")
+                    print(f"  GWP per kg:      {gwp_impact/qty:10.4f} kg CO2-eq/kg")
+                    print(f"  ADEPLmu total:   {adeplmu_impact:10.4f} kg Sb-eq")
+                    print(f"  ADEPLmu per kg:  {adeplmu_impact/qty:10.6f} kg Sb-eq/kg")
+                    print(f"  FWTOX total:     {fwtox_impact:10.2e} CTUe")
+                    print(f"  FWTOX per kg:    {fwtox_impact/qty:10.2e} CTUe/kg")
+                    
+                except Exception as e:
+                    print(f"\n{mat_name}: ERROR - {e}")
+        
+        # ========================================
+        # RANKING BY CONTRIBUTION
+        # ========================================
+        
+        print("\n" + "-"*80)
+        print("MATERIALS RANKED BY GWP CONTRIBUTION")
+        print("-"*80)
+        
+        # Sort by GWP contribution
+        gwp_ranking = sorted(material_impacts.items(), 
+                            key=lambda x: x[1]['GWP'], 
+                            reverse=True)
+        
+        total_gwp = sum(m['GWP'] for m in material_impacts.values())
+        
+        for mat, impacts in gwp_ranking:
+            pct = 100 * impacts['GWP'] / total_gwp if total_gwp > 0 else 0
+            print(f"{mat:20s}: {impacts['GWP']:12.1f} kg CO2-eq ({pct:5.1f}%)")
+        
+        print("\n" + "-"*80)
+        print("MATERIALS RANKED BY ADEPLmu CONTRIBUTION")
+        print("-"*80)
+        
+        # Sort by ADEPLmu contribution
+        adeplmu_ranking = sorted(material_impacts.items(), 
+                                key=lambda x: x[1]['ADEPLmu'], 
+                                reverse=True)
+        
+        total_adeplmu = sum(m['ADEPLmu'] for m in material_impacts.values())
+        
+        for mat, impacts in adeplmu_ranking:
+            pct = 100 * impacts['ADEPLmu'] / total_adeplmu if total_adeplmu > 0 else 0
+            print(f"{mat:20s}: {impacts['ADEPLmu']:12.4f} kg Sb-eq ({pct:5.1f}%)")
+        
+        # ========================================
+        # INVESTIGATE SPECIFIC ACTIVITIES
+        # ========================================
+        
+        print("\n" + "-"*80)
+        print("ECOINVENT ACTIVITY DETAILS")
+        print("-"*80)
+        
+        # Check what's actually in the hydrogen and oxygen activities
+        for key in ['lox', 'lh2']:
+            try:
+                act = _act(ECOINVENT_CODES[key])
+                print(f"\n{key.upper()} Activity: {act['name']}")
+                print(f"  Location: {act.get('location', 'N/A')}")
+                print(f"  Unit: {act.get('unit', 'N/A')}")
+                
+                # Look at the top exchanges (inputs to this activity)
+                print(f"  Top exchanges (inputs):")
+                exchanges = list(act.exchanges())[:5]  # First 5 exchanges
+                for exc in exchanges:
+                    if exc['type'] == 'technosphere':
+                        print(f"    - {exc.input['name']}: {exc['amount']} {exc.get('unit', '')}")
+                        
+            except Exception as e:
+                print(f"\n{key.upper()}: Could not analyze - {e}")
+        
+        # ========================================
+        # BREAKDOWN BY LIFECYCLE PHASE
+        # ========================================
+        
+        print("\n" + "-"*80)
+        print("LIFECYCLE PHASE BREAKDOWN")
+        print("-"*80)
+        
+        # Structural materials (manufacturing phase)
+        structural_mats = ['aluminum_7075', 'aluminum_lithium', 'cfrp', 'steel', 
+                        'titanium', 'polyurethane_foam', 'electronics']
+        
+        structural_gwp = sum(material_impacts.get(m, {}).get('GWP', 0) 
+                            for m in structural_mats)
+        structural_adeplmu = sum(material_impacts.get(m, {}).get('ADEPLmu', 0) 
+                                for m in structural_mats)
+        
+        # Propellants (use phase)
+        propellant_gwp = (material_impacts.get('lox', {}).get('GWP', 0) + 
+                        material_impacts.get('lh2', {}).get('GWP', 0))
+        propellant_adeplmu = (material_impacts.get('lox', {}).get('ADEPLmu', 0) + 
+                            material_impacts.get('lh2', {}).get('ADEPLmu', 0))
+        
+        print(f"\nStructural Materials:")
+        print(f"  GWP:     {structural_gwp:12.1f} kg CO2-eq ({100*structural_gwp/total_gwp:5.1f}%)")
+        print(f"  ADEPLmu: {structural_adeplmu:12.4f} kg Sb-eq ({100*structural_adeplmu/total_adeplmu:5.1f}%)")
+        
+        print(f"\nPropellants:")
+        print(f"  GWP:     {propellant_gwp:12.1f} kg CO2-eq ({100*propellant_gwp/total_gwp:5.1f}%)")
+        print(f"  ADEPLmu: {propellant_adeplmu:12.4f} kg Sb-eq ({100*propellant_adeplmu/total_adeplmu:5.1f}%)")
+        
+        # ========================================
+        # NORMALIZATION CHECK
+        # ========================================
+        
+        print("\n" + "-"*80)
+        print("NORMALIZATION AND WEIGHTING CHECK")
+        print("-"*80)
+        
+        print("\nADEPLmu calculation chain:")
+        print(f"  Raw impact:     {total_adeplmu:.4f} kg Sb-eq")
+        print(f"  Normalization:  {total_adeplmu:.4f} × {ESA_NORMALIZATION['ADEPLmu']} = {total_adeplmu * ESA_NORMALIZATION['ADEPLmu']:.2f}")
+        print(f"  Weighting:      {total_adeplmu * ESA_NORMALIZATION['ADEPLmu']:.2f} × {ESA_WEIGHTS['ADEPLmu']} = {total_adeplmu * ESA_NORMALIZATION['ADEPLmu'] * ESA_WEIGHTS['ADEPLmu']:.2f} Pt")
+        
+        print("\nGWP calculation chain:")
+        print(f"  Raw impact:     {total_gwp:.1f} kg CO2-eq")
+        print(f"  Normalization:  {total_gwp:.1f} × {ESA_NORMALIZATION['GWP']} = {total_gwp * ESA_NORMALIZATION['GWP']:.2f}")
+        print(f"  Weighting:      {total_gwp * ESA_NORMALIZATION['GWP']:.2f} × {ESA_WEIGHTS['GWP']} = {total_gwp * ESA_NORMALIZATION['GWP'] * ESA_WEIGHTS['GWP']:.2f} Pt")
+        
+        # ========================================
+        # SUSPICIOUS VALUES CHECK
+        # ========================================
+        
+        print("\n" + "-"*80)
+        print("SUSPICIOUS VALUES CHECK")
+        print("-"*80)
+        
+        # Check for unusually high per-kg impacts
+        print("\nMaterials with potentially incorrect impacts:")
+        
+        for mat, impacts in material_impacts.items():
+            gwp_per_kg = impacts['GWP_per_kg']
+            adeplmu_per_kg = impacts['ADEPLmu_per_kg']
+            
+            # Expected ranges (approximate)
+            expected_ranges = {
+                'aluminum_7075': (5, 15, 0.0001, 0.001),      # GWP_min, GWP_max, ADP_min, ADP_max
+                'aluminum_lithium': (8, 20, 0.0001, 0.002),
+                'cfrp': (15, 35, 0.001, 0.01),
+                'steel': (1, 5, 0.00005, 0.001),
+                'titanium': (20, 50, 0.001, 0.01),
+                'lox': (0.1, 0.5, 0.00001, 0.0001),
+                'lh2': (5, 20, 0.0001, 0.001),  # Green H2 would be 5-20, grey H2 could be 50+
+            }
+            
+            if mat in expected_ranges:
+                gwp_min, gwp_max, adp_min, adp_max = expected_ranges[mat]
+                
+                if gwp_per_kg < gwp_min or gwp_per_kg > gwp_max:
+                    print(f"\n⚠ {mat}: GWP = {gwp_per_kg:.2f} kg CO2/kg (expected {gwp_min}-{gwp_max})")
+                
+                if adeplmu_per_kg < adp_min or adeplmu_per_kg > adp_max:
+                    print(f"⚠ {mat}: ADEPLmu = {adeplmu_per_kg:.6f} kg Sb-eq/kg (expected {adp_min}-{adp_max})")
+        
+        print("\n" + "="*80)
+        
+        # Return the breakdown for further analysis
+        return material_impacts
+
+    # Additional function to search for alternative activities
+    def search_alternative_activities():
+        """Search ecoinvent for alternative oxygen and hydrogen activities"""
+        import brightway2 as bw
+        db = bw.Database("ecoinvent 3.8 cutoff")
+        
+        print("\n=== OXYGEN ACTIVITIES ===")
+        for act in db.search("oxygen", limit=20):
+            if "liquid" in act['name'].lower():
+                print(f"{act['name'][:80]} - {act['code']}")
+                # Test impact
+                try:
+                    inventory = {act: 1.0}  # 1 kg
+                    lca = bw.LCA(inventory, ('EF v3.0', 'climate change', 'global warming potential (GWP100)'))
+                    lca.lci()
+                    lca.lcia()
+                    print(f"  → GWP: {lca.score:.4f} kg CO2-eq/kg")
+                except:
+                    pass
+        
+        print("\n=== HYDROGEN ACTIVITIES ===")
+        for act in db.search("hydrogen", limit=20):
+            print(f"{act['name'][:80]} - {act['code']}")
+            # Test impact
+            try:
+                inventory = {act: 1.0}  # 1 kg
+                lca = bw.LCA(inventory, ('EF v3.0', 'climate change', 'global warming potential (GWP100)'))
+                lca.lci()
+                lca.lcia()
+                print(f"  → GWP: {lca.score:.4f} kg CO2-eq/kg")
+            except:
+                pass
 
     def _use_placeholder_impacts(self, outputs):
         """ Use placeholder impact values when ecoinvent is not available

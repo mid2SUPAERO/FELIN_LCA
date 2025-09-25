@@ -10,7 +10,7 @@ import numpy as np
 from openmdao.api import ExplicitComponent
 
 
-class Dry_Mass_stage_1_Comp(ExplicitComponent):
+class Dry_Mass_stage_2_Comp(ExplicitComponent):
     def setup(self):
         self.add_input('Prop_mass_stage_2',val=1.)
 		

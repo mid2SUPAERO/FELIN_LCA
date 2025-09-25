@@ -143,6 +143,7 @@ class Dry_Mass_stage_1_Comp(ExplicitComponent):
         outputs['M_intertank'] = M_intertank
         outputs['M_interstage'] = M_interstage
         
+        '''
         # Calculate material fractions based on k_SM values
         # Thrust frame: k_SM ranges from 1.0 (100% Al) to 0.62 (100% Composite)
         # Linear interpolation: Al_fraction = (k_SM - 0.62) / (1.0 - 0.62)
@@ -158,3 +159,16 @@ class Dry_Mass_stage_1_Comp(ExplicitComponent):
         # Linear interpolation: Al_fraction = (k_SM - 0.8) / (1.0 - 0.8)
         outputs['Al_fraction_intertank'] = (k_SM_it - 0.8) / 0.2
         outputs['Composite_fraction_intertank'] = 1.0 - outputs['Al_fraction_intertank'][0]
+        '''
+        # After computing k_SM_*:
+        al_tf = float(np.clip((k_SM_tf - 0.62)/0.38, 0.0, 1.0))
+        outputs['Al_fraction_thrust_frame'] = al_tf
+        outputs['Composite_fraction_thrust_frame'] = 1.0 - al_tf
+
+        al_is = float(np.clip((k_SM_is - 0.7)/0.3, 0.0, 1.0))
+        outputs['Al_fraction_interstage'] = al_is
+        outputs['Composite_fraction_interstage'] = 1.0 - al_is
+
+        al_it = float(np.clip((k_SM_it - 0.8)/0.2, 0.0, 1.0))
+        outputs['Al_fraction_intertank'] = al_it
+        outputs['Composite_fraction_intertank'] = 1.0 - al_it
