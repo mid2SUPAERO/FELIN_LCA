@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 """
 Material conversion helper functions for FELIN launcher optimization
-Handles conversions between k_SM values and material fractions
+Complete version with all components and LCA integration
 """
 
 import numpy as np
@@ -16,12 +15,39 @@ class MaterialConverter:
     K_SM_RANGES = {
         'thrust_frame': {
             'Al': 1.0,
-            'Composite': 0.62  # 38% mass reduction with composite
+            'Composite': 0.62,  # 38% mass reduction with composite
+            'name': 'Thrust Frame'
         },
         'interstage': {
             'Al': 1.0,
-            'Composite': 0.7   # 30% mass reduction with composite
+            'Composite': 0.70,  # 30% mass reduction with composite
+            'name': 'Interstage'
+        },
+        'intertank': {
+            'Al': 1.0,
+            'Composite': 0.80,  # 20% mass reduction with composite
+            'name': 'Intertank'
+        },
+        'stage_2': {
+            'Al': 1.0,
+            'Composite': 0.75,  # 25% mass reduction with composite
+            'name': 'Stage 2 Structure'
         }
+    }
+    
+    # Environmental impact factors (kg CO2-eq per kg material)
+    # These can be updated based on specific LCA database values
+    IMPACT_FACTORS = {
+        'aluminum_primary': 8.5,       # Primary aluminum
+        'aluminum_recycled': 1.5,      # Recycled aluminum (if using)
+        'cfrp_virgin': 25.0,           # Virgin carbon fiber composite
+        'cfrp_recycled': 12.0,         # Recycled CFRP (if available)
+        'steel': 2.3,                  # Steel
+        'titanium': 35.0,              # Titanium alloy
+        # Operational factors
+        'fuel_multiplier': 8.0,        # kg fuel saved per kg structure over mission
+        'lh2_impact': 9.0,             # kg CO2 per kg H2 (grey hydrogen)
+        'lox_impact': 0.2,             # kg CO2 per kg O2
     }
     
     @staticmethod
@@ -34,7 +60,7 @@ class MaterialConverter:
         k_SM : float
             Structural mass factor (between k_SM_composite and k_SM_Al)
         component : str
-            Component name ('thrust_frame' or 'interstage')
+            Component name ('thrust_frame', 'interstage', 'intertank', 'stage_2')
             
         Returns:
         --------
@@ -47,15 +73,20 @@ class MaterialConverter:
         k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
         k_Comp = MaterialConverter.K_SM_RANGES[component]['Composite']
         
-        # Validate input
-        if not (k_Comp <= k_SM <= k_Al):
-            raise ValueError(f"k_SM {k_SM} out of range [{k_Comp}, {k_Al}] for {component}")
+        # Ensure k_SM is within valid range (with small tolerance for numerical errors)
+        k_SM = np.clip(k_SM, k_Comp - 0.001, k_Al + 0.001)
         
         # Linear interpolation
-        Al_fraction = (k_SM - k_Comp) / (k_Al - k_Comp)
+        Al_fraction = (k_SM - k_Comp) / (k_Al - k_Comp) if k_Al != k_Comp else 1.0
+        Al_fraction = np.clip(Al_fraction, 0.0, 1.0)
         Composite_fraction = 1.0 - Al_fraction
         
-        return Al_fraction, Composite_fraction
+        return float(Al_fraction), float(Composite_fraction)
+    
+    @classmethod
+    def reset_baseline(cls):
+        """Reset baseline for new optimization run"""
+        cls._baseline_dry_mass = None
     
     @staticmethod
     def fractions_to_k_SM(Al_fraction, component):
@@ -76,8 +107,7 @@ class MaterialConverter:
         if component not in MaterialConverter.K_SM_RANGES:
             raise ValueError(f"Unknown component: {component}")
         
-        if not (0 <= Al_fraction <= 1):
-            raise ValueError(f"Al_fraction {Al_fraction} must be between 0 and 1")
+        Al_fraction = np.clip(Al_fraction, 0.0, 1.0)
         
         k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
         k_Comp = MaterialConverter.K_SM_RANGES[component]['Composite']
@@ -85,7 +115,7 @@ class MaterialConverter:
         # Linear interpolation
         k_SM = Al_fraction * k_Al + (1 - Al_fraction) * k_Comp
         
-        return k_SM
+        return float(k_SM)
     
     @staticmethod
     def get_bounds(component):
@@ -125,222 +155,337 @@ class MaterialConverter:
         """
         k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
         mass_reduction = (1 - k_SM/k_Al) * 100
-        return mass_reduction
+        return max(0, mass_reduction)
     
     @staticmethod
-    def optimal_k_SM_for_lca(lca_al, lca_composite, component):
+    def calculate_lca_impact(mass, k_SM, component, include_operational=True):
         """
-        Calculate optimal k_SM to minimize LCA impact
-        Simple linear optimization assuming linear LCA relationship
+        Calculate LCA impact for a component with given mass and material mix
         
         Parameters:
         -----------
-        lca_al : float
-            LCA impact per kg of aluminum
-        lca_composite : float
-            LCA impact per kg of composite
+        mass : float
+            Component mass (kg) with current k_SM
+        k_SM : float
+            Structural mass factor
         component : str
             Component name
+        include_operational : bool
+            Whether to include operational benefits from mass savings
             
         Returns:
         --------
-        float : Optimal k_SM value
+        dict : LCA impact breakdown
         """
-        k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
-        k_Comp = MaterialConverter.K_SM_RANGES[component]['Composite']
+        # Get material fractions
+        al_frac, comp_frac = MaterialConverter.k_SM_to_fractions(k_SM, component)
         
-        # If composite has lower impact per effective kg
-        if lca_composite * k_Comp < lca_al * k_Al:
-            return k_Comp  # Use 100% composite
-        else:
-            return k_Al  # Use 100% aluminum
+        # Calculate material masses
+        al_mass = mass * al_frac
+        comp_mass = mass * comp_frac
+        
+        # Manufacturing impacts
+        impact_al = MaterialConverter.IMPACT_FACTORS['aluminum_primary']
+        impact_comp = MaterialConverter.IMPACT_FACTORS['cfrp_virgin']
+        
+        manufacturing_impact = al_mass * impact_al + comp_mass * impact_comp
+        
+        # Operational benefit (if applicable)
+        operational_benefit = 0
+        if include_operational:
+            # Compare with all-aluminum baseline
+            k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
+            baseline_mass = mass / k_SM * k_Al  # What mass would be with 100% Al
+            mass_saved = baseline_mass - mass
+            
+            # Fuel savings over mission lifetime
+            fuel_saved = mass_saved * MaterialConverter.IMPACT_FACTORS['fuel_multiplier']
+            operational_benefit = fuel_saved * MaterialConverter.IMPACT_FACTORS['lh2_impact']
+        
+        # Net impact
+        net_impact = manufacturing_impact - operational_benefit
+        
+        return {
+            'manufacturing_impact': manufacturing_impact,
+            'operational_benefit': operational_benefit,
+            'net_impact': net_impact,
+            'al_mass': al_mass,
+            'comp_mass': comp_mass,
+            'mass_savings': baseline_mass - mass if include_operational else 0
+        }
     
     @staticmethod
-    def print_component_info(component):
+    def find_optimal_k_SM(base_mass, component, include_operational=True):
         """
-        Print information about material efficiency for a component
+        Find optimal k_SM to minimize LCA impact for a component
+        
+        Parameters:
+        -----------
+        base_mass : float
+            Mass if component were 100% aluminum with k_SM = 1.0
+        component : str
+            Component name
+        include_operational : bool
+            Whether to include operational benefits
+            
+        Returns:
+        --------
+        dict : Optimal k_SM and related metrics
         """
-        if component not in MaterialConverter.K_SM_RANGES:
-            print(f"Unknown component: {component}")
-            return
+        bounds = MaterialConverter.get_bounds(component)
         
-        k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
-        k_Comp = MaterialConverter.K_SM_RANGES[component]['Composite']
-        mass_reduction = (1 - k_Comp/k_Al) * 100
+        # Test range of k_SM values
+        k_SM_values = np.linspace(bounds[0], bounds[1], 100)
+        impacts = []
         
-        print(f"\n{component.upper()} Material Properties:")
-        print(f"  Aluminum k_SM: {k_Al}")
-        print(f"  Composite k_SM: {k_Comp}")
-        print(f"  Mass reduction with 100% composite: {mass_reduction:.1f}%")
-        print(f"  Valid k_SM range: [{k_Comp}, {k_Al}]")
+        for k_SM in k_SM_values:
+            mass = base_mass * k_SM
+            result = MaterialConverter.calculate_lca_impact(
+                mass, k_SM, component, include_operational
+            )
+            impacts.append(result['net_impact'])
+        
+        # Find minimum
+        min_idx = np.argmin(impacts)
+        optimal_k_SM = k_SM_values[min_idx]
+        optimal_impact = impacts[min_idx]
+        
+        # Get fractions at optimum
+        al_frac, comp_frac = MaterialConverter.k_SM_to_fractions(optimal_k_SM, component)
+        
+        return {
+            'optimal_k_SM': optimal_k_SM,
+            'optimal_impact': optimal_impact,
+            'al_fraction': al_frac,
+            'comp_fraction': comp_frac,
+            'all_k_SM': k_SM_values,
+            'all_impacts': impacts
+        }
+    
+    @staticmethod
+    def validate_design(k_SM_dict):
+        """
+        Validate a complete design (all k_SM values)
+        
+        Parameters:
+        -----------
+        k_SM_dict : dict
+            Dictionary with component names as keys and k_SM values as values
+            
+        Returns:
+        --------
+        tuple : (is_valid, error_messages)
+        """
+        errors = []
+        
+        for component, k_SM in k_SM_dict.items():
+            if component not in MaterialConverter.K_SM_RANGES:
+                errors.append(f"Unknown component: {component}")
+                continue
+                
+            bounds = MaterialConverter.get_bounds(component)
+            if not (bounds[0] <= k_SM <= bounds[1]):
+                errors.append(f"{component}: k_SM={k_SM:.3f} outside bounds {bounds}")
+        
+        return len(errors) == 0, errors
+    
+    @staticmethod
+    def print_design_summary(k_SM_dict, base_masses=None):
+        """
+        Print a summary of the design configuration
+        
+        Parameters:
+        -----------
+        k_SM_dict : dict
+            Dictionary with component names as keys and k_SM values as values
+        base_masses : dict, optional
+            Base masses for each component (100% Al case)
+        """
+        print("\n" + "="*60)
+        print("DESIGN CONFIGURATION SUMMARY")
+        print("="*60)
+        
+        total_manufacturing = 0
+        total_operational = 0
+        total_mass = 0
+        total_base_mass = 0
+        
+        for component, k_SM in k_SM_dict.items():
+            if component not in MaterialConverter.K_SM_RANGES:
+                continue
+                
+            name = MaterialConverter.K_SM_RANGES[component]['name']
+            al_frac, comp_frac = MaterialConverter.k_SM_to_fractions(k_SM, component)
+            mass_reduction = MaterialConverter.calculate_mass_reduction(k_SM, component)
+            
+            print(f"\n{name}:")
+            print(f"  k_SM = {k_SM:.3f}")
+            print(f"  Material mix: {al_frac*100:.1f}% Al, {comp_frac*100:.1f}% Composite")
+            print(f"  Mass reduction: {mass_reduction:.1f}%")
+            
+            if base_masses and component in base_masses:
+                base_mass = base_masses[component]
+                actual_mass = base_mass * k_SM
+                result = MaterialConverter.calculate_lca_impact(
+                    actual_mass, k_SM, component, include_operational=True
+                )
+                
+                print(f"  Mass: {actual_mass:.1f} kg (saved {base_mass-actual_mass:.1f} kg)")
+                print(f"  Manufacturing impact: {result['manufacturing_impact']:.1f} kg CO2-eq")
+                print(f"  Operational benefit: -{result['operational_benefit']:.1f} kg CO2-eq")
+                print(f"  Net impact: {result['net_impact']:.1f} kg CO2-eq")
+                
+                total_manufacturing += result['manufacturing_impact']
+                total_operational += result['operational_benefit']
+                total_mass += actual_mass
+                total_base_mass += base_mass
+        
+        if base_masses:
+            print("\n" + "-"*60)
+            print("TOTAL IMPACTS:")
+            print(f"  Total mass: {total_mass:.1f} kg (saved {total_base_mass-total_mass:.1f} kg)")
+            print(f"  Total manufacturing: {total_manufacturing:.1f} kg CO2-eq")
+            print(f"  Total operational benefit: -{total_operational:.1f} kg CO2-eq")
+            print(f"  Net impact: {total_manufacturing - total_operational:.1f} kg CO2-eq")
 
 
-def validate_k_SM_design(k_SM_thrust_frame, k_SM_interstage):
+# Utility functions for optimization
+def create_bounds_arrays():
     """
-    Validate k_SM values for both variable components
+    Create bounds arrays for optimization algorithms
+    
+    Returns:
+    --------
+    tuple : (lower_bounds, upper_bounds) as numpy arrays
+    """
+    components = ['thrust_frame', 'interstage', 'intertank', 'stage_2']
+    lower = []
+    upper = []
+    
+    for comp in components:
+        bounds = MaterialConverter.get_bounds(comp)
+        lower.append(bounds[0])
+        upper.append(bounds[1])
+    
+    return np.array(lower), np.array(upper)
+
+
+def normalize_k_SM(k_SM_values):
+    """
+    Normalize k_SM values to [0, 1] range for optimization
     
     Parameters:
     -----------
-    k_SM_thrust_frame : float
-        k_SM value for thrust frame
-    k_SM_interstage : float
-        k_SM value for interstage
+    k_SM_values : array-like
+        k_SM values in actual range
         
     Returns:
     --------
-    bool : True if valid, False otherwise
+    numpy array : Normalized values
     """
-    # Check thrust frame bounds
-    tf_bounds = MaterialConverter.get_bounds('thrust_frame')
-    if not (tf_bounds[0] <= k_SM_thrust_frame <= tf_bounds[1]):
-        return False
+    components = ['thrust_frame', 'interstage', 'intertank', 'stage_2']
+    normalized = []
     
-    # Check interstage bounds
-    is_bounds = MaterialConverter.get_bounds('interstage')
-    if not (is_bounds[0] <= k_SM_interstage <= is_bounds[1]):
-        return False
+    for i, comp in enumerate(components):
+        bounds = MaterialConverter.get_bounds(comp)
+        norm_val = (k_SM_values[i] - bounds[0]) / (bounds[1] - bounds[0])
+        normalized.append(norm_val)
     
-    return True
+    return np.array(normalized)
 
 
-def calculate_environmental_tradeoff(base_mass, k_SM, component, 
-                                    impact_al=8.5, impact_composite=25.0):
+def denormalize_k_SM(normalized_values):
     """
-    Calculate the environmental impact trade-off for a component
+    Convert normalized [0, 1] values back to actual k_SM range
     
     Parameters:
     -----------
-    base_mass : float
-        Mass if component were 100% aluminum with k_SM = 1.0
-    k_SM : float
-        Current structural mass factor
-    component : str
-        Component name
-    impact_al : float
-        Environmental impact per kg aluminum (default: kg CO2-eq)
-    impact_composite : float
-        Environmental impact per kg composite (default: kg CO2-eq)
+    normalized_values : array-like
+        Normalized values [0, 1]
         
     Returns:
     --------
-    dict : Environmental metrics
+    numpy array : Actual k_SM values
     """
-    # Get actual mass with current k_SM
-    actual_mass = base_mass * k_SM
+    components = ['thrust_frame', 'interstage', 'intertank', 'stage_2']
+    actual = []
     
-    # Get material fractions
-    al_frac, comp_frac = MaterialConverter.k_SM_to_fractions(k_SM, component)
+    for i, comp in enumerate(components):
+        bounds = MaterialConverter.get_bounds(comp)
+        k_SM = bounds[0] + normalized_values[i] * (bounds[1] - bounds[0])
+        actual.append(k_SM)
     
-    # Calculate impacts
-    al_mass = actual_mass * al_frac
-    comp_mass = actual_mass * comp_frac
-    
-    total_impact = al_mass * impact_al + comp_mass * impact_composite
-    
-    # Compare with 100% aluminum case
-    al_only_mass = base_mass * MaterialConverter.K_SM_RANGES[component]['Al']
-    al_only_impact = al_only_mass * impact_al
-    
-    # Compare with 100% composite case
-    comp_only_mass = base_mass * MaterialConverter.K_SM_RANGES[component]['Composite']
-    comp_only_impact = comp_only_mass * impact_composite
-    
-    return {
-        'actual_mass': actual_mass,
-        'al_mass': al_mass,
-        'comp_mass': comp_mass,
-        'total_impact': total_impact,
-        'al_only_impact': al_only_impact,
-        'comp_only_impact': comp_only_impact,
-        'mass_saved_vs_al': al_only_mass - actual_mass,
-        'impact_vs_al': total_impact - al_only_impact,
-        'impact_vs_comp': total_impact - comp_only_impact
-    }
+    return np.array(actual)
 
 
 # Example usage and testing
 if __name__ == "__main__":
     
     print("="*60)
-    print("FELIN LAUNCHER MATERIAL CONVERSION UTILITIES")
+    print("FELIN LAUNCHER MATERIAL OPTIMIZATION ANALYSIS")
     print("="*60)
     
-    # Show component information
-    for component in ['thrust_frame', 'interstage']:
-        MaterialConverter.print_component_info(component)
+    # Show all component information
+    for component in MaterialConverter.K_SM_RANGES.keys():
+        bounds = MaterialConverter.get_bounds(component)
+        print(f"\n{MaterialConverter.K_SM_RANGES[component]['name']}:")
+        print(f"  k_SM range: [{bounds[0]:.2f}, {bounds[1]:.2f}]")
+        print(f"  Max mass reduction: {(1-bounds[0])*100:.0f}%")
     
+    # Test design configurations
     print("\n" + "="*60)
-    print("CONVERSION EXAMPLES")
+    print("DESIGN CONFIGURATIONS")
     print("="*60)
     
-    # Example 1: Different k_SM for same material mix
-    print("\nExample: 50% Al, 50% Composite material mix")
+    # Define test configurations
+    configs = {
+        '100% Aluminum': {'thrust_frame': 1.0, 'interstage': 1.0, 
+                         'intertank': 1.0, 'stage_2': 1.0},
+        '100% Composite': {'thrust_frame': 0.62, 'interstage': 0.70, 
+                          'intertank': 0.80, 'stage_2': 0.75},
+        '50/50 Mix': {'thrust_frame': 0.81, 'interstage': 0.85, 
+                     'intertank': 0.90, 'stage_2': 0.875},
+    }
     
-    # Thrust frame
-    k_SM_tf = MaterialConverter.fractions_to_k_SM(0.5, 'thrust_frame')
-    print(f"Thrust frame: k_SM = {k_SM_tf:.3f}")
+    # Example base masses (kg)
+    base_masses = {
+        'thrust_frame': 2000,
+        'interstage': 1500,
+        'intertank': 1000,
+        'stage_2': 3000  # structural portion only
+    }
     
-    # Interstage  
-    k_SM_is = MaterialConverter.fractions_to_k_SM(0.5, 'interstage')
-    print(f"Interstage: k_SM = {k_SM_is:.3f}")
-    print("Note: Same material mix gives different k_SM values!")
+    # Analyze each configuration
+    for name, k_SM_dict in configs.items():
+        print(f"\n### {name} ###")
+        MaterialConverter.print_design_summary(k_SM_dict, base_masses)
     
-    # Example 2: Mass reduction
-    print("\nMass reduction for different k_SM values:")
-    test_k_values = [1.0, 0.9, 0.8, 0.7, 0.62]
-    for k in test_k_values:
-        if k >= 0.62:  # Valid for thrust frame
-            reduction = MaterialConverter.calculate_mass_reduction(k, 'thrust_frame')
-            al_frac, _ = MaterialConverter.k_SM_to_fractions(k, 'thrust_frame')
-            print(f"  Thrust frame k_SM={k:.2f}: {reduction:.1f}% reduction, "
-                  f"{al_frac*100:.0f}% Al")
-    
-    # Example 3: Environmental trade-off
+    # Find optimal configuration
     print("\n" + "="*60)
-    print("ENVIRONMENTAL TRADE-OFF ANALYSIS")
+    print("OPTIMIZATION ANALYSIS")
     print("="*60)
     
-    base_mass = 1000  # kg
+    for component, base_mass in base_masses.items():
+        print(f"\nOptimizing {MaterialConverter.K_SM_RANGES[component]['name']}:")
+        result = MaterialConverter.find_optimal_k_SM(base_mass, component, 
+                                                    include_operational=True)
+        print(f"  Optimal k_SM: {result['optimal_k_SM']:.3f}")
+        print(f"  Material mix: {result['al_fraction']*100:.0f}% Al, "
+              f"{result['comp_fraction']*100:.0f}% Composite")
+        print(f"  Optimal impact: {result['optimal_impact']:.1f} kg CO2-eq")
     
-    # Analyze thrust frame
-    print(f"\nThrust Frame (base mass = {base_mass} kg):")
-    for al_percent in [100, 75, 50, 25, 0]:
-        al_frac = al_percent / 100
-        k_SM = MaterialConverter.fractions_to_k_SM(al_frac, 'thrust_frame')
-        metrics = calculate_environmental_tradeoff(base_mass, k_SM, 'thrust_frame')
-        
-        print(f"  {al_percent}% Al: mass={metrics['actual_mass']:.0f} kg, "
-              f"CO2={metrics['total_impact']:.0f} kg")
-    
-    # Find break-even point
+    # Test normalization functions
     print("\n" + "="*60)
-    print("OPTIMIZATION INSIGHTS")
+    print("NORMALIZATION TEST")
     print("="*60)
     
-    # When is composite better than aluminum?
-    impact_al = 8.5  # kg CO2/kg
-    impact_comp = 25.0  # kg CO2/kg
+    test_k_SM = np.array([0.81, 0.85, 0.90, 0.875])
+    print(f"Original k_SM: {test_k_SM}")
     
-    print(f"\nWith Al impact={impact_al} and Composite impact={impact_comp}:")
+    normalized = normalize_k_SM(test_k_SM)
+    print(f"Normalized: {normalized}")
     
-    for component in ['thrust_frame', 'interstage']:
-        k_Al = MaterialConverter.K_SM_RANGES[component]['Al']
-        k_Comp = MaterialConverter.K_SM_RANGES[component]['Composite']
-        
-        # Break-even point where impacts are equal
-        # impact_al * mass_al = impact_comp * mass_comp
-        # impact_al * k_Al = impact_comp * k_Comp (for same base mass)
-        
-        ratio = (impact_al * k_Al) / (impact_comp * k_Comp)
-        
-        if ratio > 1:
-            print(f"  {component}: Composite is better (ratio={ratio:.2f})")
-        elif ratio < 1:
-            print(f"  {component}: Aluminum is better (ratio={ratio:.2f})")
-        else:
-            print(f"  {component}: Equal impact")
-        
-        # Critical impact ratio where they break even
-        critical_ratio = k_Al / k_Comp
-        critical_impact_comp = impact_al * critical_ratio
-        print(f"    Break-even when composite impact < {critical_impact_comp:.1f} kg CO2/kg")
+    denormalized = denormalize_k_SM(normalized)
+    print(f"Denormalized: {denormalized}")
+    
+    print(f"Match: {np.allclose(test_k_SM, denormalized)}")

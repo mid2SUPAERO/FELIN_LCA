@@ -73,7 +73,7 @@ class Dry_Mass_stage_1_Comp(ExplicitComponent):
         Constants['Thrust_frame_material']='Al'
         Constants['Redundancy_level'] = 3
         Constants['Type_fuel']='LH2'                 #Type of fuel (here LH2)
-        Constants['S_interstage']=0.0
+        Constants['S_interstage']=1.0
         Constants['g0']=9.80665
         Constants['Type_interstage']='lower'
         Constants['SSM_TF_1st_stage'] = 1.25
@@ -158,17 +158,20 @@ class Dry_Mass_stage_1_Comp(ExplicitComponent):
         # Intertank: k_SM ranges from 1.0 (100% Al) to 0.8 (100% Composite)  
         # Linear interpolation: Al_fraction = (k_SM - 0.8) / (1.0 - 0.8)
         outputs['Al_fraction_intertank'] = (k_SM_it - 0.8) / 0.2
-        outputs['Composite_fraction_intertank'] = 1.0 - outputs['Al_fraction_intertank'][0]
-        '''
-        # After computing k_SM_*:
+        outputs['Composite_fraction_intertank'] = 1.0 - outputs['Al_fraction_intertank'][0]'''
+        
+        # Calculate material fractions based on k_SM values
+        # Thrust frame: k_SM ranges from 1.0 (100% Al) to 0.62 (100% Composite)
         al_tf = float(np.clip((k_SM_tf - 0.62)/0.38, 0.0, 1.0))
         outputs['Al_fraction_thrust_frame'] = al_tf
         outputs['Composite_fraction_thrust_frame'] = 1.0 - al_tf
 
+        # Interstage: k_SM ranges from 1.0 (100% Al) to 0.7 (100% Composite)
         al_is = float(np.clip((k_SM_is - 0.7)/0.3, 0.0, 1.0))
         outputs['Al_fraction_interstage'] = al_is
         outputs['Composite_fraction_interstage'] = 1.0 - al_is
 
+        # Intertank: k_SM ranges from 1.0 (100% Al) to 0.8 (100% Composite)
         al_it = float(np.clip((k_SM_it - 0.8)/0.2, 0.0, 1.0))
         outputs['Al_fraction_intertank'] = al_it
         outputs['Composite_fraction_intertank'] = 1.0 - al_it

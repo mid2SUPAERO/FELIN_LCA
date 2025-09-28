@@ -51,7 +51,8 @@ class Launcher_vehicle(Group):
         # NEW: Material composition design variables
         indeps.add_output('k_SM_thrust_frame', 0.81)  # Default 50% Al, 50% Composite
         indeps.add_output('k_SM_interstage', 0.85)    # Default 50% Al, 50% Composite
-        indeps.add_output('k_SM_intertank', 0.9)      # Default 50% Al, 50% Composite
+        indeps.add_output('k_SM_intertank', 0.9)      # Default 50% Al, 50% Composite~
+        indeps.add_output('k_SM_stage_2', 0.875)       # Default 50% Al, 50% Composite
 
         # Create cycle group with promotion
         cycle = self.add_subsystem('cycle', Group(), promotes=['*'])
@@ -72,7 +73,7 @@ class Launcher_vehicle(Group):
         
         # Structure Stage 2
         Struct_2 = cycle.add_subsystem('Struct_2', Dry_Mass_stage_2.Dry_Mass_stage_2_Comp(),
-                                       promotes_inputs=['Prop_mass_stage_2'],
+                                       promotes_inputs=['Prop_mass_stage_2', 'k_SM_stage_2'],
                                        promotes_outputs=['Dry_mass_stage_2'])
 
         # Aerodynamics discipline
@@ -115,11 +116,11 @@ class Launcher_vehicle(Group):
         Environmental = cycle.add_subsystem('Environmental', 
                                            Environmental_Discipline.Environmental_Discipline_Comp())
         
-        # Connect Stage 1 component masses to Environmental discipline
-        # Based on the error message, the correct paths are:
-        # FROM: 'Struct_1.X' (not 'cycle.Struct_1.X')
-        # TO: 'Environmental.Y' (not 'cycle.Environmental.Y')
+        # ========================================
+        # CONNECT STAGE 1 TO ENVIRONMENTAL
+        # ========================================
         
+        # Component masses
         self.connect('Struct_1.M_eng', 'Environmental.M_eng_stage_1')
         self.connect('Struct_1.M_thrust_frame', 'Environmental.M_thrust_frame_stage_1')
         self.connect('Struct_1.M_FT', 'Environmental.M_FT_stage_1')
@@ -132,7 +133,7 @@ class Launcher_vehicle(Group):
         self.connect('Struct_1.M_intertank', 'Environmental.M_intertank_stage_1')
         self.connect('Struct_1.M_interstage', 'Environmental.M_interstage_stage_1')
         
-        # Connect material fractions
+        # Material fractions Stage 1
         self.connect('Struct_1.Al_fraction_thrust_frame', 
                     'Environmental.Al_fraction_thrust_frame_stage_1')
         self.connect('Struct_1.Composite_fraction_thrust_frame', 
@@ -145,10 +146,27 @@ class Launcher_vehicle(Group):
                     'Environmental.Al_fraction_intertank_stage_1')
         self.connect('Struct_1.Composite_fraction_intertank', 
                     'Environmental.Composite_fraction_intertank_stage_1')
+        # Connect k_SM values to Environmental
+        self.connect('k_SM_thrust_frame', 'Environmental.k_SM_thrust_frame')
+        self.connect('k_SM_interstage', 'Environmental.k_SM_interstage')
+        self.connect('k_SM_intertank', 'Environmental.k_SM_intertank')
+        self.connect('k_SM_stage_2', 'Environmental.k_SM_stage_2')
         
-        # Connect Stage 2 and propellant masses
-        # These are promoted to the top level, so use direct names
+        # ========================================
+        # CONNECT STAGE 2 TO ENVIRONMENTAL
+        # ========================================
+        
+        # Stage 2 dry mass
         self.connect('Dry_mass_stage_2', 'Environmental.Dry_mass_stage_2')
+        
+        # NEW: Stage 2 material fractions
+        self.connect('Struct_2.Al_fraction_stage_2', 'Environmental.Al_fraction_stage_2')
+        self.connect('Struct_2.Composite_fraction_stage_2', 'Environmental.Composite_fraction_stage_2')
+        
+        # ========================================
+        # CONNECT PROPELLANT MASSES
+        # ========================================
+        
         self.connect('Prop_mass_stage_1', 'Environmental.Prop_mass_stage_1')
         self.connect('Prop_mass_stage_2', 'Environmental.Prop_mass_stage_2')
         self.connect('OF_stage_1', 'Environmental.OF_stage_1')
