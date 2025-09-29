@@ -31,97 +31,118 @@ print(eco.random())
 ```
 
 
-#Changes made for changing the ratio of materials in the structure (k_SM) in order to minime environmental score
+### Workflow Overview
 
-There are two launcher components where k_SM influences: Thrust frame and Interstage.
+1. Design Variable Flow: k_SM (Structural Mass factor) represents material composition:
 
-In dry_mass_stage_1.py:
+Each component has specific range:
+
+Thrust frame: [0.62, 1.00]
+Interstage: [0.70, 1.00]
+Intertank: [0.80, 1.00]
+Stage 2: [0.75, 1.00]
+
+k_SM = 1.0 means 100% aluminum, lower bound means 100% composite
+Mass calculation: Component_mass = Base_mass × k_SM
+
+2. Structural Mass Calculation Chain
+k_SM → Material Fractions → Component Masses → Total Dry Mass
+In Dry_Mass_stage_1.py:
 ```
-        # Add k_SM as input variables with component-specific ranges
-        # Thrust frame: 1.0 = 100% Al, 0.62 = 100% Composite
-        self.add_input('k_SM_thrust_frame', val=1.0)
-        # Interstage: 1.0 = 100% Al, 0.7 = 100% Composite  
-        self.add_input('k_SM_interstage', val=1.0)
-        # Intertank: 1.0 = 100% Al, 0.8 = 100% Composite
-        self.add_input('k_SM_intertank', val=1.0)
+Convert k_SM to material fractions
+Al_fraction = (k_SM - k_SM_min) / (k_SM_max - k_SM_min)
+Composite_fraction = 1.0 - Al_fraction
 
-        # Material composition outputs for LCA
-        self.add_output('Al_fraction_thrust_frame', val=1.0)
-        self.add_output('Composite_fraction_thrust_frame', val=0.0)
-        self.add_output('Al_fraction_interstage', val=1.0)
-        self.add_output('Composite_fraction_interstage', val=0.0)
-        self.add_output('Al_fraction_intertank', val=1.0)
-        self.add_output('Composite_fraction_intertank', val=0.0)
+# Calculate component mass with material factor
+M_thrust_frame = base_calculation × k_SM_thrust_frame
+```
+Mass breakdown:
 
-        # Computation of thrust frame mass with variable k_SM
-        # Instead of fixed material, use k_SM as continuous variable
-        k_SM_tf = inputs['k_SM_thrust_frame'][0]
-        #Computation of thrust frame mass (structure that support the engines and connect to the tanks)
-        M_thrust_frame = mmf.thrust_frame_mass_variable(Total_Thrust/inputs['N_eng_stage_1'][0]/1000,M_eng/inputs['N_eng_stage_1'][0],Constants['NX_max_dim'],inputs['N_eng_stage_1'][0],k_SM_tf,Constants['SSM_TF_1st_stage'])
+Variable components (affected by k_SM): thrust frame, interstage, intertank, Stage 2 structure
+Fixed components (always same material): tanks, engines, avionics, TPS
 
-        #Computation of intertank mass
-        k_SM_it = inputs['k_SM_intertank'][0]
-        M_FT,M_OxT,M_TPS_OxT,M_TPS_FT,M_intertank = mmf.tank_mass_variable(inputs['Pdyn_max_dim'][0],Constants['NX_max_dim'],Constants['P_tank_Ox'],Constants['P_tank_F'],V_FT,V_Ox,inputs['Diameter_stage_1']            [0],S_Ox,S_F,2*S_dome,S_totale,Constants['Type_prop'],Constants['Tank_config'],Constants['Stage_in_staging'],k_SM_it)
+3. Environmental Impact Calculation
+Material Inventory Building:
+```
+#For each component
+material_inventory['aluminum_7075'] += component_mass × Al_fraction
+material_inventory['cfrp'] += component_mass × Composite_fraction
+```
+LCA Impact Assessment using Brightway2:
+```
+#For each material in inventory
+activity = bw.get_activity(ECOINVENT_CODES[material])
+bw_inventory[activity] = mass_kg
+```
+```
+# For each ESA impact category
+lca = bw.LCA(bw_inventory, method)
+lca.lci()  # Life Cycle Inventory
+lca.lcia() # Life Cycle Impact Assessment
+impact = lca.score
+```
+ESA Method Processing:
 
-        #Computation of interstage mass
-        k_SM_is = inputs['k_SM_interstage'][0]
-        M_interstage = mmf.mass_interstage_variable(Constants['S_interstage'],inputs['Diameter_stage_1'][0],inputs['Diameter_stage_2'][0],Constants['Type_interstage'],k_SM_is)
+16 impact categories (GWP, acidification, toxicity...)
+Each normalized to common units
+Weighted by importance factors (took from simapro)
+Summed to single score in Points (Pt)
 
-        Dry_mass_stage_1 = M_eng+M_thrust_frame+M_FT+M_OxT+M_TPS_OxT+\
-                        M_TPS_FT+M_TVC+M_avio+M_EPS+M_intertank+\
-                        M_interstage+Constants['Masse_aux_stage_1']
+4. Operational Benefit Calculation (mass savings by using cfrp)
+```
+#Mass savings compared to baseline (100% aluminum)
+baseline_mass = component_mass / k_SM  # What it would be at k_SM=1.0
+mass_savings = baseline_mass - actual_mass
 
-        # Output individual masses for LCA
-        outputs['M_eng'] = M_eng
-        outputs['M_thrust_frame'] = M_thrust_frame
-        outputs['M_FT'] = M_FT
-        outputs['M_OxT'] = M_OxT
-        outputs['M_TPS_OxT'] = M_TPS_OxT
-        outputs['M_TPS_FT'] = M_TPS_FT
-        outputs['M_TVC'] = M_TVC
-        outputs['M_avio'] = M_avio
-        outputs['M_EPS'] = M_EPS
-        outputs['M_intertank'] = M_intertank
-        outputs['M_interstage'] = M_interstage
-        
-        # Calculate material fractions based on k_SM values
-        # Thrust frame: k_SM ranges from 1.0 (100% Al) to 0.62 (100% Composite)
-        # Linear interpolation: Al_fraction = (k_SM - 0.62) / (1.0 - 0.62)
-        outputs['Al_fraction_thrust_frame'] = (k_SM_tf - 0.62) / 0.38
-        outputs['Composite_fraction_thrust_frame'] = 1.0 - outputs['Al_fraction_thrust_frame'][0]
-        
-        # Interstage: k_SM ranges from 1.0 (100% Al) to 0.7 (100% Composite)
-        # Linear interpolation: Al_fraction = (k_SM - 0.7) / (1.0 - 0.7)
-        outputs['Al_fraction_interstage'] = (k_SM_is - 0.7) / 0.3
-        outputs['Composite_fraction_interstage'] = 1.0 - outputs['Al_fraction_interstage'][0]
+# Fuel savings over mission lifetime
+fuel_savings = mass_savings × 8  # Multiplier from rocket equation
 
-        # Intertank: k_SM ranges from 1.0 (100% Al) to 0.8 (100% Composite)  
-        # Linear interpolation: Al_fraction = (k_SM - 0.8) / (1.0 - 0.8)
-        outputs['Al_fraction_intertank'] = (k_SM_it - 0.8) / 0.2
-        outputs['Composite_fraction_intertank'] = 1.0 - outputs['Al_fraction_intertank'][0]
+# Environmental benefit from saved propellant production
+benefit = LCA(saved_LOX + saved_LH2)
+```
+5. Complete Integration Loop
+CMA-ES Optimizer
+    ↓ (proposes k_SM values)
+OpenMDAO Problem
+    ↓
+Structural Discipline
+    → Calculates masses based on k_SM
+    → Outputs material fractions
+    ↓
+Environmental Discipline  
+    → Builds material inventory
+    → Maps ecoinvent entries via Brightway2
+    → Calculates manufacturing impacts
+    → Calculates operational benefits
+    → Returns LCA score
+    ↓
+Trajectory Discipline
+    → Simulates flight with updated masses
+    → Returns performance metrics
+    ↓
+Objective Function
+    → Combines LCA score and performance
+    → Returns to optimizer
+    
+6. Balanced Optimization Approach
+Single Weighted Objective -> Alpha* mass + (1-alpha)*score
+```
+Normalize both objectives to [0,1]
+lca_normalized = (lca_score - 250) / (285 - 250)
+glow_normalized = (glow - 378000) / (382000 - 378000)
+
+# Weighted combination
+objective = w_env × lca_normalized + w_perf × glow_normalized
+Key Trade-offs:
+
+Aluminum: Lower environmental impact (14 kg CO₂/kg), heavier structure
+CFRP: Higher environmental impact (85 kg CO₂/kg), 20-38% mass reduction
+Operational benefit: Rarely compensates for CFRP's 6× higher manufacturing impact
 ```
 
-In Environmental_Discipline.py:
-```
-        # Material fractions for variable components
-        self.add_input('Al_fraction_thrust_frame_stage_1', val=1.0)
-        self.add_input('Composite_fraction_thrust_frame_stage_1', val=0.0)
-        self.add_input('Al_fraction_interstage_stage_1', val=1.0)
-        self.add_input('Composite_fraction_interstage_stage_1', val=0.0)
-        self.add_input('Al_fraction_intertank_stage_1', val=1.0)
-        self.add_input('Composite_fraction_intertank_stage_1', val=0.0)
-
-        # Stage 1 components with variable materials
-        # Thrust frame (variable Al/Composite)
-        aluminum_total += inputs['M_thrust_frame_stage_1'][0] * inputs['Al_fraction_thrust_frame_stage_1'][0]
-        composite_total += inputs['M_thrust_frame_stage_1'][0] * inputs['Composite_fraction_thrust_frame_stage_1'][0]
-        
-        # Interstage (variable Al/Composite)
-        aluminum_total += inputs['M_interstage_stage_1'][0] * inputs['Al_fraction_interstage_stage_1'][0]
-        composite_total += inputs['M_interstage_stage_1'][0] * inputs['Composite_fraction_interstage_stage_1'][0]
-
-       # Intertank (variable Al/Composite)
-        aluminum_total += inputs['M_intertank_stage_1'][0] * inputs['Al_fraction_intertank_stage_1'][0]
-        composite_total += inputs['M_intertank_stage_1'][0] * inputs['Composite_fraction_intertank_stage_1'][0]
-
-```
+7. Why Aluminum Dominates
+Manufacturing impact ratio: CFRP/Al = 6:1 (much more pollutant - should i find some greener material?)
+Mass reduction: Maximum 38% (thrust frame)
+Fuel savings multiplier: 8× over mission
+BUT Environmental penalty exceeds operational benefit
+->The balanced optimization (60% environment, 40% performance) still chose aluminum because the performance gain (0.7% GLOW reduction) is minimal compared to the environmental cost (13% LCA increase).
