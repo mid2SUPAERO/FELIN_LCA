@@ -1,12 +1,6 @@
 """
 Launch Vehicle Group with Environmental/LCA Discipline Integration
-Modified to include material optimization and environmental impact assessment
-
-Created on Mon Oct 30 11:24:33 2017
-Modified for LCA integration
-
-@author: lbrevaul (original)
-Modified for environmental optimization
+CORRECTED VERSION - proper path names for connections
 """
 
 import numpy as np
@@ -28,17 +22,17 @@ class Launcher_vehicle(Group):
         # Existing design variables
         indeps.add_output('Diameter_stage_1',4.6)
         indeps.add_output('Diameter_stage_2',4.6)
-        indeps.add_output('Mass_flow_rate_stage_1',219.)
-        indeps.add_output('Mass_flow_rate_stage_2',219.)
+        indeps.add_output('Mass_flow_rate_stage_1',300.)
+        indeps.add_output('Mass_flow_rate_stage_2',200.)
         indeps.add_output('Thrust_stage_1',1000.)
-        indeps.add_output('Thrust_stage_2',1150.)
-        indeps.add_output('Pc_stage_1',100.)
-        indeps.add_output('Pc_stage_2',100.)
+        indeps.add_output('Thrust_stage_2',1000.)
+        indeps.add_output('Pc_stage_1',80.)
+        indeps.add_output('Pc_stage_2',60.)
         indeps.add_output('Pe_stage_1',1.)
         indeps.add_output('Pe_stage_2',1.)
-        indeps.add_output('OF_stage_1',2.7)
-        indeps.add_output('OF_stage_2',2.7)
-        indeps.add_output('N_eng_stage_1',7.)
+        indeps.add_output('OF_stage_1',5.0)
+        indeps.add_output('OF_stage_2',5.5)
+        indeps.add_output('N_eng_stage_1',6.)
         indeps.add_output('N_eng_stage_2',1.)
         indeps.add_output('Prop_mass_stage_1',350000.)
         indeps.add_output('Prop_mass_stage_2',75000.)
@@ -47,21 +41,20 @@ class Launcher_vehicle(Group):
         indeps.add_output('thetacmd_f',20.)
         indeps.add_output('ksi',0.293)
         indeps.add_output('Pitch_over_duration',5.)
-        indeps.add_output('Exit_nozzle_area_stage_1',0.5)
-        indeps.add_output('Exit_nozzle_area_stage_2',0.5)
+        indeps.add_output('Exit_nozzle_area_stage_1',0.79)
+        indeps.add_output('Exit_nozzle_area_stage_2',3.6305)
         indeps.add_output('Delta_vertical_phase',10.)
         indeps.add_output('Delta_theta_pitch_over',1.)
-        indeps.add_output('is_fallout',1.)        
+        indeps.add_output('is_fallout',0.)        
         indeps.add_output('command_stage_1_exo',np.array([1.,1.]))
         
         # NEW: Material composition design variables
-        # Thrust frame: k_SM ranges from 1.0 (100% Al) to 0.62 (100% Composite)
         indeps.add_output('k_SM_thrust_frame', 0.81)  # Default 50% Al, 50% Composite
-        # Interstage: k_SM ranges from 1.0 (100% Al) to 0.7 (100% Composite)
         indeps.add_output('k_SM_interstage', 0.85)    # Default 50% Al, 50% Composite
+        indeps.add_output('k_SM_intertank', 0.9)      # Default 50% Al, 50% Composite~
+        indeps.add_output('k_SM_stage_2', 0.875)       # Default 50% Al, 50% Composite
 
-        
-        # Create cycle group
+        # Create cycle group with promotion
         cycle = self.add_subsystem('cycle', Group(), promotes=['*'])
         
         # Propulsion discipline
@@ -70,17 +63,17 @@ class Launcher_vehicle(Group):
                                                    'OF_stage_1','Pc_stage_2','Pe_stage_2','OF_stage_2'],
                                    promotes_outputs=['Isp_stage_1','Isp_stage_2'])
            
-        # Structure Stage 1 - Modified to accept k_SM inputs
+        # Structure Stage 1 - DON'T promote the individual mass outputs
         Struct_1 = cycle.add_subsystem('Struct_1', Dry_Mass_stage_1.Dry_Mass_stage_1_Comp(),
                                        promotes_inputs=['Diameter_stage_1','OF_stage_1',
                                                        'N_eng_stage_1','Diameter_stage_2','Isp_stage_1',
                                                        'Prop_mass_stage_1','Thrust_stage_1','Pdyn_max_dim',
-                                                       'k_SM_thrust_frame','k_SM_interstage'],
+                                                       'k_SM_thrust_frame','k_SM_interstage','k_SM_intertank'],
                                        promotes_outputs=['Dry_mass_stage_1'])
         
         # Structure Stage 2
-        Struct_2 = cycle.add_subsystem('Struct_2', Dry_Mass_stage_2.Dry_Mass_stage_1_Comp(),
-                                       promotes_inputs=['Prop_mass_stage_2'],
+        Struct_2 = cycle.add_subsystem('Struct_2', Dry_Mass_stage_2.Dry_Mass_stage_2_Comp(),
+                                       promotes_inputs=['Prop_mass_stage_2', 'k_SM_stage_2'],
                                        promotes_outputs=['Dry_mass_stage_2'])
 
         # Aerodynamics discipline
@@ -115,15 +108,19 @@ class Launcher_vehicle(Group):
                                                     'T_fallout','alt_fallout','flux_fallout','r_fallout',
                                                     'V_fallout','theta_fallout','alpha_fallout','nx_fallout',
                                                     'Nb_pt_fallout','m_fallout','CX_fallout',
-                                                    'lat_fallout','gamma_fallout','longi_fallout',
+                                                    'CZ_fallout','lat_fallout','gamma_fallout','longi_fallout',
                                                     'thrust_fallout','mass_flow_rate_fallout','Mach_fallout',
                                                     'pdyn_fallout','rho_fallout','distance_fallout'])
         
-        # NEW: Environmental/LCA Discipline
+        # Environmental/LCA Discipline - DON'T promote
         Environmental = cycle.add_subsystem('Environmental', 
                                            Environmental_Discipline.Environmental_Discipline_Comp())
         
-        # Connect Stage 1 component masses to Environmental discipline
+        # ========================================
+        # CONNECT STAGE 1 TO ENVIRONMENTAL
+        # ========================================
+        
+        # Component masses
         self.connect('Struct_1.M_eng', 'Environmental.M_eng_stage_1')
         self.connect('Struct_1.M_thrust_frame', 'Environmental.M_thrust_frame_stage_1')
         self.connect('Struct_1.M_FT', 'Environmental.M_FT_stage_1')
@@ -136,7 +133,7 @@ class Launcher_vehicle(Group):
         self.connect('Struct_1.M_intertank', 'Environmental.M_intertank_stage_1')
         self.connect('Struct_1.M_interstage', 'Environmental.M_interstage_stage_1')
         
-        # Connect material fractions
+        # Material fractions Stage 1
         self.connect('Struct_1.Al_fraction_thrust_frame', 
                     'Environmental.Al_fraction_thrust_frame_stage_1')
         self.connect('Struct_1.Composite_fraction_thrust_frame', 
@@ -145,8 +142,32 @@ class Launcher_vehicle(Group):
                     'Environmental.Al_fraction_interstage_stage_1')
         self.connect('Struct_1.Composite_fraction_interstage', 
                     'Environmental.Composite_fraction_interstage_stage_1')
+        self.connect('Struct_1.Al_fraction_intertank', 
+                    'Environmental.Al_fraction_intertank_stage_1')
+        self.connect('Struct_1.Composite_fraction_intertank', 
+                    'Environmental.Composite_fraction_intertank_stage_1')
+        # Connect k_SM values to Environmental
+        self.connect('k_SM_thrust_frame', 'Environmental.k_SM_thrust_frame')
+        self.connect('k_SM_interstage', 'Environmental.k_SM_interstage')
+        self.connect('k_SM_intertank', 'Environmental.k_SM_intertank')
+        self.connect('k_SM_stage_2', 'Environmental.k_SM_stage_2')
         
-        # Connect Stage 2 and propellant masses
+        # ========================================
+        # CONNECT STAGE 2 TO ENVIRONMENTAL
+        # ========================================
+        
+        # Stage 2 dry mass
         self.connect('Dry_mass_stage_2', 'Environmental.Dry_mass_stage_2')
+        
+        # NEW: Stage 2 material fractions
+        self.connect('Struct_2.Al_fraction_stage_2', 'Environmental.Al_fraction_stage_2')
+        self.connect('Struct_2.Composite_fraction_stage_2', 'Environmental.Composite_fraction_stage_2')
+        
+        # ========================================
+        # CONNECT PROPELLANT MASSES
+        # ========================================
+        
         self.connect('Prop_mass_stage_1', 'Environmental.Prop_mass_stage_1')
         self.connect('Prop_mass_stage_2', 'Environmental.Prop_mass_stage_2')
+        self.connect('OF_stage_1', 'Environmental.OF_stage_1')
+        self.connect('OF_stage_2', 'Environmental.OF_stage_2')
